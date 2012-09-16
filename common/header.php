@@ -16,13 +16,13 @@
 
     <!-- Stylesheets -->
     <?php
-        queue_css('bootstrap.min');
+        queue_css(array('site','bootstrap'));
         display_css();
     ?>
 
     <!-- JavaScripts -->
     <?php 
-        queue_js(array('site','bootstrap.min'),$dir='js');
+        queue_js(array('site','bootstrap'),$dir='js');
         display_js(); 
     ?>
 </head>
