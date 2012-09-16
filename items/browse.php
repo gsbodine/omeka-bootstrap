@@ -94,7 +94,7 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
             <?php if (item_has_tags()): ?>
                 <div class="tags well well-small">
                     <p><i class="icon-tags"></i> <strong>Tags</strong></p>
-                    <?php echo item_tags_as_string(); ?></p>
+                    <?php echo item_tags_as_string(); ?>
                 </div>
             <?php endif; ?>
         </div>
