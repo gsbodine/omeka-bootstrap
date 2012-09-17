@@ -44,12 +44,10 @@
             </div>
         </div>
         <div class="span4">
-            <div id="search-container" class="form-search pull-right" style="margin-top: 20px;">
-                <div class="pull-right">
-                    <?php echo simple_search($buttonText='Search',$formProperties=array('class'=>'form-search')); ?>
+            <div id="search-container" class="form-search pull-right" style="margin-top: 20px;"><div class="input-append"><?php echo simple_search($buttonText='Search',$formProperties=array('class'=>'span2 form-search')); ?>
                 </div>
                 <div class="pull-right">
-                    <?php echo link_to_advanced_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
+                    <i class="icon-search"></i> <?php echo link_to_advanced_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
                 </div>
             </div><!-- end search -->
         </div>
