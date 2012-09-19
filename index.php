@@ -30,17 +30,18 @@
     <?php else: ?>
         <div class="span6"></div>
     <?php endif; ?>
-        <div class="span12"><hr /></div>
     </div><!-- end row -->
    
     <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
                     && plugin_is_active('ExhibitBuilder')
                     && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
-        <div class="row">
+    <div class="row">
+        <div class="span12"><hr /></div>   
+    </div>
+    <div class="row">
         <div class="span12">
             <!-- Featured Exhibit -->
             <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-            <hr />
         </div>
         </div>
     <?php endif; ?>
@@ -49,10 +50,14 @@
     <div id="secondary">
         <div id="recent-items">
         <?php
-        $homepageRecentItems = (int)get_theme_option('Homepage Recent Items') ? get_theme_option('Homepage Recent Items') : '3';
-        set_items_for_loop(recent_items($homepageRecentItems));
+        $homepageRecentItems = (int)get_theme_option('Homepage Recent Items');
+        if ($homepageRecentItems > 0) { set_items_for_loop(recent_items($homepageRecentItems)); }
         if (has_items_for_loop()):
         ?>
+        <div class="row">
+            <div class="span12"><hr /></div>   
+        </div>
+            
         <div class="row">
             <div class="span12">
                 <h2><?php echo __('Recently Added Items'); ?></h2>
@@ -77,21 +82,9 @@
             <?php endwhile; ?>
             </ul>
         </div><!-- end row -->
-        <?php else: ?>
-            <div class="row">
-                <div class="span12">
-                    <p><?php echo __('No recent items available.'); ?></p>
-                </div>
-            </div>
         <?php endif; ?>
         </div>
         </div>
-        
-    <div class="row">
-        <div class="span12">
-            <p class="view-items-link lead"><a href="<?php echo html_escape(uri('items')); ?>"><?php echo __('View All Items'); ?></a></p>
-        </div>
-    </div>
 
     </div><!-- end secondary -->
 </div>

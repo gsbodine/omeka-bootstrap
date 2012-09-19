@@ -22,8 +22,8 @@ jQuery(document).ready(function($){
     $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large").prepend('<i class="icon-tag"></i> ');
     
     
-
-    //$('.previous').prepend('<i class="icon-step-backward"></i> ');
+    // activating popovers on desired page boxen
+    $('.pop-box').popover();
     
     
 })
