@@ -63,19 +63,17 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
 <div class="item row">
 <div class="span12">
     <div class="row">
-        <div class="item-meta span12">
-            <h2><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span3">
+        <div class="span2">
             <?php if (item_has_thumbnail()): ?>
                 <div class="item-img">
-                <?php echo link_to_item(item_square_thumbnail()); ?>
+                <?php echo link_to_item(item_thumbnail()); ?>
                 </div>
             <?php endif; ?>
         </div>
-        <div class="span6">
+        <div class="span7">
+            <div class="item-title">
+                <h3><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></h3>
+            </div>
             <?php if ($text = item('Item Type Metadata', 'Text', array('snippet'=>250))): ?>
                 <div class="item-description">
                     <p><?php echo $text; ?></p>
@@ -85,10 +83,17 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
-            <div>
+            
+            <?php if (item_belongs_to_collection()): ?>
+                <p><div><strong><?php echo __('Collection'); ?></strong></div>
+                <div class="element-text"><?php echo link_to_collection_for_item(); ?></div></p>
+
+            <?php endif; ?>
+            
+            <!-- <div>
                 <h5>Citation</h5>
                 <p class="citation"><?php echo item_citation(); ?></p>
-            </div>
+            </div> -->
         </div>
         <div class="span3">
             <?php if (item_has_tags()): ?>

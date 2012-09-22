@@ -16,13 +16,13 @@
 
     <!-- Stylesheets -->
     <?php
-        queue_css(array('site','bootstrap'));
+        queue_css(array('bootstrap','font-awesome','site'));
         display_css();
     ?>
 
     <!-- JavaScripts -->
     <?php 
-        queue_js(array('site','bootstrap'),$dir='js');
+        queue_js(array('bootstrap','site'),$dir='js');
         display_js(); 
     ?>
 </head>
@@ -44,8 +44,7 @@
             </div>
         </div>
         <div class="span4">
-            <div id="search-container" class="form-search pull-right" style="margin-top: 20px;"><div class="input-append"><?php echo simple_search($buttonText='Search',$formProperties=array('class'=>'span2 form-search')); ?>
-                </div>
+            <div id="search-container" class="pull-right" style="margin-top: 20px;"><?php echo bootstrap_simple_search($buttonText='Search',$formProperties=array('class'=>'form-search pull-right')); ?>
                 <div class="pull-right">
                     <i class="icon-search"></i> <?php echo link_to_advanced_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
                 </div>
