@@ -16,11 +16,34 @@
     </div>
     <div class="row">
         <div class="span6">
+            <!-- Item Description -->
+            <div class="row">
+                <div class="span6">
+                    <?php if ($itemDescription = item('Dublin Core','Description')): ?>
+                        <p class="lead"><?php echo $itemDescription; ?></p>
+                    <?php else: ?>
+                        <h4>Description</h4>
+                        <p class="alert"><strong>Sorry!</strong> No description recorded.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            
+            <!-- Item Collection Information (if available) -->
+            <?php if (item_belongs_to_collection()): ?>
+            <div class="row"><div class="span6">
+                <div id="collection" class="element">
+                    <h4 style="display:inline"><?php echo __('Collection'); ?>: </h4>
+                    <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
+                </div>
+            </div></div>
+            <?php endif; ?>
+            
+            <div class="row"><div class="span6"><hr /></div></div>
+            
             <div class="row">
                 <div class="span2">
-                    <?php //echo custom_show_item_metadata(); ?>
-                <!-- Date Information -->    
-                    <h5><i class="icon-calendar"></i> Date: </h5>
+                <!-- Item Date Information -->    
+                    <h4><i class="icon-calendar icon-large"></i> Date: </h5>
                     <?php if ($itemDate = item('Dublin Core','Date')): // TODO: create a date format function...?>
                         <div class="lead"><?php echo $itemDate; ?></div>
                     <?php else: ?>
@@ -28,8 +51,8 @@
                     <?php endif; ?>
                 </div>
                 <div class="span2">
-                    <!-- Recipient -->
-                    <h5><i class="icon-"></i> Author: </h5>
+                <!-- Item Creator Information -->
+                    <h4><i class="icon-user icon-large"></i> Author: </h4>
                     <div class="lead">
                     <?php if ($itemCreator = item('Dublin Core','Creator')): // TODO: create a date format function...?>
                         <?php echo $itemCreator; ?>
@@ -39,9 +62,9 @@
                     </div>
                 </div>
                 <div class="span2">
-                    <!-- Recipient -->
-                    <?php if ($itemRecipient): // TODO: create a date format function...?>
-                        <h5><i class="icon-"></i> Recipient: </h5>
+                <!-- Item Recipient Information (if available) -->
+                    <?php if ($itemRecipient = item('Item Type Metadata','Recipient')): // TODO: create a date format function...?>
+                        <h4><i class="icon-envelope icon-large"></i> Recipient: </h4>
                         <div class="lead">
                             <?php echo $itemRecipient; ?>
                         </div>
@@ -50,23 +73,22 @@
             </div>
             
             <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            <?php if (item_belongs_to_collection()): ?>
-            <div id="collection" class="element">
-                <h3><?php echo __('Collection'); ?></h3>
-                <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
-            </div>
-            <?php endif; ?>
+            
                 
             <!-- The following prints a list of all tags associated with the item -->
-            <div><i class="icon-tags"></i> <strong>Current Tags</strong></div>
-            <div class="tags well well-small">
-                <?php if (item_tags_as_string() != null) {
-                    echo item_tags_as_string(); }
-                    else {
-                    echo 'No tags recorded for this item.'; 
-                    }
-                ?>
-            </div>
+            <div class="row"><div class="span6">
+                <hr />
+                <h4><i class="icon-tags icon-large"></i> Tags</h4>
+                <div class="tags well well-small">
+                    <div><strong>Current Tags</strong></div>
+                    <?php if (item_tags_as_string() != null) {
+                        echo item_tags_as_string(); }
+                        else {
+                        echo 'No tags recorded for this item.'; 
+                        }
+                    ?>
+                </div>
+            </div></div>
             <?php echo plugin_append_to_items_show(); ?>
         
             <!-- The following prints a citation for this item. -->
