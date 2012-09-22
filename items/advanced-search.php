@@ -84,7 +84,7 @@ $formAttributes['method'] = 'GET';
                         array('name' => "advanced[$i][terms]",
                               'size' => 20),
                         @$rows['terms']); ?>
-                    <button type="button" class="remove_search btn btn-small" disabled="disabled" style="display: none;"><i class="icon-minus-sign"></i> Remove Field</button>
+                    <button type="button" class="remove_search btn btn-small btn-danger" disabled="disabled" style="display: none;"><i class="icon-minus-sign icon-white"></i> Remove Field</button>
                 </div>
             <?php endforeach; ?>
             </div>
@@ -186,7 +186,9 @@ $formAttributes['method'] = 'GET';
             </div>
         </div>
     </div>
-    <?php is_admin_theme() ? fire_plugin_hook('admin_append_to_advanced_search') : fire_plugin_hook('public_append_to_advanced_search'); ?>
+    <div class="span12">
+        <?php is_admin_theme() ? fire_plugin_hook('admin_append_to_advanced_search') : fire_plugin_hook('public_append_to_advanced_search'); ?>
+    </div>
     <div class="span12"><hr /></div>
     <div class="span12" style="text-align:center;">
         <input type="submit" class="submit btn btn-inverse" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
