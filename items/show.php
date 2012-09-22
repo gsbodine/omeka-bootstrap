@@ -1,17 +1,10 @@
 <?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
 <div id="primary">
-    <div class="pagination pagination-centered">
-        <ul>
-            <li id="previous-item" class="previous"><?php echo link_to_previous_item(); ?></li>
-        </ul>
-        <ul>
-            <li id="next-item" class="next"><?php echo link_to_next_item(); ?></li>
-        </ul>	
-    </div>
-    
     <div class="row">
         <div class="span12">
+            <p class="lead" style="text-align:center;">Item Identification #: <?php echo item('Dublin Core','Identifier'); ?></p>
             <div class="page-header"><h1><?php echo item('Dublin Core', 'Title'); ?></h1></div>
+            <?php echo flash(); ?>
         </div>
     </div>
     <div class="row">
@@ -76,26 +69,31 @@
             
                 
             <!-- The following prints a list of all tags associated with the item -->
-            <div class="row"><div class="span6">
-                <hr />
-                <h4><i class="icon-tags icon-large"></i> Tags</h4>
-                <div class="tags well well-small">
-                    <div><strong>Current Tags</strong></div>
-                    <?php if (item_tags_as_string() != null) {
-                        echo item_tags_as_string(); }
-                        else {
-                        echo 'No tags recorded for this item.'; 
-                        }
-                    ?>
+            <div class="row">
+                <div class="span6">
+                    <hr />
+                    <h4><i class="icon-tags icon-large"></i> Tags</h4>
+                    <div class="tags well well-small">
+                        <div><strong>Current Tags</strong></div>
+                        <?php if (item_tags_as_string() != null) {
+                            echo item_tags_as_string(); }
+                            else {
+                            echo 'No tags recorded for this item.'; 
+                            }
+                        ?>
+                    </div>
                 </div>
-            </div></div>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <!-- The following prints a citation for this item. -->
+                    <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
+                    <div class="element-text"><?php echo item_citation(); ?></div>
+                </div>
+            </div>
             <?php echo plugin_append_to_items_show(); ?>
         
-            <!-- The following prints a citation for this item. -->
-            <div id="item-citation" class="element">
-                <h3><?php echo __('Citation'); ?></h3>
-                <div class="element-text"><?php echo item_citation(); ?></div>
-            </div>
+            
         </div>
         <!-- The following returns all of the files associated with an item. -->
         <div id="itemfiles" class="span6">

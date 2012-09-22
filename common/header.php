@@ -12,7 +12,7 @@
     <?php echo auto_discovery_link_tags(); ?>
 
     <!-- Plugin Stuff -->
-    <?php fire_plugin_hook('public_theme_header'); ?>
+    <?php plugin_header(); ?>
 
     <!-- Stylesheets -->
     <?php
@@ -22,7 +22,7 @@
 
     <!-- JavaScripts -->
     <?php 
-        queue_js(array('bootstrap','site'),$dir='js');
+        queue_js(array('bootstrap.min','site'),$dir='js');
         display_js(); 
     ?>
 </head>

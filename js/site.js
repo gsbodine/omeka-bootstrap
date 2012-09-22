@@ -21,6 +21,7 @@ jQuery(document).ready(function($){
     $('.vvvv-popular,.vvvvv-popular,.vvvvvv-popular').addClass("btn").prepend('<i class="icon-tag"></i> ');
     $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large").prepend('<i class="icon-tag"></i> ');
     
+    $('.dropdown-toggle').dropdown();
     
     // activating popovers on desired page boxen
     $('.pop-box').popover();
