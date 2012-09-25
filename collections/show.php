@@ -3,7 +3,6 @@
             'bodyid'=>'collections',
             'bodyclass' => 'show')
     ); 
-
 ?>
 
 <div id="primary" class="show">
@@ -37,7 +36,7 @@
         <?php while (loop_items_in_collection(4)): ?>
         <div class="span3">
             <div class="well" style="text-align:center;">
-                <div><?php echo link_to_item(item_square_thumbnail($props=array('class'=>'img img-rounded img-polaroid'))); ?></div>
+                <div><?php echo link_to_item(item_square_thumbnail($props=array('class'=>'img-rounded img-polaroid'))); ?></div>
                 <br />
                 <p><small><strong><?php echo item('Dublin Core','Title'); ?></strong></small></p>
             </div>

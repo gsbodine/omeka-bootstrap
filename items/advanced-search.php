@@ -111,33 +111,41 @@ $formAttributes['method'] = 'GET';
         <div class="row">
             <div class="span12"><hr /></div>
         </div>
+        
         <div class="row">
-            <div class="span4">
+            <div class="span6">
                 <div class="field">
                     <?php echo label(array('for'=>'collection-search','class'=>'label'), __('Search By Collection')); ?>
                     <div class="inputs"><?php
                         echo select_collection(array(
                             'name' => 'collection',
                             'id' => 'collection-search',
-                            'class' => 'span4'
+                            'class' => 'span6'
                         ), @$_REQUEST['collection']); ?>
                     </div>
                 </div>
             </div>
-            <div class="span4">
+        </div>
+        
+        <div class="row">
+            <div class="span12"><hr /></div>
+        </div>
+        
+        <div class="row">
+            <div class="span3">
                 <div class="field">
                     <?php echo label(array('for'=>'item-type-search','class'=>'label'), __('Search By Item/Document Type')); ?>
                     <div class="inputs"><?php
-                        echo select_item_type(array('name'=>'type', 'id'=>'item-type-search','class'=>'span4'),
+                        echo select_item_type(array('name'=>'type', 'id'=>'item-type-search','class'=>'span3'),
                             @$_REQUEST['type']); ?>
                     </div>
                 </div>
             </div>
-            <div class="span4">
+            <div class="span3">
                 <div class="field">
                     <label class="label">Search by Script Type</label>
                     <div class="inputs">
-                        <?php echo select(array('name' => 'script-type', 'id' => 'script-type', 'class' => 'span4'),
+                        <?php echo select(array('name' => 'script-type', 'id' => 'script-type', 'class' => 'span3'),
                             array('1' => __('Primarily Handwritten'),
                                   '0' => __('Primarily Typewritten')),
                             @$_REQUEST['script-type']); ?>
@@ -276,8 +284,8 @@ $formAttributes['method'] = 'GET';
         </div>
         <!-- <div class="span12"><hr /></div> -->
         <div class="row">
-            <div class="span12" style="text-align:center;">
-                <input type="submit" class="submit btn btn-inverse" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
+            <div class="span12">
+                <input type="submit" class="submit btn btn-primary" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
             </div>
         </div>
     </form>
