@@ -16,6 +16,7 @@
                     <?php plugin_footer(); ?>
                 </div>
             </div>
+            
         </div><!-- end footer -->
     </div><!-- end wrap -->
 </body>

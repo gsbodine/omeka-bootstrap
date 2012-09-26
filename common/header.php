@@ -23,6 +23,23 @@
     <!-- JavaScripts -->
     <?php 
         queue_js(array('bootstrap.min','site'),$dir='js');
+        
+        if (get_theme_option('Use Google Analytics') == 1): ?>
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '<?php echo html_entity_decode(get_theme_option('Google Analytics Account')); ?>']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+             </script>
+            
+    <?php endif;
+        
         display_js(); 
     ?>
 </head>
@@ -56,7 +73,20 @@
     <div class="navbar">
         <div id="primary-nav" class="navbar-inner">
             <ul class="nav">
-            <?php echo custom_public_nav_header(); ?>
+            <?php //echo custom_public_nav_header(); 
+                echo public_nav_main(
+                    array(
+                        'Browse Items' => uri('items'), 
+                        'Browse Collections' => uri('collections'),
+                        'Browse Exhibits' => uri('exhibits'),
+                        'About Martha Berry' => uri('about-martha-berry'),
+                        'About MBDA' => uri('about-mbda'),
+                        'Getting Started' => uri('getting-started'),
+                        'Contacts' => uri('contacts')
+                    )
+                );
+            ?>
+                
             </ul>
         </div><!-- end primary-nav -->
     </div><!-- end navbar -->
