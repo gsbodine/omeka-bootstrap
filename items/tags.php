@@ -10,8 +10,10 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
     <ul class="navigation item-tags nav nav-tabs" id="secondary-nav">
         <?php echo custom_nav_items(); ?>
     </ul>
-
-    <?php echo tag_cloud($tags,uri('items/browse')); ?>
+    
+    <?php 
+        asort($tags);
+        echo tag_cloud($tags,uri('items/browse')); ?>
 
 </div><!-- end primary -->
 
