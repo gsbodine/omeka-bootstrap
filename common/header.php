@@ -73,8 +73,8 @@
     <div class="navbar">
         <div id="primary-nav" class="navbar-inner">
             <ul class="nav">
-            <?php //echo custom_public_nav_header(); 
-                echo public_nav_main(
+            <?php echo custom_public_nav_header(); 
+                /* echo public_nav_main(
                     array(
                         'Browse Items' => uri('items'), 
                         'Browse Collections' => uri('collections'),
@@ -84,7 +84,7 @@
                         'Getting Started' => uri('getting-started'),
                         'Contacts' => uri('contacts')
                     )
-                );
+                ); */
             ?>
                 
             </ul>
