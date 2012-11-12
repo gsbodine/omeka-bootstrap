@@ -1,4 +1,6 @@
-<?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
+<?php 
+    head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); 
+    ?>
 <div id="primary">
     <div class="row">
         <div class="span12">
@@ -100,7 +102,7 @@
                     <hr />
                     <!-- The following prints a citation for this item. -->
                     <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
-                    <div class="element-text"><?php echo item_citation(); ?></div>
+                    <div class="element-text"><?php echo site_item_citation(); ?></div>
                 </div>
             </div>
             <div class="row">

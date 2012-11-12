@@ -73,20 +73,7 @@
     <div class="navbar">
         <div id="primary-nav" class="navbar-inner">
             <ul class="nav">
-            <?php echo custom_public_nav_header(); 
-                /* echo public_nav_main(
-                    array(
-                        'Browse Items' => uri('items'), 
-                        'Browse Collections' => uri('collections'),
-                        'Browse Exhibits' => uri('exhibits'),
-                        'About Martha Berry' => uri('about-martha-berry'),
-                        'About MBDA' => uri('about-mbda'),
-                        'Getting Started' => uri('getting-started'),
-                        'Contacts' => uri('contacts')
-                    )
-                ); */
-            ?>
-                
+                <?php echo custom_public_nav_header(); ?>
             </ul>
         </div><!-- end primary-nav -->
     </div><!-- end navbar -->
