@@ -63,7 +63,7 @@ function site_item_citation($item=null) {
         $cite .= "<em>$siteTitle</em>. ";
     }
     if ($siteEditor) {
-        $cite .= "Ed. $siteEditor. ";
+        $cite .= "Eds. $siteEditor. ";
     }
     if ($siteLocation) {
         $cite .= "$siteLocation";
