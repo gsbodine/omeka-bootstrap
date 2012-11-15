@@ -41,14 +41,14 @@ function site_item_citation($item=null) {
     }
 
     $creator    = trim(strip_formatting(item('Dublin Core', 'Creator', array(), $item)));
-    $title      = strip_formatting(item('Dublin Core', 'Title', array(), $item));
-    $siteTitle  = strip_formatting(settings('site_title'));
+    $title      = trim(strip_formatting(item('Dublin Core', 'Title', array(), $item)));
+    $siteTitle  = trim(strip_formatting(settings('site_title')));
     $itemId     = item('id', null, array(), $item);
     $accessDate = date('F j, Y');
     $uri        = html_escape(abs_item_uri($item));
-    $siteEditor = strip_formatting(get_theme_option('Site Editor'));
-    $siteLocation = strip_formatting(get_theme_option('Site Location'));
-    $siteInstitution = strip_formatting(get_theme_option('Site Institution'));
+    $siteEditor = trim(strip_formatting(get_theme_option('Site Editor')));
+    $siteLocation = trim(strip_formatting(get_theme_option('Site Location')));
+    $siteInstitution = trim(strip_formatting(get_theme_option('Site Institution')));
 
     $itemDate = date_format(date_create($item->added),'Y');
     
