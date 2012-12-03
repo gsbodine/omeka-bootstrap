@@ -38,8 +38,8 @@
 
              </script>
             
-    <?php endif;
-        
+    <?php 
+        endif;
         echo head_js(); 
     ?>
 </head>
