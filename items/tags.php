@@ -1,6 +1,6 @@
 <?php
 $pageTitle = __('Browse Items');
-head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
+echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
 ?>
 
 <div id="primary">
@@ -8,7 +8,7 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
     <div class="page-title"><h1><?php echo $pageTitle; ?> <small>By Current Tags</small></h1></div>
 
     <ul class="navigation item-tags nav nav-tabs" id="secondary-nav">
-        <?php echo custom_nav_items(); ?>
+        <?php echo public_nav_items(); ?>
     </ul>
     
     <?php 
@@ -17,4 +17,4 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
 
 </div><!-- end primary -->
 
-<?php foot(); ?>
+<?php echo foot(); ?>

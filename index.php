@@ -1,4 +1,4 @@
-<?php head(array('bodyid'=>'home')); ?>
+<?php echo head(array('bodyid'=>'home')); ?>
     <div id="primary">
     <?php if (get_theme_option('Homepage Text')): ?>
         <div class="row">
@@ -50,9 +50,9 @@
     <div id="secondary">
         <div id="recent-items">
         <?php
-        $homepageRecentItems = (int)get_theme_option('Homepage Recent Items');
-        if ($homepageRecentItems > 0) { set_items_for_loop(recent_items($homepageRecentItems)); }
-        if (has_items_for_loop()):
+        $homepageRecentItems = (int)option('Homepage Recent Items');
+        if ($homepageRecentItems > 0) { set_loop_records('items',recent_items($homepageRecentItems)); }
+        if (has_loop_records('item')):
         ?>
         <div class="row">
             <div class="span12"><hr /></div>   
@@ -89,4 +89,4 @@
     </div><!-- end secondary -->
 </div>
 
-<?php foot(); ?>
+<?php echo foot(); ?>
