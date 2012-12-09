@@ -7,13 +7,13 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
 
     <div class="page-title"><h1><?php echo $pageTitle; ?> <small>By Current Tags</small></h1></div>
 
-    <ul class="navigation item-tags nav nav-tabs" id="secondary-nav">
+    <ul class="navigation item-tags nav nav-pills" id="secondary-nav">
         <?php echo public_nav_items(); ?>
     </ul>
     
     <?php 
         asort($tags);
-        echo tag_cloud($tags,uri('items/browse')); ?>
+        echo tag_cloud($tags,url('items/browse')); ?>
 
 </div><!-- end primary -->
 

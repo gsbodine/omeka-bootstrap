@@ -63,7 +63,7 @@
         <div class="span4">
             <div id="search-container" class="pull-right" style="margin-top: 20px;"><?php echo search_form(array(true,'Search',array('class'=>'form-search pull-right'))); ?>
                 <div class="pull-right">
-                    <i class="icon-search"></i> <?php //echo link_to_advanced_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
+                    <i class="icon-search"></i> <?php echo link_to_item_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
                 </div>
             </div><!-- end search -->
         </div>
