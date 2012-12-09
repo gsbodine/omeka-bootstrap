@@ -36,7 +36,7 @@
         <?php foreach(loop('items') as $item): ?>
         <div class="span3">
             <div class="well" style="text-align:center;">
-                <div><?php echo link_to_item(item_square_thumbnail($props=array('class'=>'img-rounded img-polaroid'))); ?></div>
+                <div><?php echo link_to_item(	item_image('square_thumbnail',$props=array('class'=>'img-rounded img-polaroid'))); ?></div>
                 <br />
                 <p><small><strong><?php echo metadata('item',array('Dublin Core','Title')); ?></strong></small></p>
             </div>
@@ -45,17 +45,17 @@
     </div>
     <div class="row">
         <div class="span12">
-            <p class="view-items-link-browse lead" style="text-align:center"><?php echo link_to_browse_items('Browse all items in the collection', array('collection' => collection('id'))); ?></p>
+            <p class="view-items-link-browse lead" style="text-align:center"><?php echo link_to_items_in_collection('Browse all items in the collection', $collection); ?></p>
         
         </div>
     </div>
     <!-- end collection-description -->
     <div class="row">
         <div class="span12">
-            <?php echo plugin_append_to_collections_show(); ?>
+            <?php fire_plugin_hook('public_colletion_show'); ?>
         </div>
     </div>
     
 </div><!-- end primary -->
 
-<?php foot(); ?>
+<?php echo foot(); ?>

@@ -12,7 +12,7 @@
     <?php echo auto_discovery_link_tags(); ?>
 
     <!-- Plugin Stuff -->
-    <?php //plugin_header(); ?>
+    <?php fire_plugin_hook('public_header',array('view'=>$this)); ?>
 
     <!-- Stylesheets -->
     <?php
@@ -48,6 +48,7 @@
 <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
 <div id="wrap">
 <div class="container">
+    <header role="banner">
     <div class="row">
         <div class="span12">
             <?php fire_plugin_hook('public_header'); ?>
@@ -65,18 +66,17 @@
                 <div class="pull-right">
                     <i class="icon-search"></i> <?php echo link_to_item_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
                 </div>
-            </div><!-- end search -->
+            </div>
         </div>
-    </div><!-- end header -->
+    </div>
     <?php //echo custom_header_image(); ?>
     </div> 
     <div class="navbar">
         <div id="primary-nav" class="navbar-inner">
-            
-                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav') ?>
-            
-        </div><!-- end primary-nav -->
-    </div><!-- end navbar -->
+             <?php $nav = public_nav_main(); echo $nav->setUlClass('nav') ?>
+        </div>
+    </div>
+    </header>
 </div>
-        <div id="content" class="container">
-                <?php fire_plugin_hook('public_content_top'); ?>
+<div id="content" class="container">
+    <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

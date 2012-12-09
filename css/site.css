@@ -23,4 +23,15 @@
     font-size: 13px;
 }
 
+#admin-bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+
+#admin-bar-container .navbar-inner {
+    width: 100%;
+}
+
 
