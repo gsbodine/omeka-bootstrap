@@ -25,6 +25,6 @@ jQuery(document).ready(function($){
     // activating popovers on desired page boxen
     $('.pop-box').popover();
     
-    $('.tooltipper').tooltip();
+    $(".tooltipper").tooltip();
 })
 

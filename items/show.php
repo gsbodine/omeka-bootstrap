@@ -121,7 +121,7 @@
            
             <div class="element-text"><?php echo files_for_item(
                 array('imageSize'=>'fullsize','linkToFile'=>true,'linkToMetadata'=>false),//options
-                array('class'=>'file-image'), //wrapperAttributes
+                array('class'=>'file-image'),
                 null); 
         ?></div>
         </div>

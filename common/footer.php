@@ -1,6 +1,7 @@
         </div><!-- end content -->
 
         <div id="footer" class="container">
+            <footer>
             <div class="row"><div class="span12"><hr /></div></div>
             <div id="footer-text" class="row">
                 <div class="span12"> 
@@ -13,11 +14,16 @@
             </div>
             <div class="row">
                 <div class="span12">
-                    <?php fire_plugin_hook('public_theme_footer'); ?>
+                    <?php fire_plugin_hook('public_footer'); ?>
                 </div>
             </div>
-            
+            </footer>    
         </div><!-- end footer -->
     </div><!-- end wrap -->
+    <script type="text/javascript">
+    jQuery(document).ready(function () {
+        Omeka.showAdvancedForm();
+    });
+    </script>
 </body>
 </html>
