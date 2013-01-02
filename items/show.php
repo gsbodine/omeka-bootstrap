@@ -17,8 +17,12 @@
     </div>
     <div class="row">
         <div class="span12">
-            <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
             <?php echo flash(); ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
         </div>
     </div>
     <div class="row">
