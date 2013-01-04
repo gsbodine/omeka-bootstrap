@@ -34,4 +34,21 @@
     width: 100%;
 }
 
+.popular a,
+.-popular a,
+.v-popular a,
+.vv-popular a,
+.vvv-popular a,
+.vvvv-popular a,
+.vvvvv-popular a,
+.vvvvvv-popular a,
+.vvvvvvv-popular a,
+.vvvvvvvv-popular a {
+    color: #000;
+ }
+        
+.btn-inverse a {
+    color: #fff;
+}
+
 
