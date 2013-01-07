@@ -29,7 +29,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                         <div class="item">
                         <?php if (item_has_thumbnail()): ?>
                             <div class="carousel-img" style="text-align: center">
-                                <?php echo link_to_item(item_thumbnail($props=array('class'=>'img-polaroid'))); ?>
+                                <?php echo link_to_item(item_image('thumbnail',$props=array('class'=>'img-polaroid')),null,null,$item); ?>
                             </div>
                         <?php endif; ?>
                             <div class="carousel-caption">
@@ -66,7 +66,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
         <div class="span2">
             <?php if (metadata($item, 'has thumbnail')): ?>
                 <div class="item-img">
-                <?php echo link_to_items_browse(item_image('thumbnail')); ?>
+                <?php echo link_to_item(item_image('thumbnail')); ?>
                 </div>
             <?php endif; ?>
         </div>
