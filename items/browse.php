@@ -44,7 +44,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                                     </div>
                                 <?php endif; ?>
                                 <?php if (item_has_tags()): ?>
-                                    <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
+                                    <div class="browse-item-tags"><p><strong><?php echo __('Tags'); ?>:</strong>
                                         <?php echo item_tags_as_string(); ?></p>
                                     </div>
                                 <?php endif; ?>
@@ -96,7 +96,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
         </div>
         <div class="span3">
             <?php if (metadata($item,'has tags')): ?>
-                <div class="tags well well-small">
+                <div class="browse-items-tags well well-small">
                     <p><i class="icon-tags"></i> <strong>Tags</strong></p>
                     <?php echo tag_string($item); ?>
                 </div>
