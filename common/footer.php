@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="span12">
-                    <?php //fire_plugin_hook('public_footer'); ?>
+                    <?php fire_plugin_hook('public_footer'); ?>
                 </div>
             </div>
             </footer>    
