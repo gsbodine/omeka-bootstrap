@@ -1,50 +1,22 @@
 <?php echo head(array('bodyid'=>'home')); ?>
     <div id="primary">
-    <?php if (get_theme_option('Homepage Text')): ?>
-        <div class="row">
-            <div class="span12">
-                <p class="lead"><?php echo get_theme_option('Homepage Text'); ?></p>
+    <div class="row">
+        <div class="span4">
+            <div style="text-align: center;"><a href="/items"><img class="img-rounded pop-box" title="&lt;h4&gt;Browse&lt;/h4&gt;" src="<?php echo img('BrowseImage.jpg'); ?>" alt="Browse Items in the Archive" data-content="&lt;p class=&quot;lead&quot;&gt;Browse Items in the Archive&lt;/p&gt;" data-html="true" data-trigger="hover" data-placement="top" /></a>
+                <h2>BROWSE</h2>
             </div>
         </div>
-    <?php endif; ?>
-        
-    <div class="row">
-    <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
-        <div class="span6">
-            <!-- Featured Item -->
-            <div id="featured-item" class="well">
-                <?php echo display_random_featured_item(); ?>
-            </div><!--end featured-item-->
+        <div class="span4">
+            <div style="text-align: center;"><a href="/items/advanced-search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Search for an item in the Archive" data-content="&lt;p class=&quot;lead&quot;&gt;Search for an Item in the Archive&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
+                <h2>SEARCH</h2>
+            </div>
         </div>
-    <?php else: ?>
-        <div class="span6"></div>
-    <?php endif; ?>
-        
-    <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
-        <div class="span6">   
-            <!-- Featured Collection -->
-            <div id="featured-collection" class="well">
-                <?php echo display_random_featured_collection(); ?>
-            </div><!-- end featured collection -->
+        <div class="span4">
+            <div style="text-align: center;"><a href="/participate"><img class="img-rounded pop-box" title="&lt;h4&gt;Participate&lt;/h4&gt;" src="<?php echo img('1950GrandMarch.jpg'); ?>" alt="Participate in the archival process by editing, describing, or transcribing documents and objects for the MBDA" data-content="&lt;p class=&quot;lead&quot;&gt;Help Us Edit the Archive&lt;/p&gt;" data-html="true" data-trigger="hover" data-placement="top" /></a>
+                <h2>PARTICIPATE</h2>
+            </div>
         </div>
-    <?php else: ?>
-        <div class="span6"></div>
-    <?php endif; ?>
-    </div><!-- end row -->
-   
-    <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
-                    && plugin_is_active('ExhibitBuilder')
-                    && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
-    <div class="row">
-        <div class="span12"><hr /></div>   
     </div>
-    <div class="row">
-        <div class="span12">
-            <!-- Featured Exhibit -->
-            <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-        </div>
-        </div>
-    <?php endif; ?>
     </div><!-- end primary -->
 
     <div id="secondary">
