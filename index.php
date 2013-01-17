@@ -1,4 +1,18 @@
 <?php echo head(array('bodyid'=>'home')); ?>
+<script type="text/javascript">jQuery(document).ready(function($) { $('#SiteDevModal').modal('show')});</script>
+<div id="SiteDevModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h1 id="modalLabel"><i class="icon-time"></i> In Development</h1>
+        </div>
+        <div class="modal-body">
+            <p>Please bear with us; the MBDA site is under <strong>active construction and development</strong> through April 2013.</p>
+            <p>Feel free to have a look around, to use the site for research or teaching, and/or to contact us if you have any questions.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+</div>
     <div id="primary">
     <div class="row">
         <div class="span4">
@@ -7,8 +21,8 @@
             </div>
         </div>
         <div class="span4">
-            <div style="text-align: center;"><a href="/items/advanced-search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Search for an item in the Archive" data-content="&lt;p class=&quot;lead&quot;&gt;Search for an Item in the Archive&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
-                <h2>SEARCH</h2>
+            <div style="text-align: center;"><a href="/items/advanced-search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" data-content="&lt;p class=&quot;lead&quot;&gt;Visit the MBDA educational exhibits&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
+                <h2>LEARN</h2>
             </div>
         </div>
         <div class="span4">
