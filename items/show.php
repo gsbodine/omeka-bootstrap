@@ -63,10 +63,12 @@
                 </div>
                 <div class="span2">
                 <!-- Item Creator Information -->
-                    <h4><i class="icon-user icon-large"></i> Author: </h4>
+                    <h4><i class="icon-user icon-large"></i> Author(s): </h4>
                     <div class="lead">
-                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
-                        <?php echo $itemCreator; ?>
+                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'),'all')): ?>
+                        <?php foreach ($itemCreator as $author) {
+                            echo $author . '<br />';
+                        } ?>
                     <?php else: ?>
                         None recorded.
                     <?php endif; ?>
@@ -74,20 +76,18 @@
                 </div>
                 <div class="span2">
                 <!-- Item Recipient Information (if available) -->
-                    
                     <?php 
-                        $itemRecipient = metadata($item,array('Item Type Metadata','Recipient'));
-                        if (trim($itemRecipient) != ''): ?>
-                        <h4><i class="icon-envelope icon-large"></i> Recipient: </h4>
-                        <div class="lead">
-                            <?php echo $itemRecipient; ?>
-                        </div>
-                    <?php endif; ?>
+                        $itemRecipients = metadata($item,array('Item Type Metadata','Recipient'),'all');
+                        if (count($itemRecipients) > 0) {
+                            echo '<h4><i class="icon-envelope icon-large"></i> Recipient: </h4><div class="lead">';
+                            foreach ($itemRecipients as $itemRecipient) {
+                                echo $itemRecipient . '<br />'; 
+                            }
+                            echo '</div>';
+                        }
+                    ?>
                 </div>
             </div>
-            
-            <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            
                 
             <!-- The following prints a list of all tags associated with the item -->
             <div class="row">
