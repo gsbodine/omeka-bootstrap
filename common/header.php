@@ -19,7 +19,7 @@
         queue_css_file(array('bootstrap','font-awesome','site'));
         echo head_css();
     ?>
-
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Oxygen:400,300|Cinzel:700,400' rel='stylesheet' type='text/css'>
     <!-- JavaScripts -->
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');
