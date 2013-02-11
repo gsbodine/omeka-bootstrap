@@ -16,7 +16,7 @@
 
     <!-- Stylesheets -->
     <?php
-        queue_css_file(array('bootstrap','font-awesome','site'));
+        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
         echo head_css();
     ?>
 
