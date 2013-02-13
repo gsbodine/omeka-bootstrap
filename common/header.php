@@ -45,9 +45,10 @@
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
-<?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
+
 <div id="wrap">
 <div class="container">
+    <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header role="banner">
     <div class="row">
         <div class="span12">
