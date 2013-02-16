@@ -6,6 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
+
 .item-img > img {
     margin: .5em;
 }
@@ -51,4 +52,24 @@
     color: #fff;
 }
 
+header {
+    background-color: #15397F; 
+    /* Safari 4-5, Chrome 1-9 */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#15397F), to(#001648)); 
+    /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #001648, #15397F); 
+    /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #001648, #15397F); 
+    /* IE 10 */ background: -ms-linear-gradient(top, #001648, #15397F); 
+    /* Opera 11.10+ */ background: -o-linear-gradient(top, #001648, #15397F); 
+}
+
+#site-title {
+    padding: 1em 2em;
+}
+
+#site-title h1, #site-title a {
+    color: #fff; 
+}
+
+#search-container {
+    padding: 1em 2em;
+}
 
