@@ -19,7 +19,7 @@
         queue_css_file(array('bootstrap','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
         echo head_css();
     ?>
-    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Oxygen:400,300|Cinzel:700,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css'>
     <!-- JavaScripts -->
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');
@@ -46,38 +46,40 @@
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
 
-<div id="wrap">
+<?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
 <div class="container">
-    <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header role="banner">
     <div class="row">
         <div class="span12">
-            <?php fire_plugin_hook('public_header'); ?>
+            <div id="headerPluginHook">
+                <?php fire_plugin_hook('public_header'); ?>
+            </div>
         </div>
     </div>
     <div class="row">
     <div id="header">
         <div class="span8">
-            <div id="site-title" class="page-header">
+            <div id="site-title">
                 <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
             </div>
         </div>
         <div class="span4">
-            <div id="search-container" class="pull-right" style="margin-top: 20px;"><?php echo bootstrap_simple_search(); ?>
-                <div class="pull-right">
-                    <i class="icon-search"></i> <?php echo link_to_item_search($text='Advanced Search Options',$props=array('class'=>'text-warning')); ?>
+            <div id="search-container" class="pull-right">
+                <div class="pull-right" style="padding-bottom: 5px;">
+                    <?php echo link_to_item_search($text='<i class="icon-search" style="color: #fff;"></i> Advanced Search Options',$props=array('class'=>'label label-info')); ?>
                 </div>
+                <?php echo bootstrap_simple_search(); ?>
             </div>
         </div>
     </div>
     <?php //echo custom_header_image(); ?>
     </div> 
+    </header>
     <div class="navbar">
         <div id="primary-nav" class="navbar-inner">
              <?php $nav = public_nav_main(); echo $nav->setUlClass('nav') ?>
         </div>
     </div>
-    </header>
 </div>
 <div id="content" class="container">
     <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

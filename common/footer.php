@@ -4,10 +4,9 @@
             <footer>
             <div class="row"><div class="span12"><hr /></div></div>
             <div id="footer-text" class="row">
-                <div class="span3 offset1"><a href="http://berry.edu"><img src="<?php echo img('BigBerryCollege.jpg'); ?>" class="image-rounded pull-right" /></a></div>
-                <div class="span3" style="text-align:center"><a href="http://bloomu.edu"><img src="<?php echo img('BloomsburgLogo.jpg'); ?>" class="image-rounded" /></a></div>
-                <div class="span3"><a href="http://berry.edu/oakhill"><img src="<?php echo img('OakHill.jpg'); ?>" class="image-rounded pull-left" /></a></div>
-                <div class="span2"></div>
+                <div class="span4 text-center"><a href="http://berry.edu"><img src="<?php echo img('BC.png'); ?>" class="image-rounded pull-right" /></a></div>
+                <div class="span4 text-center"><a href="http://bloomu.edu"><img src="<?php echo img('BU.png'); ?>" class="image-rounded" /></a></div>
+                <div class="span4 text-center"><a href="http://berry.edu/oakhill"><img src="<?php echo img('OakHill.jpg'); ?>" class="image-rounded pull-left" /></a></div>
             </div>
             <div class="row">
                 <div class="span12" style="text-align:center">

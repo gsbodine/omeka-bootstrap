@@ -6,6 +6,9 @@
         Purpose of the stylesheet follows.
 */
 
+.admin-bar {
+    padding-top: 45px;
+}
 
 .item-img > img {
     margin: .5em;
@@ -24,16 +27,6 @@
     font-size: 13px;
 }
 
-#admin-bar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-}
-
-
-#admin-bar-container .navbar-inner {
-    width: 100%;
-}
 
 .popular a,
 .-popular a,
@@ -54,11 +47,8 @@
 
 header {
     background-color: #15397F; 
-    /* Safari 4-5, Chrome 1-9 */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#15397F), to(#001648)); 
-    /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #001648, #15397F); 
-    /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #001648, #15397F); 
-    /* IE 10 */ background: -ms-linear-gradient(top, #001648, #15397F); 
-    /* Opera 11.10+ */ background: -o-linear-gradient(top, #001648, #15397F); 
+    background: url(../images/header_back.jpg); 
+    background-repeat: repeat-x; 
 }
 
 #site-title {
@@ -73,3 +63,6 @@ header {
     padding: 1em 2em;
 }
 
+#primary-nav {
+    background: #dedede;
+}
