@@ -7,7 +7,7 @@
 */
 
 .admin-bar {
-    padding-top: 45px;
+    padding-top: 30px;
 }
 
 .item-img > img {
@@ -45,7 +45,7 @@
     color: #fff;
 }
 
-header {
+body {
     background-color: #15397F; 
     background: url(../images/header_back.jpg); 
     background-repeat: repeat-x; 
@@ -64,5 +64,23 @@ header {
 }
 
 #primary-nav {
-    background: #dedede;
+    background: rgba(136, 190, 231, 0.5);
+}
+
+#primary-nav ul li.active a {
+    background: #EFF0F0;
+}
+
+#content h1 {
+    
+}
+
+.page-header {
+    padding: 0 .5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+}
+
+#collection-description {
+    padding: 1em 1em 0 1em;
 }

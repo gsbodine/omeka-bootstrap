@@ -26,5 +26,8 @@ jQuery(document).ready(function($){
     $('.pop-box').popover();
     
     $(".tooltipper").tooltip();
+    
+    $("#primary-nav .active a").prepend('<i class="icon-chevron-right"></i> ');
+    
 })
 

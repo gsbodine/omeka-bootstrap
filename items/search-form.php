@@ -74,7 +74,7 @@ $formAttributes['method'] = 'GET';
             </div>
         <?php endforeach; ?>
         </div>
-        <button type="button" class="add_search"><?php echo __('Add a Field'); ?></button>
+        <button type="button" class="add_search btn btn-info"><i class="icon-plus-sign"></i> <?php echo __('Add a Field'); ?></button>
     </div>
 
     <div id="search-by-range" class="field">
@@ -183,7 +183,7 @@ $formAttributes['method'] = 'GET';
 
     <?php fire_plugin_hook('public_items_search', array('view' => $this)); ?>
     <div>
-        <input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
+        <input type="submit" class="submit btn btn-primary" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
     </div>
 </form>
 
