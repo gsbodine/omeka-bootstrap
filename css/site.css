@@ -45,6 +45,10 @@
     color: #fff;
 }
 
+ul.error {
+    padding: 1em;
+}
+
 body {
     background-color: #15397F; 
     background: url(../images/header_back.jpg); 
@@ -84,3 +88,4 @@ body {
 #collection-description {
     padding: 1em 1em 0 1em;
 }
+

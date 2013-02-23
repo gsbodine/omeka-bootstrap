@@ -6,9 +6,9 @@ echo head(array('bodyclass' => 'login', 'title' => $pageTitle), $header);
 
 <div class="row">
     <fieldset>
-        <div class="span12"><legend><h1><i class="icon-lock"></i> Log in to <?php echo get_option('site_title'); ?></h1></legend></div>
+        <div class="span12"><legend><h1 class="text-center"><i class="icon-lock"></i> Log in to <?php echo get_option('site_title'); ?></h1></legend></div>
         <div class="span5">
-            <p class="btn btn-info"><strong><i class="icon-cog"></i> Need to create an account?</strong></p>
+            <p class="text-center"><a class="btn btn-success" href="/participate/join"><strong><i class="icon-cog"></i> Need to create an account?</strong></a></p>
         </div>
         <div class="span7">
             <?php echo flash(); ?>
@@ -28,10 +28,10 @@ echo head(array('bodyclass' => 'login', 'title' => $pageTitle), $header);
                 </div>
                 <div class="row">
                     <div class="span2">
-                        <input type="submit" class="btn btn-primary" value="Log in" /> 
+                        <button type="submit" class="btn btn-primary"><i class="icon-signin"></i> <?php echo __('Log In') ?></button> 
                     </div>
                     <div class="span5">
-                        <?php echo link_to('participate', 'forgot-password', __('Forgot password?'),array('class'=>'text-warning')); ?>
+                        <?php echo link_to('users', 'forgot-password', __('<i class="icon-question-sign"></i> Forgot password?'),array('class'=>'text-warning')); ?>
                     </div>
                 </div>
             </form>

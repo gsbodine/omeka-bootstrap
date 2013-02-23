@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
     
     $(".tooltipper").tooltip();
     
-    $("#primary-nav .active a").prepend('<i class="icon-chevron-right"></i> ');
+    $("#primary-nav .active a").prepend('<i class="icon-caret-right"></i> ');
     
 })
 
