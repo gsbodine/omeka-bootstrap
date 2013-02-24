@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="span2">
                 <!-- Item Date Information -->    
-                    <h4><i class="icon-calendar icon-large"></i> Date: </h5>
+                    <h4><i class="icon-calendar"></i> Date: </h5>
                     <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
                         <div class="lead"><?php echo $itemDate; ?></div>
                     <?php else: ?>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="span2">
                 <!-- Item Creator Information -->
-                    <h4><i class="icon-user icon-large"></i> Author(s): </h4>
+                    <h4><i class="icon-user"></i> Author(s): </h4>
                     <div class="lead">
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'),'all')): ?>
                         <?php foreach ($itemCreator as $author) {
@@ -79,7 +79,7 @@
                     <?php 
                         $itemRecipients = metadata($item,array('Item Type Metadata','Recipient'),'all');
                         if (count($itemRecipients) > 0) {
-                            echo '<h4><i class="icon-envelope icon-large"></i> Recipient: </h4><div class="lead">';
+                            echo '<h4><i class="icon-envelope"></i> Recipient: </h4><div class="lead">';
                             foreach ($itemRecipients as $itemRecipient) {
                                 echo $itemRecipient . '<br />'; 
                             }
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="span6">
                     <hr />
-                    <h4><i class="icon-tags icon-large"></i> Tags</h4>
+                    <h4><i class="icon-tags"></i> Tags</h4>
                     <div class="tags well well-small">
                         <?php if (tag_string($item) != null) {
                             echo tag_string($item); }
@@ -108,7 +108,7 @@
                 <div class="span6">
                     <hr />
                     <!-- The following prints a citation for this item. -->
-                    <h4><i class="icon-share icon-large"></i> <?php echo __('Citation'); ?></h4>
+                    <h4><i class="icon-share"></i> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>
