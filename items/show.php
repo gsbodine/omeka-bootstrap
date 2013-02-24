@@ -108,7 +108,7 @@
                 <div class="span6">
                     <hr />
                     <!-- The following prints a citation for this item. -->
-                    <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
+                    <h4><i class="icon-share icon-large"></i> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>
