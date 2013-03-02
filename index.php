@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="span4">
-            <div style="text-align: center;"><a href="/items/advanced-search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" data-content="&lt;p class=&quot;lead&quot;&gt;Visit the MBDA educational exhibits&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
+            <div style="text-align: center;"><a href="/items/search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" data-content="&lt;p class=&quot;lead&quot;&gt;Visit the MBDA educational exhibits&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
                 <h2>LEARN</h2>
             </div>
         </div>
