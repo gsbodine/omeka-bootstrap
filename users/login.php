@@ -8,7 +8,7 @@ echo head(array('bodyclass' => 'login', 'title' => $pageTitle), $header);
     <fieldset>
         <div class="span12"><legend><h1 class="text-center"><i class="icon-lock"></i> Log in to <?php echo get_option('site_title'); ?></h1></legend></div>
         <div class="span5">
-            <p class="text-center"><a class="btn btn-success" href="/participate/join"><strong><i class="icon-cog"></i> Need to create an account?</strong></a></p>
+            <p class="text-center"><a class="btn btn-success" href="/user/register"><strong><i class="icon-cog"></i> Need to create an account?</strong></a></p>
         </div>
         <div class="span7">
             <?php echo flash(); ?>

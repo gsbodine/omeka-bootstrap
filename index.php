@@ -76,9 +76,8 @@
         </div><!-- end row -->
         <?php endif; ?>
         </div>
-        </div>
+        </div><!-- end secondary -->
 
-    </div><!-- end secondary -->
-</div>
+
 
 <?php echo foot(); ?>
