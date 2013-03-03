@@ -16,18 +16,24 @@
     <div id="primary">
     <div class="row">
         <div class="span4">
-            <div style="text-align: center;"><a href="/items"><img class="img-rounded pop-box" title="&lt;h4&gt;Browse&lt;/h4&gt;" src="<?php echo img('BrowseImage.jpg'); ?>" alt="Browse Items in the Archive" data-content="&lt;p class=&quot;lead&quot;&gt;Browse Items in the Archive&lt;/p&gt;" data-html="true" data-trigger="hover" data-placement="top" /></a>
+            <div style="text-align: center;">
+                <a href="/items"><img class="img-rounded pop-box" title="&lt;h4&gt;Browse&lt;/h4&gt;" src="<?php echo img('BrowseImage.jpg'); ?>" alt="Browse Items in the Archive" /></a>
                 <h2>BROWSE</h2>
+                <p class="lead">Browse the items in the archive</p>
             </div>
         </div>
         <div class="span4">
-            <div style="text-align: center;"><a href="/items/search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" data-content="&lt;p class=&quot;lead&quot;&gt;Visit the MBDA educational exhibits&lt;/p&gt;" data-trigger="hover" data-html="true" data-placement="top" /></a>
+            <div style="text-align: center;">
+                <a href="/items/search"><img class="img-rounded pop-box" title="&lt;h4&gt;Search&lt;/h4&gt;" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" /></a>
                 <h2>LEARN</h2>
+                <p class="lead">Visit the MBDA educational exhibits</p>
             </div>
         </div>
         <div class="span4">
-            <div style="text-align: center;"><a href="/participate"><img class="img-rounded pop-box" title="&lt;h4&gt;Participate&lt;/h4&gt;" src="<?php echo img('1950GrandMarch.jpg'); ?>" alt="Participate in the archival process by editing, describing, or transcribing documents and objects for the MBDA" data-content="&lt;p class=&quot;lead&quot;&gt;Help Us Edit the Archive&lt;/p&gt;" data-html="true" data-trigger="hover" data-placement="top" /></a>
+            <div style="text-align: center;">
+                <a href="/participate"><img class="img-rounded pop-box" title="&lt;h4&gt;Participate&lt;/h4&gt;" src="<?php echo img('1950GrandMarch.jpg'); ?>" alt="Participate in the archival process by editing, describing, or transcribing documents and objects for the MBDA" /></a>
                 <h2>PARTICIPATE</h2>
+                <p class="lead">Help us edit the documents in the collection</p>
             </div>
         </div>
     </div>
