@@ -1053,15 +1053,15 @@ input[type="checkbox"]:focus {
 }
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #a0a3a6;
+  color: rgba(136, 190, 231, 0.5);
 }
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #a0a3a6;
+  color: rgba(136, 190, 231, 0.5);
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #a0a3a6;
+  color: rgba(136, 190, 231, 0.5);
 }
 .radio,
 .checkbox {
