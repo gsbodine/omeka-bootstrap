@@ -56,15 +56,15 @@
                 <!-- Item Date Information -->    
                     <h4><i class="icon-calendar"></i> Date: </h5>
                     <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
-                        <div class="lead"><?php echo $itemDate; ?></div>
+                        <div><?php echo $itemDate; ?></div>
                     <?php else: ?>
-                        <div class="lead">None recorded.</div>
+                        <div>None recorded.</div>
                     <?php endif; ?>
                 </div>
                 <div class="span2">
                 <!-- Item Creator Information -->
                     <h4><i class="icon-user"></i> Author(s): </h4>
-                    <div class="lead">
+                    <div>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'),'all')): ?>
                         <?php foreach ($itemCreator as $author) {
                             echo $author . '<br />';
@@ -79,7 +79,7 @@
                     <?php 
                         $itemRecipients = metadata($item,array('Item Type Metadata','Recipient'),'all');
                         if (count($itemRecipients) > 0) {
-                            echo '<h4><i class="icon-envelope"></i> Recipient: </h4><div class="lead">';
+                            echo '<h4><i class="icon-envelope"></i> Recipient: </h4><div>';
                             foreach ($itemRecipients as $itemRecipient) {
                                 echo $itemRecipient . '<br />'; 
                             }
