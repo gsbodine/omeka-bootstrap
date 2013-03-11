@@ -99,3 +99,7 @@ body {
 .page-image img {
     margin: 1em;
 }
+
+legend {
+    padding-top: 2em;
+}
