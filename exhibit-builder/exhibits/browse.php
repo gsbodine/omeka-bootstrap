@@ -21,25 +21,29 @@ echo head(array('title' => $title, 'bodyid' => 'exhibit', 'bodyclass' => 'browse
             </nav>
 
             <div class="pagination"><?php echo pagination_links(); ?></div>
-
+            
             <?php $exhibitCount = 0; ?>
-                <?php foreach (loop('exhibit') as $exhibit): ?>
-                    <?php $exhibitCount++; ?>
-                    <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
+            <?php foreach (loop('exhibit') as $exhibit): ?>
+                <?php $exhibitCount++; ?>
+                <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?> row">
+                    <div class="span8">
                         <h2><?php echo link_to_exhibit(); ?></h2>
                         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-                        <div class="description lead"><?php echo $exhibitDescription; ?></div>
-                        <?php endif; ?>
-                        <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
-                        <p class="tags well"><?php echo $exhibitTags; ?></p>
+                        <div class="description"><?php echo $exhibitDescription; ?></div>
                         <?php endif; ?>
                     </div>
-                    <hr />
-                <?php endforeach; ?>
+                    <div class="span4">
+                    <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
+                        <div class="tags well"><p class="lead"><i class="icon-tags"></i> Tags</p><?php echo $exhibitTags; ?></div>
+                    <?php endif; ?>
+                    </div>
+                </div>
+                <hr />
+            <?php endforeach; ?>
             <div class="pagination"><?php echo pagination_links(); ?></div>
 
         <?php else: ?>
-        <p><?php echo __('There are no exhibits available yet.'); ?></p>
+            <p class="alert alert-warning"><i class="icon-exclamation-sign"></i> <?php echo __('There are no exhibits available yet.'); ?></p>
         <?php endif; ?>
     </div>
 </div>
