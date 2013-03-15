@@ -13,31 +13,98 @@
             <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
 </div>
-    <div id="primary">
-    <div class="row">
-        <div class="span4">
-            <div style="text-align: center;">
-                <a href="/items"><img class="img-rounded" title="Browse" src="<?php echo img('BrowseImage.jpg'); ?>" alt="Browse Items in the Archive" /></a>
-                <h2>BROWSE</h2>
-                <p class="lead">Browse the items in the archive</p>
+<div class="row">
+    <div class="span7">
+    <div id="homeCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#homeCarousel" data-slide-to="1"></li>
+            <li data-target="#homeCarousel" data-slide-to="2"></li>
+            <li data-target="#homeCarousel" data-slide-to="3"></li>
+            <li data-target="#homeCarousel" data-slide-to="4"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+                <img src="<?php echo img('Carousel/RealMB/MBPlowsField.jpg'); ?>" alt="" />
+                <div class="carousel-caption">
+                    <h4>Discover the Real Martha Berry</h4>
+                    <p>Much is known about the Berry Schools, but Martha Berry the woman remains 
+                        a mystery. Who was she? Are the rumors about her love life true? Was she a feminist? What is the true 
+                        story? Participate and discover for yourself the real Martha Berry. </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/TeachLearn/farmerettes.jpg') ?>" alt="" />
+                <div class="carousel-caption">
+                    <h4>Share Your Expertise</h4>
+                    <p>Many visitors know as much or more about MBDA documents as we do, and we need your 
+                        help! Every document you describe improves the collection&rsquo;s searchability and helps users learn more.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/GetRecognized/band-1917.png'); ?>" alt="" />
+                <div class="carousel-caption">
+                    <h4>Get Recognized</h4>
+                    <p>Editor contributions are acknowledged in document citations and through MBDA’s top and recent 
+                        editor lists. Get started and get cited!</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/StudyEarly20thCentury/troose.jpg')?>" alt="" />
+                <div class="carousel-caption">
+                    <h4>Study the Early 20th Century</h4>
+                    <p>Learn about key historical moments such as WWI and WWII, women’s suffrage, educational reform, and 
+                        presidential elections. Mine the collection to study politics, diet, travel, medicine, advertising, language, 
+                        business, education, and more...</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/UnearthStories/GirlsInField.jpg')?>" alt="" />  
+                <div class="carousel-caption">                  
+                    <h4>Unearth Stories</h4>
+                    <p>Revive previously lost voices from the early twentieth century. Many letters are personal, exposing authors&rsquo; 
+                        intimate stories of family, love, triumph, and sorrow. Dig into the collection and uncover a new story.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/ShareExpertise/WWI.jpg') ?>" alt="" />
+                 <div class="carousel-caption">
+                    <h4>Find Family History</h4>
+                    <p>Did you know that the collection contains correspondence with over 200 individuals and organizations? 
+                        Discover links to Georgia as well as to locations across the US. You may just find a piece of your 
+                        family history here!</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo img('Carousel/TeachLearn/ClaraFordStudent.jpg')?>" alt="" />
+                <div class="carousel-caption">
+                    <h4>Teach and Learn</h4>
+                    <p>Coming Soon: Lesson plans and activities to enhance social studies and language arts 
+                        curricula, as well as university English and History courses.</p>
+                </div>
             </div>
         </div>
-        <div class="span4">
-            <div style="text-align: center;">
-                <a href="/exhibits"><img class="img-rounded" title="Learn" src="<?php echo img('MBRoanie.jpg'); ?>" alt="Learn" /></a>
-                <h2>LEARN</h2>
-                <p class="lead">Visit the MBDA educational exhibits</p>
-            </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#homeCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#homeCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    </div>
+    <div class="span5">
+        <div id="browseBox" class="homeBox">
+            <h2>BROWSE <small>Browse the collection</small></h2>
         </div>
-        <div class="span4">
-            <div style="text-align: center;">
-                <a href="/participate"><img class="img-rounded" title="Participate" src="<?php echo img('1950GrandMarch.jpg'); ?>" alt="Participate in the archival process by editing, describing, or transcribing documents and objects for the MBDA" /></a>
-                <h2>PARTICIPATE</h2>
-                <p class="lead">Help us edit the documents in the collection</p>
-            </div>
+        <div id="learnBox" class="homeBox">
+            <h2>LEARN <small>Explore educational resources</small></h2>
+        </div>
+        <div id="participateBox" class="homeBox">
+            <h2>PARTICIPATE <small>Help us improve MBDA</small></h2>
+        </div>
+        <div id="searchBox" class="homeBox">
+            <h2>SEARCH <small>Search by name, date, or place</small></h2>
         </div>
     </div>
-    </div><!-- end primary -->
+</div>
 
     <div id="secondary">
         <div id="recent-items">
