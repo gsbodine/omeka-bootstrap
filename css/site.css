@@ -34,7 +34,7 @@
 .vvvvvv-popular a,
 .vvvvvvv-popular a,
 .vvvvvvvv-popular a {
-    color: #000;
+    /* color: #000; */
  }
         
 .btn-inverse a {
@@ -51,12 +51,9 @@ body {
     background-repeat: repeat-x; 
 }
 
-#site-title {
-    padding: 1em 2em;
-}
-
-#site-title h1, #site-title a {
-    color: #fff; 
+#site-title, #site-title h1 {
+    margin: 0;
+    padding: 2px 0;
 }
 
 #search-container {
@@ -106,9 +103,19 @@ legend {
     border-bottom: 1px solid #f5f5f5;
 }
 
-.homeBox:hover {
+.homeBox a {
+    color: #333;
+    text-decoration: none;
+}
+
+.homeBox a:hover {
+    color: #f5f5f5;
+}
+
+.homeBox:hover, .homeBox:hover a {
     color: #f5f5f5;
     background: #333;
+    text-decoration: none;
 }
 
 .homeBox h2 {
