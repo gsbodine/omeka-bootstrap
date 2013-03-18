@@ -91,17 +91,17 @@
     </div>
     </div>
     <div class="span5">
-        <div id="browseBox" class="homeBox">
-            <h2>BROWSE <small>Browse the collection</small></h2>
+        <div id="browseBox" class="homeBox" onclick="location.href='/items/browse'">
+            <h2><a href="/items/browse">BROWSE <small>Browse the collection</small></a></h2>
         </div>
-        <div id="learnBox" class="homeBox">
-            <h2>LEARN <small>Explore educational resources</small></h2>
+        <div id="learnBox" class="homeBox" onclick="location.href='/exhibits'">
+            <h2><a href="/exhibits">LEARN <small>Explore educational resources</small></a></h2>
         </div>
-        <div id="participateBox" class="homeBox">
-            <h2>PARTICIPATE <small>Help us improve MBDA</small></h2>
+        <div id="participateBox" class="homeBox" onclick="location.href='/participate'">
+            <h2><a href="/participate">PARTICIPATE <small>Help improve MBDA</small></a></h2>
         </div>
-        <div id="searchBox" class="homeBox">
-            <h2>SEARCH <small>Search by name, date, or place</small></h2>
+        <div id="searchBox" class="homeBox" onclick="location.href='/items/search'">
+            <h2><a href="/items/search">SEARCH <small>By name, date, or place</small></a></h2>
         </div>
     </div>
 </div>

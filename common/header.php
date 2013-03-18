@@ -16,7 +16,7 @@
 
     <!-- Stylesheets -->
     <?php
-        queue_css_file(array('bootstrap','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
+        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
         echo head_css();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css'>
