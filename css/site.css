@@ -142,3 +142,9 @@ legend {
 #learnBox:hover {
     background: url('../images/BaggageTag.jpg') no-repeat right #333;
 }
+
+.tabs-left > ul.nav-tabs {
+    float: right;
+    clear: both;
+}
+

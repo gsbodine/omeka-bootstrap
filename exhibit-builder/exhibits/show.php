@@ -9,7 +9,7 @@ echo head(array(
     <hr />
 </div>
 <div class="row">
-    <div class="span9">
+    <div class="span8">
         <nav id="exhibit-child-pages">
             <?php echo exhibit_builder_child_page_nav(); ?>
         </nav>
@@ -32,7 +32,7 @@ echo head(array(
             </div>
         </div>
     </div>
-    <div class="span3">
+    <div class="span4">
         <nav id="exhibit-pages">
             <?php echo exhibit_builder_page_nav(); ?>
         </nav>
