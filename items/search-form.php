@@ -118,7 +118,7 @@ $formAttributes['method'] = 'GET';
                     </fieldset>
 
                     <fieldset>
-                        <legend><i class="icon-tags"></i> Tags Search</legend>
+                        <legend id="searchByTag"><i class="icon-tags"></i> Tags Search</legend>
                         <div class="field">
                             <?php echo $this->formLabel('tag-search', __('Search By Tags')); ?>
                             <div class="inputs">
