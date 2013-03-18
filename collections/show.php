@@ -52,7 +52,7 @@
     <!-- end collection-description -->
     <div class="row">
         <div class="span12">
-            <?php fire_plugin_hook('public_colletion_show'); ?>
+            <?php fire_plugin_hook('public_collection_show'); ?>
         </div>
     </div>
     
