@@ -51,6 +51,22 @@ body {
     background-repeat: repeat-x; 
 }
 
+.simple-page-content img {
+    margin: 2em;
+}
+
+.simple-page-content img.pull-left {
+    margin-left: 0;
+}
+
+.simple-page-content img.pull-right {
+    margin-right: 0;
+}
+
+.simple-page-content p {
+    padding-right: 3em;
+}
+
 #site-title, #site-title h1 {
     margin: 0;
     padding: 2px 0;
@@ -80,17 +96,6 @@ body {
 
 #collection-description {
     padding: 1em 1em 0 1em;
-}
-
-.page-image {
-    margin: .5em;
-    padding: 1em;
-    background: #d2e9ba;
-    text-align: center;
-}
-
-.page-image img {
-    margin: 1em;
 }
 
 legend {
@@ -146,5 +151,24 @@ legend {
 .tabs-left > ul.nav-tabs {
     float: right;
     clear: both;
+    margin-right: 0;
+    padding-right: 0;
+    
+}
+
+.simple-page-content blockquote {
+    background: #f5f5f5;
+    padding: 2em;
+    font-weight: 500;
+}
+
+.simple-page-content cite {
+    font-size: 75%;
+    color: #666;
+}
+
+.simple-page-content h1 {
+    font-size: 150%;
+    text-align: center;
 }
 
