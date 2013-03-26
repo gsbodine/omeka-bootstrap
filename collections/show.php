@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="row">
-        <?php foreach(loop('items') as $item): ?>
+        <?php foreach(loop('items', array_slice($items, 0, 4)) as $item): ?>
         <div class="span3">
             <div class="well" style="text-align:center;">
                 <div><?php echo link_to_item(	item_image('square_thumbnail',$props=array('class'=>'img-rounded img-polaroid'))); ?></div>
