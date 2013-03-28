@@ -16,10 +16,11 @@
 
     <!-- Stylesheets -->
     <?php
-        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
+        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min'));
         echo head_css();
     ?>
-    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" />
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css' />
     <!-- JavaScripts -->
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');
