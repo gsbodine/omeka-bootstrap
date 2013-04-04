@@ -46,7 +46,7 @@
                 <img src="<?php echo img('Carousel/GetRecognized/band-1917.png'); ?>" alt="" />
                 <div class="carousel-caption">
                     <h4>Get Recognized</h4>
-                    <p>Editor contributions are acknowledged in document citations and through MBDA’s top and recent 
+                    <p>Editor contributions are acknowledged in document citations and through MBDA&rsquo;s top and recent 
                         editor lists. Get started and get cited!</p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 <img src="<?php echo img('Carousel/StudyEarly20thCentury/troose.jpg')?>" alt="" />
                 <div class="carousel-caption">
                     <h4>Study the Early 20th Century</h4>
-                    <p>Learn about key historical moments such as WWI and WWII, women’s suffrage, educational reform, and 
+                    <p>Learn about key historical moments such as WWI and WWII, women&rsquo;s suffrage, educational reform, and 
                         presidential elections. Mine the collection to study politics, diet, travel, medicine, advertising, language, 
                         business, education, and more...</p>
                 </div>
@@ -98,53 +98,63 @@
             <h2><a href="/exhibits">LEARN <small>Explore educational resources</small></a></h2>
         </div>
         <div id="participateBox" class="homeBox" onclick="location.href='/participate'">
-            <h2><a href="/participate">PARTICIPATE <small>Help improve MBDA</small></a></h2>
+            <h2><a href="/participate">PARTICIPATE <small>Help edit MBDA</small></a></h2>
         </div>
         <div id="searchBox" class="homeBox" onclick="location.href='/items/search'">
             <h2><a href="/items/search">SEARCH <small>By name, date, or place</small></a></h2>
         </div>
     </div>
+    <div class="span12">
+        <hr />
+    </div>
 </div>
-
-    <div id="secondary">
-        <div id="recent-items">
-        <?php
-        $homepageRecentItems = (int)option('Homepage Recent Items');
-        if ($homepageRecentItems > 0) { set_loop_records('items',recent_items($homepageRecentItems)); }
-        if (has_loop_records('item')):
-        ?>
-        <div class="row">
-            <div class="span12"><hr /></div>   
+<div class="row">
+    <div class="span3">
+        <div class="triBox">
+            <?php echo random_featured_items(1); ?>
         </div>
-            
-        <div class="row">
-            <div class="span12">
-                <h2><?php echo __('Recently Added Items'); ?></h2>
+    </div>
+    <div class="span3">
+        <div class="triBox text-center">
+            <div class="random-document">
+                <div class="row">
+                    <div class="span3">
+                        <h4 class="text-center">Tag of the Week</h4>
+                        <div style="border: 1px solid #999; border-radius:15px" class="padded">
+                            <span class="label label-inverse"><i class="icon-tag"></i> Cool Tag</span>
+                        </div>
+                    </div>  
+                </div>
             </div>
-        </div>   
-        <div class="row-fluid">
-            <ul class="thumbnails">
-            <?php while (loop_items()): ?>
-                <li class="span4">
-                    <div class="thumbnail" style="padding-left:1em;padding-right:1em;text-align:center;">
-                        <h3><?php echo link_to_item(); ?></h3>
-                        <?php if(item_has_thumbnail()): ?>
-                            <div class="item-img">
-                                <?php echo link_to_item(item_thumbnail($props=array('class'=>'img-rounded','style'=>'margin:1em'))); ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
-                                <p style="text-align: left"><?php echo $desc; ?><?php echo link_to_item('see more',(array('class'=>'show'))) ?></p>
-                        <?php endif; ?>
-                    </div>
-                </li>
-            <?php endwhile; ?>
-            </ul>
-        </div><!-- end row -->
-        <?php endif; ?>
+            <div class="random-document">
+                <h4 class="text-center">Video Tutorial Here</h4>
+            </div>
         </div>
-        </div><!-- end secondary -->
-
-
-
+    </div>
+    <div class="span3">
+        <div class="tribox">
+            <div class="random-document">
+                <h4>MBDA Links</h4>
+                <ul class="nav nav-stacked" style="border-left:1px solid #ccc;">
+                    <li class="padded"><a href="">Link list item</a></li>
+                    <li class="padded"><a href="">Link list item</a></li>
+                    <li class="padded"><a href="">Link list item</a></li>
+                    <li class="padded"><a href="">Link list item</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="span3">
+        <div class="triBox text-center">
+            <h4>Watch Our Progress</h4>
+            <div class="crowd-box" style="background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 25px">
+                <br /><br /><br />
+                <h4 class="padded" style="background: rgba(255,255,255,.75)">Did someone say CROWDSOURCING?</h4>
+                 
+                <br /><br /><br />
+            </div>
+            <?php echo $this->completionMeter($size='small'); ?>
+        </div>
+    </div>
+</div>
 <?php echo foot(); ?>
