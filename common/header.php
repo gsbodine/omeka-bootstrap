@@ -11,40 +11,32 @@
 
     <?php echo auto_discovery_link_tags(); ?>
 
-    <!-- Plugin Stuff -->
     <?php fire_plugin_hook('public_head',array('view'=>$this)); ?>
 
-    <!-- Stylesheets -->
     <?php
-        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min','site'));
+        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min'));
         echo head_css();
     ?>
-    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css'>
-    <!-- JavaScripts -->
+    <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" />
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css' />
+
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');
-        
-        if (get_theme_option('Use Google Analytics') == 1): ?>
-            <script type="text/javascript">
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', '<?php echo html_entity_decode(get_theme_option('Google Analytics Account')); ?>']);
-                _gaq.push(['_trackPageview']);
-
-                (function() {
-                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-
-             </script>
-            
-    <?php 
-        endif;
         echo head_js(); 
     ?>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39775971-1', 'berry.edu');
+    ga('send', 'pageview');
+
+</script>
 
 <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
 <div class="container">
