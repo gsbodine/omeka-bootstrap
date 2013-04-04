@@ -11,7 +11,8 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
             </div>
         </div>
     </div>
-    <div class="nav nav-tabs" id="secondary-nav">
+    <div class="nav nav-tabs" id="secondary-nav">    
+        <a class="btn btn-success pull-right" href="/items/show/<?php echo $this->itemEditing()->getRandomUneditedItem($this->_db)->id; ?>"><strong><i class="icon-edit"></i> Show me a random unedited document</strong></a>
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
     </div>
 
