@@ -1,16 +1,20 @@
 <?php echo head(array('title' => metadata('exhibit', 'title'), 'bodyid'=>'exhibit', 'bodyclass'=>'summary')); ?>
 <div class="row">
     <div class="span12">
-        <h1><?php echo metadata('exhibit', 'title'); ?></h1>
-        <?php echo exhibit_builder_page_nav(); ?>
+       <?php echo exhibit_builder_page_nav(); ?>
     </div>
 </div>
         
 <div class="row">
     <div class="span9">
+        <h1 class="text-center"><?php echo metadata('exhibit', 'title'); ?></h1>
+        
+        
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
             <div class="exhibit-description">
-                <?php echo $exhibitDescription; ?>
+                <?php 
+                    echo $exhibitDescription; 
+                ?>
             </div>
         <?php endif; ?>
 
@@ -20,6 +24,11 @@
                 <p><?php echo $exhibitCredits; ?></p>
             </div>
         <?php endif; ?>
+        
+         <?php if (metadata('exhibit', 'slug') == 'reading-mbda') {
+                echo '<div class="text-center" style="padding:0 0 1em 1em;"><img src="' . img('Exhibits/MBHowardBallReading.jpg') . '" class="img-polaroid" /></div>';
+        } ?>
+        
     </div>
     <div class="span3">
         <nav id="exhibit-pages">
