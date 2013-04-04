@@ -34,7 +34,7 @@
                         <p class="lead"><?php echo $itemDescription; ?></p>
                     <?php else: ?>
                         <h4>Description</h4>
-                        <p class="alert"><strong>Sorry!</strong> No description recorded yet.</p>
+                        <p class="alert"><strong>Sorry!</strong> No description recorded yet. <?php echo $this->participateLinks()->createParticipateLink($item," Provide a description!","icon-edit"); ?></p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -98,7 +98,8 @@
                         <?php if (tag_string($item) != null) {
                             echo tag_string($item); }
                             else {
-                            echo 'No tags recorded for this item.'; 
+                                echo 'No tags recorded for this item. ';
+                                echo $this->participateLinks()->createParticipateLink($item,"Tag me!","icon-tag"); 
                             }
                         ?>
                     </div>
