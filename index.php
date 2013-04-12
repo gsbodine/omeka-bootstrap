@@ -147,7 +147,7 @@
             <!-- <h4>Watch Our Progress</h4> -->
             <div class="crowd-box" style="background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 10px">
                 <br /><br /><br />
-                <h4 style="background: rgba(255,255,255,.75); padding: .5em 1em"><a href="/community">CROWDSOURCE MBDA</a></h4>
+                <h4 style="background: rgba(255,255,255,.75); padding: .5em 1em"><a href="/community">CROWDSOURCING!</a></h4>
                  
                 <br /><br /><br />
             </div>
