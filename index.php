@@ -105,7 +105,7 @@
         </div>
     </div>
     <div class="span12">
-        <hr />
+        <hr style="height:5px;border:none;background:#85c446;margin-top:5px" />
     </div>
 </div>
 <div class="row">
@@ -133,11 +133,11 @@
             <div class="random-document">
                 <h4>MBDA Links</h4>
                 <ul id="mbda-links" class="nav nav-stacked" style="border-left:1px solid #ccc;">
+                    <li><a href="/about-mbda">About MBDA</a></li>
                     <li><a href="/you-are-invited">You&rsquo;re Invited!</a></li>
                     <li><a href="/crowd-ed">Crowd-Ed</a></li>
-                    <li><a href="/citation-and-copyright">Citation and Copyright</a></li>
                     <li><a href="/exhibits/show/discovering-mbda">Discovering MBDA</a></li>
-                    <li><a href="/whats-next">What&rsquo;s Next</a></li>
+                    <li><a href="/citation-and-copyright">Citation and Copyright</a></li>
                 </ul>
             </div>
         </div>
