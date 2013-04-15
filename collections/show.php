@@ -9,7 +9,7 @@
     
     <div class="row" id="collection-title">
         <div class="span12">
-            <h1 class="page-header"><?php echo metadata('collection',array('Dublin Core','Title')); ?><br /><small><?php echo $collection->totalItems(); ?> item<?php if ($collection->totalItems() != 1)  echo 's';  ?> in collection</small></h1>
+            <h1 class="page-header"><?php echo metadata('collection',array('Dublin Core','Title')); ?><br /><small><?php echo $collection->totalItems(); ?> item<?php if ($collection->totalItems() != 1)  echo 's';  ?> in collection (<?php echo link_to_items_in_collection('view all', $collection); ?>)</small></h1>
         </div>
     </div>
     <div class="row">
