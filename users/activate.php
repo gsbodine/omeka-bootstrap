@@ -1,6 +1,8 @@
 <?php
 $pageTitle = __('User Activation');
 echo head(array('title' => $pageTitle), $header);
+$e = new Entity();
+$entity = $e->getEntityFromUser($user);
 ?>
 <div class="row">
     <div class="span12">
