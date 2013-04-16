@@ -20,7 +20,7 @@
                 </div>
                 <div class="span3" style="text-align:right;">
                     <ul class="nav nav-pills nav-stacked" style="padding-right:1em;">
-                        <li><a href="/contact"><i class="icon-comment-alt"></i> Contact us</a></li>
+                        <li><a href="mailto:mbda@berry.edu"><i class="icon-comment-alt"></i> Contact us</a></li>
                         <li><a href="https://twitter.com/BerryArchive"><i class="icon-twitter"></i> Follow us</a></li>
                     </ul>
                 </div>
