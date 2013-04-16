@@ -71,7 +71,7 @@
                 <img src="<?php echo img('Carousel/ShareExpertise/WWI.jpg') ?>" alt="" />
                  <div class="carousel-caption">
                     <h4>Find Family History</h4>
-                    <p>Did you know that the collection contains correspondence with over 200 individuals and organizations? 
+                    <p>Did you know that the collection contains correspondence with over 300 individuals and organizations? 
                         Discover links to Georgia as well as to locations across the US. You may just find a piece of your 
                         family history here!</p>
                 </div>
@@ -105,7 +105,7 @@
         </div>
     </div>
     <div class="span12">
-        <hr />
+        <hr style="height:5px;border:none;background:#85c446;margin-top:5px" />
     </div>
 </div>
 <div class="row">
@@ -117,17 +117,14 @@
     <div class="span3">
         <div class="triBox text-center">
             <div class="random-document">
-                <div class="row">
-                    <div class="span3">
-                        <h4 class="text-center">Tag of the Week</h4>
-                        <div style="border: 1px solid #999; border-radius:15px" class="padded">
-                            <span class="label label-inverse"><i class="icon-tag"></i> Cool Tag</span>
-                        </div>
-                    </div>  
+                <h4 class="text-center">Tag of the Week</h4>
+                <div class="padded">
+                    <a href="/tag-mbda"><span class="label label-inverse"><i class="icon-tag"></i> grippe</span></a>
                 </div>
             </div>
             <div class="random-document">
-                <h4 class="text-center">Video Tutorial Here</h4>
+                <h4>Just Get Started</h4>
+                <a href="/items/show/<?php echo $this->itemEditing()->getRandomUneditedItem($this->_db)->id; ?>"><span class="btn btn-success"><i class="icon-edit"></i> Edit a document now!</span></a>
             </div>
         </div>
     </div>
@@ -135,21 +132,22 @@
         <div class="tribox">
             <div class="random-document">
                 <h4>MBDA Links</h4>
-                <ul class="nav nav-stacked" style="border-left:1px solid #ccc;">
-                    <li class="padded"><a href="">Link list item</a></li>
-                    <li class="padded"><a href="">Link list item</a></li>
-                    <li class="padded"><a href="">Link list item</a></li>
-                    <li class="padded"><a href="">Link list item</a></li>
+                <ul id="mbda-links" class="nav nav-stacked" style="border-left:1px solid #ccc;">
+                    <li><a href="/about-mbda">About MBDA</a></li>
+                    <li><a href="/you-are-invited">You&rsquo;re Invited!</a></li>
+                    <li><a href="/crowd-ed">Crowd-Ed</a></li>
+                    <li><a href="/exhibits/show/discovering-mbda">Discovering MBDA</a></li>
+                    <li><a href="/citation-and-copyright">Citation and Copyright</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="span3">
         <div class="triBox text-center">
-            <h4>Watch Our Progress</h4>
-            <div class="crowd-box" style="background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 25px">
+            <!-- <h4>Watch Our Progress</h4> -->
+            <div class="crowd-box" style="background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 10px">
                 <br /><br /><br />
-                <h4 class="padded" style="background: rgba(255,255,255,.75)">Did someone say CROWDSOURCING?</h4>
+                <h4 style="background: rgba(255,255,255,.75); padding: .5em 1em"><a href="/community">CROWDSOURCING!</a></h4>
                  
                 <br /><br /><br />
             </div>

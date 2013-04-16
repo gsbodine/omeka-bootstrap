@@ -4,14 +4,19 @@
     ?>
 <div id="primary">
     <div class="row">
-        <div class="span12">
-            <div class="pagination pagination-centered">
+        <div class="span8">
+            <div class="pagination pagination-centered" style="margin-top:0;margin-bottom:0;">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
                 </ul>
                 <ul>
                     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="pull-right">
+                <a href="/items/show/<?php echo $this->itemEditing()->getRandomUneditedItem($this->_db)->id; ?>"><span class="btn btn-success"><i class="icon-edit"></i> Show me a random, unedited document</span></a>
             </div>
         </div>
     </div>

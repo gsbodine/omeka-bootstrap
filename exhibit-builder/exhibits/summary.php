@@ -25,7 +25,7 @@
             </div>
         <?php endif; ?>
         
-         <?php if (metadata('exhibit', 'slug') == 'reading-mbda') {
+         <?php if (metadata('exhibit', 'slug') == 'discovering-mbda') {
                 echo '<div class="text-center" style="padding:0 0 1em 1em;"><img src="' . img('Exhibits/MBHowardBallReading.jpg') . '" class="img-polaroid" /></div>';
         } ?>
         
