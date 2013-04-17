@@ -18,7 +18,7 @@
         echo head_css();
     ?>
     <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" />
-    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300' rel='stylesheet' type='text/css' />
+    <link href="//fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300" rel="stylesheet" type="text/css" />
 
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');

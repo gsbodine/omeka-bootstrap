@@ -31,8 +31,8 @@
                     <div style="padding: 1em;" class="text-center">
                     <small>
                     <?php if ($copyright = option('copyright')): ?>
-                        <p>This work is licensed under a <a style="color:#fff;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
-                        <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></p>
+                        <p>This work is licensed under a <a style="color:#fff;" rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+                        <p><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></p>
                     <?php endif; ?>
                     </small>
                     </div>
