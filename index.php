@@ -117,19 +117,19 @@
     <div class="span3">
         <div class="triBox text-center">
             <div class="random-document">
+                <h4>Welcome to MBDA</h4>
+                <a href="#VideoModal" role="button" class="img" data-toggle="modal"><img src="<?php echo img('MBvideo.png'); ?>" alt="Martha Berry Into Video" /></a>
+            </div>
+            <div class="random-document">
                 <h4 class="text-center">Tag of the Week</h4>
                 <div class="padded">
                     <a href="/tag-mbda"><span class="label label-inverse"><i class="icon-tag"></i> grippe</span></a>
                 </div>
             </div>
-            <div class="random-document">
-                <h4>Just Get Started</h4>
-                <a href="/items/show/<?php echo $this->itemEditing()->getRandomUneditedItem($this->_db)->id; ?>"><span class="btn btn-success"><i class="icon-edit"></i> Edit a document now!</span></a>
-            </div>
         </div>
     </div>
     <div class="span3">
-        <div class="tribox">
+        <div class="triBox text-center">
             <div class="random-document">
                 <h4>MBDA Links</h4>
                 <ul id="mbda-links" class="nav nav-stacked" style="border-left:1px solid #ccc;">
@@ -139,13 +139,15 @@
                     <li><a href="/exhibits/show/discovering-mbda">Discovering MBDA</a></li>
                     <li><a href="/citation-and-copyright">Citation and Copyright</a></li>
                 </ul>
+                <h4>Just Get Started</h4>
+                <a href="/items/show/<?php echo $this->itemEditing()->getRandomUneditedItem($this->_db)->id; ?>"><span class="btn btn-success"><i class="icon-edit"></i> Edit a document now!</span></a>
             </div>
         </div>
     </div>
     <div class="span3">
         <div class="triBox text-center">
             <!-- <h4>Watch Our Progress</h4> -->
-            <div class="crowd-box" style="background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 10px">
+            <div class="crowd-box" style="margin-top: 25px; background: url(<?php echo img('1950GrandMarch.jpg') ?>); border-radius: 10px">
                 <br /><br /><br />
                 <h4 style="background: rgba(255,255,255,.75); padding: .5em 1em"><a href="/community">CROWDSOURCING!</a></h4>
                  
@@ -153,6 +155,17 @@
             </div>
             <?php echo $this->completionMeter($size='small'); ?>
         </div>
+    </div>
+</div>
+<div id="VideoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    
+    <div class="modal-body">
+        <div class="text-center">
+            <video id="MBvideo" src="<?php echo img('video/MarthaBerryIntro.mp4'); ?>" height="250px" controls></video>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
 </div>
 <?php echo foot(); ?>
