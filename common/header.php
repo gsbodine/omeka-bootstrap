@@ -13,13 +13,15 @@
 
     <?php fire_plugin_hook('public_head',array('view'=>$this)); ?>
 
+    
     <?php
-        queue_css_file(array('bootstrap.min','bootstrap-responsive.min','font-awesome.min','font-awesome-ie7.min'));
+        queue_css_file(array('bootstrap.min','bootstrap-responsive.min'));
         echo head_css();
     ?>
     <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" />
     <link href="//fonts.googleapis.com/css?family=Arvo:400,700|Oxygen:400,300" rel="stylesheet" type="text/css" />
-
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    
     <?php 
         queue_js_file(array('bootstrap.min','site'),$dir='js');
         echo head_js(); 
