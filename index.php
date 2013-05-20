@@ -1,18 +1,4 @@
 <?php echo head(array('bodyid'=>'home')); ?>
-<script type="text/javascript">jQuery(document).ready(function($) { $('#SiteDevModal').modal('show')});</script>
-<div id="SiteDevModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h1 id="modalLabel"><i class="icon-time"></i> In Development</h1>
-        </div>
-        <div class="modal-body">
-            <p>Please bear with us; the MBDA site is under <strong>active construction and development</strong> through April 2013.</p>
-            <p>Feel free to have a look around, to use the site for research or teaching, and/or to contact us if you have any questions.</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-</div>
 <div class="row">
     <div class="span7">
     <div id="homeCarousel" class="carousel slide">
@@ -123,7 +109,7 @@
             <div class="random-document">
                 <h4 class="text-center">Tag of the Week</h4>
                 <div class="padded">
-                    <a href="/tag-mbda"><span class="label label-inverse"><i class="icon-tag"></i> grippe</span></a>
+                    <a href="/tag-mbda"><span class="label label-inverse"><i class="icon-tag"></i> Coca-Cola</span></a>
                 </div>
             </div>
         </div>
@@ -158,10 +144,15 @@
     </div>
 </div>
 <div id="VideoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    
     <div class="modal-body">
         <div class="text-center">
-            <video id="MBvideo" src="<?php echo img('video/MarthaBerryIntro.mp4'); ?>" height="250px" controls></video>
+            <video id="MBvideo" height="250px" controls>
+                <source src="<?php echo img('video/MarthaBerryIntroMP4.mp4'); ?>" type="video/mp4" />
+                <source src="<?php echo img('video/MarthaBerryIntro.mp4'); ?>" type="video/mp4" />
+                <source src="<?php echo img('video/MarthaBerryIntroH264.mov'); ?>" type="video/mp4" />
+                <source src="<?php echo img('video/MarthaBerryIntroFLV.flv'); ?>" type="video/flv" />
+                <source src="<?php echo img('video/MarthaBerryIntro_OGG.ogg'); ?>" type="video/ogg" />
+            </video>
         </div>
     </div>
     <div class="modal-footer">
