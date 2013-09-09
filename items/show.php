@@ -1,149 +1,58 @@
-<?php 
-    echo head(array('title' => metadata($item,array('Dublin Core', 'Title')), 'bodyid'=>'items','bodyclass' => 'show')); 
-    $item = $this->item;
-    ?>
+<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
+
+<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
+
 <div id="primary">
-    <div class="row">
-        <div class="span12">
-            <div class="pagination pagination-centered">
-                <ul>
-                    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-                </ul>
-                <ul>
-                    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-                </ul>
-            </div>
-        </div>
+
+    <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
+    <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+    <?php endif; ?>
+    
+    <?php echo all_element_texts('item'); ?>
+    
+    <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+
+
+
+</div><!-- end primary -->
+
+<aside id="sidebar">
+
+    <!-- The following returns all of the files associated with an item. -->
+    <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
+    <div id="itemfiles" class="element">
+        <h2><?php echo __('Files'); ?></h2>
+        <?php echo item_image_gallery(); ?>
     </div>
-    <div class="row">
-        <div class="span12">
-            <?php echo flash(); ?>
-        </div>
+    <?php endif; ?>
+
+    <!-- If the item belongs to a collection, the following creates a link to that collection. -->
+    <?php if (metadata('item', 'Collection Name')): ?>
+    <div id="collection" class="element">
+        <h2><?php echo __('Collection'); ?></h2>
+        <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
     </div>
-    <div class="row">
-        <div class="span12">
-            <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
-        </div>
+    <?php endif; ?>
+
+    <!-- The following prints a list of all tags associated with the item -->
+    <?php if (metadata('item', 'has tags')): ?>
+    <div id="item-tags" class="element">
+        <h2><?php echo __('Tags'); ?></h2>
+        <div class="element-text"><?php echo tag_string('item'); ?></div>
     </div>
-    <div class="row">
-        <div class="span6">
-            <!-- Item Description -->
-            <div class="row">
-                <div class="span6">
-                    <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
-                        <p class="lead"><?php echo $itemDescription; ?></p>
-                    <?php else: ?>
-                        <h4>Description</h4>
-                        <p class="alert"><strong>Sorry!</strong> No description recorded yet.</p>
-                    <?php endif; ?>
-                </div>
-            </div>
-            
-            <!-- Item Collection Information (if available) -->
-            <?php if (get_collection_for_item($item)): ?>
-            <div class="row"><div class="span6">
-                <div id="collection" class="element">
-                    <h4 style="display:inline"><?php echo __('Collection'); ?>: </h4>
-                    <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
-                </div>
-            </div></div>
-            <?php endif; ?>
-            
-            <div class="row"><div class="span6"><hr /></div></div>
-            
-            <div class="row">
-                <div class="span2">
-                <!-- Item Date Information -->    
-                    <h4><i class="icon-calendar icon-large"></i> Date: </h5>
-                    <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
-                        <div class="lead"><?php echo $itemDate; ?></div>
-                    <?php else: ?>
-                        <div class="lead">None recorded.</div>
-                    <?php endif; ?>
-                </div>
-                <div class="span2">
-                <!-- Item Creator Information -->
-                    <h4><i class="icon-user icon-large"></i> Author: </h4>
-                    <div class="lead">
-                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
-                        <?php echo $itemCreator; ?>
-                    <?php else: ?>
-                        None recorded.
-                    <?php endif; ?>
-                    </div>
-                </div>
-                <div class="span2">
-                <!-- Item Recipient Information (if available) -->
-                    
-                    <?php 
-                        $itemRecipient = metadata($item,array('Item Type Metadata','Recipient'));
-                        if (trim($itemRecipient) != ''): ?>
-                        <h4><i class="icon-envelope icon-large"></i> Recipient: </h4>
-                        <div class="lead">
-                            <?php echo $itemRecipient; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-            
-            <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            
-                
-            <!-- The following prints a list of all tags associated with the item -->
-            <div class="row">
-                <div class="span6">
-                    <hr />
-                    <h4><i class="icon-tags icon-large"></i> Tags</h4>
-                    <div class="tags well well-small">
-                        <?php if (tag_string($item) != null) {
-                            echo tag_string($item); }
-                            else {
-                            echo 'No tags recorded for this item.'; 
-                            }
-                        ?>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <hr />
-                    <!-- The following prints a citation for this item. -->
-                    <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
-                    <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
-                </div>
-            </div>
-        </div>
-        <!-- The following returns all of the files associated with an item. -->
-        <div id="itemfiles" class="span6">
-            <!-- <h3><?php echo __('Files'); ?></h3> -->
-            <p class="lead" style="text-align:center;">Item Identification #: <?php echo metadata($item,array('Dublin Core','Identifier')); ?></p>
-           
-            <div class="element-text"><?php echo files_for_item(
-                array('imageSize'=>'fullsize','linkToFile'=>true,'linkToMetadata'=>false),//options
-                array('class'=>'file-image'),
-                null); 
-        ?></div>
-        </div>
+    <?php endif;?>
+
+    <!-- The following prints a citation for this item. -->
+    <div id="item-citation" class="element">
+        <h2><?php echo __('Citation'); ?></h2>
+        <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
-    <div class="row">
-        <div class="span12">
-            <div class="pagination pagination-centered">
-                <ul>
-                    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-                </ul>
-                <ul>
-                    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-        
-</div>
-<!-- end primary -->
+
+</aside>
+
+<ul class="item-pagination navigation">
+    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
+    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+</ul>
 
 <?php echo foot(); ?>

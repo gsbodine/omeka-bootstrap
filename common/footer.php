@@ -1,24 +1,31 @@
-        </div><!-- end content -->
+</div><!-- end content -->
 
-        <div id="footer" class="container">
-            <footer>
-            <div class="row"><div class="span12"><hr /></div></div>
-            <div id="footer-text" class="row">
-                <div class="span12"> 
-                    <?php echo html_entity_decode(get_theme_option('Footer Text')); ?>
-                    
-                    <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
-                        <div><small><?php echo html_entity_decode($copyright); ?></small></div>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <?php fire_plugin_hook('public_footer'); ?>
-                </div>
-            </div>
-            </footer>    
-        </div><!-- end footer -->
-    </div><!-- end wrap -->
+<footer>
+
+        <div id="custom-footer-text">
+            <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
+            <p><?php echo $footerText; ?></p>
+            <?php endif; ?>
+            <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
+                <p><?php echo $copyright; ?></p>
+            <?php endif; ?>
+        </div>
+
+        <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+        
+    <?php fire_plugin_hook('public_footer'); ?>
+    
+</footer>
+
+</div><!--end wrap-->
+
+<script type="text/javascript">
+jQuery(document).ready(function () {
+    Seasons.showAdvancedForm();
+    Seasons.mobileSelectNav();
+});
+</script>
+
 </body>
+
 </html>
