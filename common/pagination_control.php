@@ -1,5 +1,5 @@
 <?php if ($this->pageCount > 1): ?>
-<ul class="pagination_list">
+<ul class="nav pagination_list">
     
     <?php if ($this->first != $this->current): ?>
         <!-- First page link --> 

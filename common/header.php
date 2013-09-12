@@ -36,16 +36,27 @@
     <div id="wrap" class="container">
         <header>
             <div id="site-title">
-                <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
+                <div class=""><?php echo link_to_home_page(theme_logo()); ?></div>
             </div>
-            <div id="search-container">
-                <?php echo search_form(array('show_advanced' => true)); ?>
+            <div id="search-container pull-right">
+                <?php echo search_form(array('show_advanced' => true, 'class' => 'form-inline', 'role' => 'form')); ?>
             </div>
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
         </header>
 
-        <nav class="top">
-            <?php echo public_nav_main(); ?>
+        <nav class="top navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><?php echo get_theme_option('navbar_brand_text'); ?></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navbar-nav navbar-right')?>
+            </div>
         </nav>
 
-        <div id="content">
+        <div id="content" class="container">
