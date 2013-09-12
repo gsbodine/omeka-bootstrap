@@ -35,7 +35,7 @@ function bootstrap_simple_search($buttonText = null, $formProperties=array('id'=
 }
 
 function filterPublicNavigationMain($nav) {
-    $nav[] = array('class' => 'nav');
+    //$nav[] = array('class' => 'nav');
     return $nav;
 }
 

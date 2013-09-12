@@ -39,7 +39,7 @@
                 <div class=""><?php echo link_to_home_page(theme_logo()); ?></div>
             </div>
             <div id="search-container pull-right">
-                <?php echo search_form(array('show_advanced' => true, 'class' => 'form-inline', 'role' => 'form')); ?>
+                <?php echo search_form(array('show_advanced' => true, 'class' => 'form-inline pull-right', 'role' => 'form')); ?>
             </div>
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
         </header>
