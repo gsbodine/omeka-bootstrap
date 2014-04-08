@@ -1,0 +1,91 @@
+/*
+    Document: site
+    Created on: Sep 15, 2012, 4:22:19 PM
+    Author: Garrick S. Bodine <garrick.bodine@gmail.com>
+    Description: Purpose of the stylesheet follows.
+*/
+
+.item-img > img {
+    margin: .5em;
+}
+
+.carousel {
+    border: 1px solid #ccc;
+}
+
+.carousel-img {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.tooltip {
+    font-size: 13px;
+}
+
+.popular a,
+.-popular a,
+.v-popular a,
+.vv-popular a,
+.vvv-popular a,
+.vvvv-popular a,
+.vvvvv-popular a,
+.vvvvvv-popular a,
+.vvvvvvv-popular a,
+.vvvvvvvv-popular a {
+    color: #000;
+ }
+
+.btn-inverse a {
+    color: #fff;
+}
+
+a#advanced-search.button {
+  width: 10%;
+  top: 0;
+  border: 0;
+  position: absolute;
+  text-decoration: none;
+}
+#advanced-search {
+  width: 10%;
+  font-size: 16px;
+  text-indent: -9999px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#advanced-search:after {
+  content: "+";
+  display: block;
+  text-indent: 0;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  background: #369;
+  top: 0;
+}
+#advanced-form {
+  display: none;
+  background-color: #fff;
+  overflow: auto;
+  z-index: 1001;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border: 1px solid #e7e7e7;
+  padding: 1.5em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#advanced-form input[type="radio"] {
+  margin-right: 5px;
+}
+#search-form fieldset fieldset {
+  margin-bottom: 18px;
+}

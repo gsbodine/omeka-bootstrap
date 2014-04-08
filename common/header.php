@@ -23,18 +23,20 @@
     <!-- Stylesheets -->
     <?php
     queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+    queue_css_file('style');
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
-    
-    <?php // see footer for bootstrap-related js... ?>
-    <?php echo head_js(); ?>
+
+    <?php // see footer for bootstrap-related js...
+    queue_js_file('globals');
+    echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap" class="container">
-        <header>
+        <header id="header" role="banner">
             <div id="site-title">
                 <div class=""><?php echo link_to_home_page(theme_logo()); ?></div>
             </div>
