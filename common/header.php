@@ -21,14 +21,17 @@
     <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 
     <!-- Stylesheets -->
-    <?php
-    queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+    <?php if (get_theme_option('Use Internal Bootstrap') == '1') {
+        queue_css_file('bootstrap.min');
+    }
+    else {
+        queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+    }
     queue_css_file('style');
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
-
     <?php // see footer for bootstrap-related js...
     queue_js_file('globals');
     echo head_js(); ?>

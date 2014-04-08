@@ -7,4 +7,4 @@ This theme was originally developed for (and alongside) the [Crowd-Ed plugin](ht
 
 The original outcome of this theme (based on Bootstrap 2.3.2 and running on Omeka 2.0.x) is viewable on the [Martha Berry Digital Archive](https://mbda.berry.edu) site.
 
-Work has just begun on making a more genericized version based on Bootstrap 3.0.0.
+Work has just begun on making a more genericized version based on Bootstrap 3.

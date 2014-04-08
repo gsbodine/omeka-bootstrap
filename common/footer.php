@@ -20,8 +20,23 @@ jQuery(document).ready(function () {
     Omeka.dropDown();
 });
 </script>
+<?php
+// Omeka 2 and Bootstrap 3.1.1 use the same jQuery (1.10).
+$config = Zend_Registry::get('bootstrap')->getResource('Config');
+$useInternalAssets = isset($config->theme->useInternalAssets)
+   ? (bool) $config->theme->useInternalAssets
+   : false;
+if ($useInternalAssets) : ?>
+<script src="<?php echo src('vendor/jquery', 'javascripts', 'js'); ?>"></script>
+<?php else: ?>
 <script src="//code.jquery.com/jquery.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<?php endif; ?>
+<?php if (get_theme_option('Use Internal Bootstrap') == '1') :?>
+<script src="<?php echo src('bootstrap.min', 'javascripts', 'js'); ?>"></script>
+<?php else: ?>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<?php endif; ?>
+
 
 </body>
 
