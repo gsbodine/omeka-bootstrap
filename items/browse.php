@@ -19,7 +19,7 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
         <?php echo pagination_links(); ?>
     </div>
 
-    
+
 <?php if (get_theme_option('Display Items Carousel') == '1'): ?>
     <div class="row">
         <div class="span8 offset2">
@@ -27,29 +27,29 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                 <div class="carousel-inner">
                     <?php foreach(loop('items') as $item): ?>
                         <div class="item">
-                        <?php if (item_has_thumbnail()): ?>
+                        <?php if (metadata($item, 'has thumbnail')): ?>
                             <div class="carousel-img" style="text-align: center">
                                 <?php echo link_to_item(item_image('thumbnail',$props=array('class'=>'img-polaroid')),null,null,$item); ?>
                             </div>
                         <?php endif; ?>
                             <div class="carousel-caption">
-                                <h4><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></h4>
-                                <?php if ($description = item('Dublin Core', 'Description', array('snippet'=>250))): ?>
+                                <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h4>
+                                <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
                                     <p class="item-description">
                                         <?php echo $description; ?>
                                     </p>
-                                <?php elseif ($text = item('Item Type Metadata', 'Text', array('snippet'=>250))): ?>
+                                <?php elseif ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
                                     <div class="item-description">
                                         <?php echo $text; ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if (item_has_tags()): ?>
+                                <?php if (metadata('item', 'has tags')): ?>
                                     <div class="browse-item-tags"><p><strong><?php echo __('Tags'); ?>:</strong>
-                                        <?php echo item_tags_as_string(); ?></p>
+                                        <?php echo tag_string('items'); ?></p>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            <?php echo plugin_append_to_items_browse_each(); ?>
+                            <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -83,12 +83,12 @@ echo head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
-            
+
             <?php if (get_collection_for_item($item)): ?>
                 <p><div><strong><?php echo __('Collection'); ?></strong></div>
                 <div class="element-text"><?php echo link_to_collection_for_item(); ?></div></p>
             <?php endif; ?>
-            
+
             <!-- <div>
                 <h5>Citation</h5>
                 <p class="citation"><?php //echo item_citation(); ?></p>
