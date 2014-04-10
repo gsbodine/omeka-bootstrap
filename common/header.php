@@ -13,12 +13,12 @@
     }
     $titleParts[] = option('site_title');
     ?>
-    <title><?php echo implode(' &middot; ', $titleParts); ?></title>
+    <title><?php echo implode(' · ', $titleParts); ?></title>
 
     <?php echo auto_discovery_link_tags(); ?>
 
     <!-- Plugin Stuff -->
-    <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
+    <?php fire_plugin_hook('public_head', array('view' => $this)); ?>
 
     <!-- Stylesheets -->
     <?php if ($temp_banner = get_theme_option('temp banner text')) {
@@ -40,24 +40,24 @@
     echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
-    <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
+    <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
     <?php if ($temp_banner) : ?>
     <span id="corner-banner">
         <em><?php echo $temp_banner; ?></em>
     </span>
     <?php endif; ?>
     <div id="wrap" class="container">
-        <header id="header" role="banner">
-            <div id="site-title">
-                <div class=""><?php echo link_to_home_page(theme_logo()); ?></div>
+        <header id="header" role="banner" class="row">
+            <div id="site-title" class="col-sm-8 col-md-8">
+                <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
             </div>
-            <div id="search-container pull-right">
-                <?php echo search_form(array('show_advanced' => true, 'class' => 'form-inline pull-right', 'role' => 'form')); ?>
+            <div id="search-container" class="col-sm-4 col-md-4">
+                <?php echo search_form(array('show_advanced' => true, 'submit_value' => __('Search'), 'form_attributes' => array('class' => 'form-search', 'role' => 'form'))); ?>
             </div>
-            <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
+            <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
         </header>
 
-        <nav class="top navbar navbar-default" role="navigation">
+        <nav class="top navbar nav-pills" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle menu</span>

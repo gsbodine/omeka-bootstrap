@@ -22,7 +22,7 @@
     <ul>
         <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
         <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
-            <?php echo exhibit_builder_page_summary($exhibitPage); ?>
+        <?php echo exhibit_builder_page_summary($exhibitPage); ?>
         <?php endforeach; ?>
     </ul>
 </nav>

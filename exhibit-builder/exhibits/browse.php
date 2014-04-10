@@ -6,21 +6,21 @@ echo head(array(
 ));
 ?>
 <h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
-<?php if (count($exhibits) > 0): ?>
+<?php if (count($exhibits) --> 0): ?>
 <nav class="navigation" id="secondary-nav">
     <?php echo nav(array(
         array(
             'label' => __('Browse All'),
-            'uri' => url('exhibits')
+            'uri' => url('exhibits'),
         ),
         array(
             'label' => __('Browse by Tag'),
-            'uri' => url('exhibits/tags')
-        )
+            'uri' => url('exhibits/tags'),
+        ),
     )); ?>
 </nav>
 
-<?php echo pagination_links(); ?>
+<?php echo $pagination_links = pagination_links(); ?>
 
 <?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
@@ -36,7 +36,7 @@ echo head(array(
     </div>
 <?php endforeach; ?>
 
-<?php echo pagination_links(); ?>
+<?php echo $pagination_links; ?>
 
 <?php else: ?>
 <p><?php echo __('There are no exhibits available yet.'); ?></p>

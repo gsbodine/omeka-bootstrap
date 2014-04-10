@@ -5,7 +5,7 @@
     ?>
     <h3><?php echo link_to($this->collection, 'show', strip_formatting($title)); ?></h3>
     <?php if ($description): ?>
-        <p class="collection-description"><?php echo $description; ?></p>
+    <p class="collection-description"><?php echo $description; ?></p>
     <?php endif; ?>
 <?php else: ?>
     <p><?php echo __('No featured collections are available.'); ?></p>

@@ -1,12 +1,12 @@
 <?php
-
-/*
+/**
  * @copyright Garrick S. Bodine, 2012
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
 // basically, this is just the Omeka simple_search minus the hardcoded fieldset and some added Bootstrap classes:
-function bootstrap_simple_search($buttonText = null, $formProperties=array('id'=>'simple-search'), $uri = null) {
+function bootstrap_simple_search($buttonText = null, $formProperties = array('id' => 'simple-search'), $uri = null)
+{
     if (!$buttonText) {
         $buttonText = __('Search');
     }
@@ -18,9 +18,9 @@ function bootstrap_simple_search($buttonText = null, $formProperties=array('id'=
     $searchQuery = array_key_exists('search', $_GET) ? $_GET['search'] : '';
     $formProperties['action'] = $uri;
     $formProperties['method'] = 'get';
-    $html  = '<form ' . tag_attributes($formProperties) . '><div class="input-append">';
-    $html .= get_view()->formText('search', $searchQuery, array('name'=>'search','class'=>'input-medium'));
-    $html .= get_view()->formSubmit('submit_search', $buttonText, array('class'=>'btn'));
+    $html  = '<form ' . tag_attributes($formProperties) . '><div class="input-group">';
+    $html .= get_view()->formText('search', $searchQuery, array('name' => 'search', 'class' => 'input-md'));
+    $html .= get_view()->formSubmit('submit_search', $buttonText, array('class' => 'btn btn-default'));
 
     $parsedUri = parse_url($uri);
     if (array_key_exists('query', $parsedUri)) {
@@ -34,10 +34,9 @@ function bootstrap_simple_search($buttonText = null, $formProperties=array('id'=
     return $html;
 }
 
-function filterPublicNavigationMain($nav) {
+function filterPublicNavigationMain($nav)
+{
     //$nav[] = array('class' => 'nav');
     return $nav;
 }
-
-
 ?>

@@ -15,7 +15,7 @@ echo head(array(
 </nav>
 
 <div role="main">
-<?php exhibit_builder_render_exhibit_page(); ?>
+    <?php exhibit_builder_render_exhibit_page(); ?>
 </div>
 
 <div id="exhibit-page-navigation">
