@@ -5,7 +5,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-// basically, this is just the Omeka simple_search minus the hardcoded fieldset and some added Bootstrap classes: 
+// basically, this is just the Omeka simple_search minus the hardcoded fieldset and some added Bootstrap classes:
 function bootstrap_simple_search($buttonText = null, $formProperties=array('id'=>'simple-search'), $uri = null) {
     if (!$buttonText) {
         $buttonText = __('Search');

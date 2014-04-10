@@ -1,15 +1,12 @@
-<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'item exhibit-item-show')); ?>
-
+<?php echo head(array(
+    'title' => metadata('item', array('Dublin Core', 'Title')),
+    'bodyclass' => 'item exhibit-item-show',
+)); ?>
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
-
 <div id="primary">
-    
     <?php echo all_element_texts('item'); ?>
-
 </div><!-- end primary -->
-
 <aside id="sidebar">
-
     <!-- The following returns all of the files associated with an item. -->
     <?php if (metadata('item', 'has files')): ?>
     <div id="itemfiles" class="element">
@@ -41,7 +38,5 @@
     </div>
 
     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
-
 </aside>
-
 <?php echo foot(); ?>
