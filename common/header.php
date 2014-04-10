@@ -21,6 +21,9 @@
     <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 
     <!-- Stylesheets -->
+    <?php if ($temp_banner = get_theme_option('temp banner text')) {
+        queue_css_file('beta');
+    } ?>
     <?php if (get_theme_option('Use Internal Bootstrap') == '1') {
         queue_css_file('bootstrap.min');
     }
@@ -38,6 +41,11 @@
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
+    <?php if ($temp_banner) : ?>
+    <span id="corner-banner">
+        <em><?php echo $temp_banner; ?></em>
+    </span>
+    <?php endif; ?>
     <div id="wrap" class="container">
         <header id="header" role="banner">
             <div id="site-title">
