@@ -2,8 +2,7 @@
 $pageTitle = __('Browse Items');
 echo head(array(
     'title' => $pageTitle,
-    'bodyid' => 'items',
-    'bodyclass' => 'browse',
+    'bodyclass' => 'items browse',
 ));
 ?>
 <!-- <div id="primary"> -->

@@ -1,9 +1,12 @@
-<?php echo head(array('title' => 'Browse Collections', 'bodyid' => 'collections', 'bodyclass' => 'browse')); ?>
+<?php
+$title = __('Browse Collections');
+echo head(array(
+    'title' => $title,
+    'bodyclass' => 'collections browse',
+)); ?>
 <div id="primary">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-             <h1 class="page-header">Collections</h1>
-        </div>
+    <div class="page-header">
+         <h1><?php echo $title; ?></h1>
     </div>
     <?php if ($pagination_links = pagination_links()): ?>
     <div class="row">

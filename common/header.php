@@ -72,4 +72,4 @@
             </div>
         </nav>
 
-        <div id="content" class="container">
+        <div id="content">
