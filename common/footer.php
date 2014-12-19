@@ -36,7 +36,7 @@
     <?php if (get_theme_option('Use Internal Bootstrap') == '1') :?>
     <script src="<?php echo src('bootstrap.min', 'javascripts', 'js'); ?>"></script>
     <?php else: ?>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <?php endif; ?>
 </body>
 </html>
