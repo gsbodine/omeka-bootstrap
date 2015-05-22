@@ -46,30 +46,29 @@
         <em><?php echo $temp_banner; ?></em>
     </span>
     <?php endif; ?>
-    <div id="wrap" class="container">
-        <header id="header" role="banner" class="row">
-            <div id="site-title" class="col-sm-8 col-md-8">
-                <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
-            </div>
-            <div id="search-container" class="col-sm-4 col-md-4">
-                <?php echo search_form(array('show_advanced' => true, 'submit_value' => __('Search'), 'form_attributes' => array('class' => 'form-search', 'role' => 'form'))); ?>
-            </div>
-            <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
-        </header>
+    <div id="wrap">
+        
 
-        <nav class="top navbar nav-pills" role="navigation">
+        <nav class="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/"><?php echo get_theme_option('navbar_brand_text'); ?></a>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <?php echo link_to_home_page(theme_logo()); ?>
+            </div>
+            <div id="search-container" class="form-group navbar-right">
+          <?php echo search_form(array('show_advanced' => true, 'submit_value' => __('Search'), 'form_attributes' => array('class' => 'form-search navbar-left', 'role' => 'form'))); ?>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navbar-nav navbar-right')?>
+                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav navbar-right')?>
+            
             </div>
         </nav>
-
+        </div>
+        <div class="container">
         <div id="content">

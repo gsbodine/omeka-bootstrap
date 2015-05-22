@@ -1,0 +1,274 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"current",
+				"currentWard"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "markdown",
+		"selected_items":
+		[
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"evernote",
+				"Evernote: List recent notes"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ever",
+				"Evernote: List recent notes"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Applications/MAMP/htdocs/wgh/themes/WearingGayHistoryTheme"
+	],
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/wgh/.htaccess.changeme",
+		"/Applications/MAMP/htdocs/DHNow/WordPress/wp-content/themes/PressForward-TurnKey-Theme/README.md",
+		"/Applications/MAMP/htdocs/wgh/db.ini.changeme",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Spring 2015/Fellowship/Reflection.mdown",
+		"/Users/mandyslaptop/Desktop/untitled",
+		"/Users/mandyslaptop/Desktop/notesFeb2",
+		"/Users/mandyslaptop/Desktop/Google Books.mdown",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Fellowship/skilldevelopment.mdown",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Fellowship/mentoring.mdown",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Spring 2015/Fellowship/miscnotes",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Spring 2015/Fellowship/tkblogpost.mdown",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Spring 2015/811/811firstdraft-notes.mdown",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/Spring 2015/Fellowship/960gs.mdown",
+		"/Users/mandyslaptop/Downloads/Aquiline-two-fontfacekit/web fonts/aquilinetwo_regular_macroman/AquilineTwo-demo.html",
+		"/Users/mandyslaptop/Dropbox/RecreationMagazine/stoplist.txt",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/db/GoogleBooks/MindandBody/txt/1895v2.txt",
+		"/Users/mandyslaptop/Dropbox/***GMU PHD/db/GoogleBooks/MindandBody/stoplist.txt",
+		"/Users/mandyslaptop/Dropbox/**GMU PHD/Spring 2015/Fellowship/MetaDataBlog.mdown",
+		"/Users/mandyslaptop/Desktop/test.mdown",
+		"/Users/mandyslaptop/Library/Application Support/Sublime Text 3/Packages/User/Evernote.sublime-settings",
+		"/Users/mandyslaptop/Library/Application Support/Sublime Text 3/Packages/Evernote/Evernote.sublime-settings",
+		"/Users/mandyslaptop/Dropbox/PFDevNotes3.5.x",
+		"/Users/mandyslaptop/Dropbox/**GMU PHD/Spring 2015/811/811Notes.Jan27",
+		"/Applications/MAMP/htdocs/DHNow/WordPress/wp-content/themes/brew-master/sidebar.php",
+		"/Applications/MAMP/htdocs/DHNow/WordPress/wp-content/themes/BrewChildTheme/page-home.php",
+		"/Applications/MAMP/htdocs/DHNow/WordPress/wp-cron.php",
+		"/Users/mandyslaptop/Documents/Clio3-Final/index.html",
+		"/Users/mandyslaptop/Documents/Clio3-Final/visualization.js",
+		"/Users/mandyslaptop/Documents/Clio3-Final/test.html",
+		"/Users/mandyslaptop/Documents/Clio3-Final/test2.js",
+		"/Users/mandyslaptop/Documents/Clio3-Final/test.js",
+		"/Users/mandyslaptop/Documents/Clio3-Final/GenderChart_removed.js",
+		"/Users/mandyslaptop/Documents/Clio3-Final/foundation/css/foundation.css",
+		"/Users/mandyslaptop/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mandyslaptop/open",
+		"/Users/mandyslaptop/.zshrc",
+		"/Users/mandyslaptop/Documents/Clio3-Final/open",
+		"/Users/mandyslaptop/Documents/Clio3-Final/piechart_age.html"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"</h2>",
+			"<h2>",
+			"THATC",
+			"vol. ",
+			"sliderval",
+			"current",
+			"svg",
+			"rangeRound",
+			"width",
+			"filter",
+			"sliderval",
+			"h4",
+			"width"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"</h3>",
+			"<h3>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "wgh_theme.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 255.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

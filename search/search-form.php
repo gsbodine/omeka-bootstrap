@@ -1,7 +1,7 @@
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
     <?php echo $this->formText('query', $filters['query'], array('title' => __('Search'), 'class' => 'input-medium search-query', 'placeholder' => __('Search'))); ?>
     <?php if ($options['show_advanced']): ?>
-    <fieldset id="advanced-form" class="col-md-offset-2">
+    <fieldset id="advanced-form" class="col-md-offset-9 col-sm-offset-7">
         <fieldset id="query-types">
             <p><?php echo __('Search using this query type:'); ?></p>
             <?php echo $this->formRadio('query_type', $filters['query_type'], null, $query_types); ?>
