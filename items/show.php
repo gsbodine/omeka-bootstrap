@@ -5,14 +5,14 @@
 <div id="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="pagination pagination-centered">
+              <nav class="pager">
                 <ul>
-                    <li id="previous-item" role="button" class="btn btn-default previous"><?php echo link_to_previous_item_show(); ?></li>
+                    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
                 </ul>
                 <ul>
-                    <li id="next-item" role="button" class="btn btn-default next"><?php echo link_to_next_item_show(); ?></li>
+                    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </div>
     <div class="row">
@@ -30,6 +30,7 @@
             <!-- Item Description -->
             <div class="row">
                 <div class="col-md-12">
+                    <h4><i class="fa fa-thumb-tack fa-lg"></i> Description: </h4>
                     <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
                         <p class="lead"><?php echo $itemDescription; ?></p>
                     <?php else: ?>
@@ -74,15 +75,15 @@
                 </div>
                 <div class="col-md-4">
                 <!-- Item Recipient Information (if available) -->
-                   <!--  
-                    <?php 
-                       // $itemRecipient = metadata($item,array('Item Type Metadata','Recipient'));
-                        //if (trim($itemRecipient) != ''): ?>
-                        <h4><i class="icon-envelope icon-large"></i> Recipient: </h4>
-                        <div class="lead">
-                            <?php echo $itemRecipient; ?>
-                        </div>
-                    <?php// endif; ?> -->
+                  <h4><i class="fa fa-archive fa-lg"></i> Source: </h4>
+                    <div>
+                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Source'))): ?>
+                        <?php echo $itemCreator; ?>
+                    <?php else: ?>
+                        None recorded.
+                    <?php endif; ?>
+                    </div>
+                    
                 </div>
             </div>
             
@@ -132,14 +133,13 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="pagination pagination-centered">
+            <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
                 </ul>
                 <ul>
                     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
-            </div>
         </div>
     </div>
         

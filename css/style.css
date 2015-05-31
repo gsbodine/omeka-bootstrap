@@ -45,6 +45,10 @@ body {
 .label-primary {
   background-color: #a0c263;
 }
+.previous >a, .next > a {
+  padding: 3px 10px 3px 10px !important;
+  font-size: 13px;
+}
 /********HEADER STYLES*********/
 nav {
   border: none;
@@ -84,6 +88,19 @@ a:hover {
 #home-intro {
   border-bottom: orange 3px solid;
 }
+.page-header {
+  margin-top: 0;
+}
+.page-header > h1 {
+  margin-top: 10px;
+}
+.pager {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pager > ul {
+  padding-left: 0;
+}
 /********BROWSE PAGE STYLES*********/
 .item-title > h3 {
   margin-top: 0px;
@@ -96,6 +113,7 @@ a:hover {
 }
 .file-image > a > img {
   max-width: 100%;
+  height: auto;
 }
 
 .carousel {
