@@ -5,7 +5,7 @@
     Description: Purpose of the stylesheet follows.
 */
 /**********GENERAL STYLES**************/
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400|Cabin:400,500,600|Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic|Open+Sans:400,300,600,700);
 @font-face{ 
   font-family: 'Cicle_Fina';
   src: url('../fonts/Cicle_Fina-webfont.eot');
@@ -15,17 +15,31 @@
        url('../fonts/Cicle_Fina-webfont.svg#webfont') format('svg');
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Cicle_Fina';
+  font-family: 'Didact Gothic';
   letter-spacing: 1px;
 }
 body, p {
   font-family: 'Open Sans';
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 25px;
 }
 body {
-  
+  background-color: #f8f8f8;
 
+}
+#wrapper {
+  background-color: #fff;
+  margin-top: 25px;
+  padding: 30px;
+  border: thin solid #e8e8e8;
+}
+.meta {
+  border-bottom: thin solid #e8e8e8;
+  padding: 15px 15px;
+}
+#files {
+  padding: 15px 15px;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
   background-color: #a0c263;
@@ -36,6 +50,9 @@ body {
 /********HEADER STYLES*********/
 nav {
   border: none;
+}
+.navbar-header {
+  padding: 10px 0 7px 0;
 }
 #wrap {
   padding: 0 50px 0 50px;
@@ -64,9 +81,11 @@ a:hover {
   background-color: transparent !important;
 }
 .navelement{
-  margin-top: 35px;
+  margin-top: 60px;
 }
-
+#home-intro {
+  border-bottom: orange 3px solid;
+}
 /********BROWSE PAGE STYLES*********/
 .item-title > h3 {
   margin-top: 0px;

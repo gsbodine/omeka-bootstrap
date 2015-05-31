@@ -42,13 +42,13 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
     <?php if ($temp_banner) : ?>
-    <span id="corner-banner">
-        <em><?php echo $temp_banner; ?></em>
-    </span>
+   
     <?php endif; ?>
     <div id="wrap">
         
+    <div class="container">
 
+    </div>
         <nav class="navbar">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,14 +61,11 @@
               </button>
             <?php echo link_to_home_page(theme_logo()); ?>
             </div>
-            <div id="search-container" class="form-group navbar-right">
-          <?php echo search_form(array('show_advanced' => true, 'submit_value' => __('Search'), 'form_attributes' => array('class' => 'form-search navbar-left', 'role' => 'form'))); ?>
-            </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav navbar-right')?>
             
             </div>
         </nav>
         </div>
-        <div class="container">
+        <div class="container" id="wrapper">
         <div id="content">
