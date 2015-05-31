@@ -56,15 +56,15 @@
                 <!-- Item Date Information -->    
                     <h4><i class="fa fa-calendar fa-lg"></i> Date: </h5>
                     <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
-                        <div class="lead"><?php echo $itemDate; ?></div>
+                        <div><?php echo $itemDate; ?></div>
                     <?php else: ?>
-                        <div class="lead">None recorded.</div>
+                        <div>None recorded.</div>
                     <?php endif; ?>
                 </div>
                 <div class="col-md-4">
                 <!-- Item Creator Information -->
                     <h4><i class="fa fa-user fa-lg"></i> Author: </h4>
-                    <div class="lead">
+                    <div>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>

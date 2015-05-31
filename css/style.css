@@ -6,28 +6,25 @@
 */
 /**********GENERAL STYLES**************/
 
-@import url(http://fonts.googleapis.com/css?family=Didact+Gothic|Open+Sans:400,300,600,700);
-@font-face{ 
-  font-family: 'Cicle_Fina';
-  src: url('../fonts/Cicle_Fina-webfont.eot');
-  src: url('../fonts/Cicle_Fina-webfont.eot?iefix') format('eot'),
-       url('../fonts/Cicle_Fina-webfont.woff') format('woff'),
-       url('../fonts/Cicle_Fina-webfont.ttf') format('truetype'),
-       url('../fonts/Cicle_Fina-webfont.svg#webfont') format('svg');
-}
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic|Lato:200,400,300,600,700);
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Didact Gothic';
   letter-spacing: 1px;
 }
 body, p {
-  font-family: 'Open Sans';
-  font-weight: 300;
-  font-size: 18px;
+  /*font-family: 'Lato' !important;*/
+  font-weight: 200;
+  font-size: 15px;
   line-height: 25px;
 }
 body {
   background-color: #f8f8f8;
 
+}
+.lead {
+  font-size: 18px;
+  font-family: 'Lato';
+  font-weight: 200;
 }
 #wrapper {
   background-color: #fff;
@@ -96,6 +93,9 @@ a:hover {
 }
 .item-img > img {
     margin: .5em;
+}
+.file-image > a > img {
+  max-width: 100%;
 }
 
 .carousel {
