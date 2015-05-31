@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col-md-4">
                 <!-- Item Date Information -->    
-                    <h4><i class="icon-calendar icon-large"></i> Date: </h5>
+                    <h4><i class="fa fa-calendar fa-lg"></i> Date: </h5>
                     <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
                         <div class="lead"><?php echo $itemDate; ?></div>
                     <?php else: ?>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-md-4">
                 <!-- Item Creator Information -->
-                    <h4><i class="icon-user icon-large"></i> Author: </h4>
+                    <h4><i class="fa fa-user fa-lg"></i> Author: </h4>
                     <div class="lead">
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
                         <?php echo $itemCreator; ?>
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <hr />
-                    <h4><i class="icon-tags icon-large"></i> Tags</h4>
+                    <h4><i class="fa fa-tags fa-large"></i> Tags</h4>
                     <div class="tags well well-small">
                         <?php if (tag_string($item) != null) {
                             echo tag_string($item); }
@@ -108,7 +108,7 @@
                 <div class="col-md-12">
                     <hr />
                     <!-- The following prints a citation for this item. -->
-                    <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
+                    <h4><i class="fa fa-retweet fa-lg"></i> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
     queue_css_file('style');
     echo head_css();
     ?>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JavaScripts -->
     <?php // see footer for bootstrap-related js...
     queue_js_file('globals');
