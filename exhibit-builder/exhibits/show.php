@@ -4,9 +4,13 @@ echo head(array(
     'bodyclass' => 'exhibits show',
 ));
 ?>
-
-<div class="col-md-9">
+<div class="row">
+<div class="col-md-12">
 <h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
+</div>
+</div>
+<div class="col-md-9">
+
 
 <nav id="exhibit-child-pages">
     <?php echo exhibit_builder_child_page_nav(); ?>

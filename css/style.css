@@ -101,6 +101,92 @@ a:hover {
 .pager > ul {
   padding-left: 0;
 }
+/**********Exhibit STYLES**************/
+/*#secondary-nav {
+  margin-left: 0;
+}
+#secondary-nav > li {
+  list-style-type: none;
+}
+#secondary-nav > li > ul > li{
+  list-style-type: none;
+  padding-left: 0px;
+}
+#secondary-nav > li > ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+ul#secondary-nav{
+  padding-left: 10px;
+  margin-top: 20px;
+  border-left: thin solid gray;
+
+}
+#secondary-nav > a {
+  border: 1px red solid;
+  background-color: ;
+}
+.current.active{
+  background-color: #e8e8e8;
+  font-weight: 400;
+  padding-left: 0;
+}
+.exhibit-title {
+  font-family: 'Didact Gothic';
+  letter-spacing: 1px;
+}
+#exhibit-pages ul {
+  margin-left: 0;
+}*/
+/*#exhibit-pages > ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+#exhibit-pages > h4{
+  margin-top: 0;
+
+}*/
+.exhibit-page-nav {
+  border-left: 1px solid #eee;
+  margin-left: 0px;
+  padding-left: 0px;
+
+}
+.exhibit-page-nav > li:first-child {
+  padding-left: 5px;
+}
+.exhibit-page-nav > li {
+  list-style-type: none;
+} 
+.exhibit-page-nav > li > {
+  margin: 5px 0 5px 0;
+} 
+.exhibit-nav-level-1 > li{
+  margin: 5px 0 5px 0;
+} 
+.exhibit-nav-level-1 {
+  padding-left: 0;
+  list-style-type: none;
+  margin-left: 0 !important;
+}
+.exhibit-nav-level-1 > li {
+    padding: 5px 5px 5px 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px ;
+}
+.exhibit-title {
+  font-family: 'Didact Gothic';
+  letter-spacing: 1px;
+}
+.exhibit-nav-level-1 > li:hover {
+  background-color: #eee;
+
+}
+.exhibit-nav-level-1 > .current.active {
+  font-weight: 500;
+
+}
+
 /********BROWSE PAGE STYLES*********/
 .item-title > h3 {
   margin-top: 0px;

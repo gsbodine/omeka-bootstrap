@@ -3,9 +3,16 @@
     'bodyclass' => 'exhibits summary',
 ));
 ?>
+<div class="row">
+<div class="col-md-12">
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-9">
+
 <?php echo exhibit_builder_page_nav(); ?>
-<div id="primary">
+
     <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
     <div class="exhibit-description">
         <?php echo $exhibitDescription; ?>
@@ -18,7 +25,10 @@
     </div>
     <?php endif; ?>
 </div>
+
+<div class="col-md-3">
 <nav id="exhibit-pages">
+<h4>Exhibit Pages:</h4>
     <ul>
         <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
         <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
@@ -26,4 +36,6 @@
         <?php endforeach; ?>
     </ul>
 </nav>
+</div>
+</div>
 <?php echo foot(); ?>
