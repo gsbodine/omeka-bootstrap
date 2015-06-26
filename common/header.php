@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="<?php echo get_theme_option('Style Sheet'); ?>" lang="<?php echo get_html_lang(); ?>">
 <head>
+    <link rel="stylesheet" href="css/slider-pro.min.css"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php if ($description = option('description')): ?>
@@ -44,12 +45,16 @@
     <?php if ($temp_banner) : ?>
    
     <?php endif; ?>
-    <div id="wrap">
+    <div>
         
-    <div class="container">
-
+    <div class="container" id="logo">
+        <div class="row">
+        <div class="col-md-12 col-sm-12">
+        <?php echo link_to_home_page(theme_logo()); ?>
+        </div>
+        </div>
     </div>
-        <nav class="navbar">
+        <nav class="navbar" id="wrap">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -59,11 +64,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-            <?php echo link_to_home_page(theme_logo()); ?>
+
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav navbar-right')?>
-            
+                
             </div>
         </nav>
         </div>

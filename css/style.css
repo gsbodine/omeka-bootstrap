@@ -4,6 +4,11 @@
     Author: Garrick S. Bodine <garrick.bodine@gmail.com>
     Description: Purpose of the stylesheet follows.
 */
+
+
+
+
+
 /**********GENERAL STYLES**************/
 
 @import url(http://fonts.googleapis.com/css?family=Didact+Gothic|Lato:200,400,300,600,700);
@@ -18,8 +23,9 @@ body, p {
   line-height: 25px;
 }
 body {
-  background-color: #f8f8f8;
-
+background-color: #f8f8f8;
+background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squares.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 .lead {
   font-size: 18px;
@@ -48,6 +54,35 @@ body {
 .previous >a, .next > a {
   padding: 3px 10px 3px 10px !important;
   font-size: 13px;
+}
+
+/********HOMEPAGE FEATURED ITEMS*********/
+#featured-row {
+  border-top: 3px green solid;
+  margin: 10px 0 10px 0;
+}
+#featured-item > .item.record > .image > img {
+  border: solid 1px #eee;
+  padding: 3px;
+}
+#recent-items > .items-list > .item > .item-img > a > img {
+  border: solid 1px #eee;
+  padding: 3px;
+}
+#featured-item > h2  {
+  font-size: 25px;
+}
+#featured-item > .item.record > h3 {
+  font-size: 21px;
+}
+#featured-exhibit > h2{
+  font-size: 25px;
+}
+#recent-items > h2{
+  font-size: 25px;
+}
+#recent-items > .items-list > .item > h3 {
+  font-size: 21px;
 }
 /********HEADER STYLES*********/
 nav {
@@ -82,8 +117,8 @@ a:hover {
 .navbar-nav>li>a:hover, .navbar-nav>li>a:focus{
   background-color: transparent !important;
 }
-.navelement{
-  margin-top: 60px;
+#logo {
+  margin: 10px 0 10px 65px;
 }
 #home-intro {
   border-bottom: orange 3px solid;

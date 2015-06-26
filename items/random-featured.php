@@ -13,7 +13,9 @@
         }
         ?>
         <?php if ($description): ?>
+    <div class="col-md-6">
     <p class="item-description"><?php echo $description; ?></p>
+    </div>
         <?php endif; ?>
     <?php endforeach; ?>
 <?php else: ?>
