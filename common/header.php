@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="<?php echo get_theme_option('Style Sheet'); ?>" lang="<?php echo get_html_lang(); ?>">
 <head>
-    <link rel="stylesheet" href="css/slider-pro.min.css"/>
+    <link rel="stylesheet" href="themes/WearingGayHistoryTheme/css/slider-pro.min.css"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php if ($description = option('description')): ?>

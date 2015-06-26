@@ -16,12 +16,35 @@
             </div>
         </footer>
     </div><!--end wrap-->
+    <script src="themes/WearingGayHistoryTheme/javascripts/jquery.sliderPro.min.js"></script>
     <script type="text/javascript">
     jQuery(document).ready(function () {
         Omeka.showAdvancedForm();
         Omeka.dropDown();
     });
+
+    jQuery( document ).ready(function( $ ) {
+        $( '#my-slider' ).sliderPro({
+            width: 960,
+            height: 500,
+            arrows: true,
+            buttons: false,
+            waitForLayers: true,
+            thumbnailWidth: 200,
+            thumbnailHeight: 100,
+            thumbnailPointer: true,
+            autoplay: true,
+            autoScaleLayers: false,
+            breakpoints: {
+                500: {
+                    thumbnailWidth: 120,
+                    thumbnailHeight: 50
+                }
+            }
+        });
+    });
     </script>
+    
     <?php
     // Omeka 2 and Bootstrap 3.1.1 use the same jQuery (1.10).
     $config = Zend_Registry::get('bootstrap')->getResource('Config');
