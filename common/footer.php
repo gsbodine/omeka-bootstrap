@@ -25,7 +25,7 @@
 
     jQuery( document ).ready(function( $ ) {
         $( '#my-slider' ).sliderPro({
-            width: 960,
+            width: 1500,
             height: 500,
             arrows: true,
             buttons: false,
@@ -34,7 +34,7 @@
             thumbnailHeight: 100,
             thumbnailPointer: true,
             autoplay: true,
-            autoScaleLayers: false,
+            autoScaleLayers: true,
             breakpoints: {
                 500: {
                     thumbnailWidth: 120,

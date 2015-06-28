@@ -27,6 +27,9 @@ background-color: #f8f8f8;
 background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squares.png);
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+#tagline, #tagline-author {
+  text-align: center;
+}
 .lead {
   font-size: 18px;
   font-family: 'Lato';
@@ -37,6 +40,12 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   margin-top: 25px;
   padding: 30px;
   border: thin solid #e8e8e8;
+}
+.home-features {
+  margin: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
+  border-top:thin solid #e8e8e8 ;
+  
 }
 .meta {
   border-bottom: thin solid #e8e8e8;
