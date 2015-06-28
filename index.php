@@ -67,7 +67,8 @@
     </div><!-- end about-->
     
     <div class="col-md-4"> <!--tag cloud -->
-
+    <h2><?php echo __('Tag Cloud'); ?></h2>
+        <?php echo tag_cloud(get_recent_tags(10), '/items/browse'); ?>
     </div>
 </div>
 
