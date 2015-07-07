@@ -330,3 +330,30 @@ a#advanced-search.button {
 #search-form {
   margin-top: 35px;
 }
+
+/******TAGS*******/
+
+.vvvv-popular {
+  font-size: 150%;
+  font-family: 'Didact Gothic';
+}
+.vvvv-popular {
+  font-size: 140%;
+  font-family: 'Didact Gothic';
+}
+.vvv-popular {
+  font-size: 130%;
+  font-family: 'Didact Gothic';
+}
+.vv-popular {
+  font-size: 120%;
+  font-family: 'Didact Gothic';
+}
+.v-popular {
+  font-size: 110%;
+  font-family: 'Didact Gothic';
+}
+.popular {
+  font-size: 100%;
+  font-family: 'Didact Gothic';
+}
