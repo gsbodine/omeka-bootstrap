@@ -29,6 +29,7 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
 }
 #tagline, #tagline-author {
   text-align: center;
+  font-size: 40px;
 }
 .lead {
   font-size: 18px;
@@ -39,6 +40,7 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   background-color: #fff;
   margin-top: 25px;
   padding: 30px;
+  margin-bottom: 45px;
   border: thin solid #e8e8e8;
 }
 .home-features {
@@ -112,6 +114,7 @@ nav {
   background: linear-gradient(to right, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48c5db', endColorstr='#8feeff', GradientType=1 );       
   }
+
 #search-container {
   margin: 10px 0 0 10px;
 }
@@ -330,30 +333,124 @@ a#advanced-search.button {
 #search-form {
   margin-top: 35px;
 }
-
-/******TAGS*******/
-
-.vvvv-popular {
-  font-size: 150%;
-  font-family: 'Didact Gothic';
+/******ITEM PAGE STYLES*******/
+#geolocation {
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
 }
-.vvvv-popular {
+#geolocation > h4 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.comments {
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
+}
+#socialsharing {
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
+}
+#socialsharing > h4 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/******TAGS*******/
+.vvvvvvvv-popular {
   font-size: 140%;
   font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
 }
-.vvv-popular {
+.vvvvvvvv-popular > i {
+  color: #333;
+}
+.vvvvvvv-popular {
+  font-size: 135%;
+  font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
+}
+.vvvvvvv-popular > i {
+  color: #333;
+}
+.vvvvvv-popular {
   font-size: 130%;
   font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
 }
-.vv-popular {
+.vvvvvv-popular > i {
+  color: #333;
+}
+.vvvvv-popular {
+  font-size: 125%;
+  font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
+}
+.vvvvv-popular > i {
+  color: #333;
+}
+.vvvv-popular {
   font-size: 120%;
   font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
 }
-.v-popular {
+.vvvv-popular > i {
+  color: #333;
+}
+.vvv-popular {
+  font-size: 115%;
+  font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
+}
+.vvv-popular > i {
+  color: #333;
+}
+.vv-popular {
   font-size: 110%;
   font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
+}
+.vv-popular > i {
+  color: #333;
+}
+.v-popular {
+  font-size: 105%;
+  font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
+}
+.v-popular > i {
+  color: #333;
 }
 .popular {
   font-size: 100%;
   font-family: 'Didact Gothic';
+  background-color: transparent;
+  border: none;
 }
+.popular > i {
+  color: #333;
+}
+.hTagcloud > .popularity > li {
+  margin-bottom: 0px;
+  padding: 7px 7px 7px 7px;
+
+}
+.hTagcloud > .popularity > li:hover {
+  margin-bottom: 0px;
+  background-color: #ddd;
+}
+.popularity, #tagcloud {
+  padding-left: 10px;
+}
+footer {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #e8e8e8;
+}
+

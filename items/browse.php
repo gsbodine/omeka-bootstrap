@@ -94,7 +94,7 @@ echo head(array(
             <div class="col-sm-3 col-md-3">
                 <?php if (metadata($item,'has tags')): ?>
                 <div class="browse-items-tags well well-sm">
-                    <p><i class="icon-tags"></i> <strong><?php echo __('Tags'); ?></strong></p>
+                    <p><i class="fa fa-tag"></i> <strong><?php echo __('Tags'); ?></strong></p>
                     <?php echo tag_string($item); ?>
                 </div>
                 <?php endif; ?>

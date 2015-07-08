@@ -8,7 +8,7 @@ echo head(array(
 ?>
 <div id="primary">
     <div class="page-title">
-        <h1><i class="icon-tags"></i> <?php echo $pageTitle; ?> <small><?php echo __('By Current Tags'); ?></small></h1>
+        <h1><?php echo $pageTitle; ?> <small><?php echo __('By Current Tags'); ?></small></h1>
     </div>
     <div class="col-sm-12 col-md-12">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>

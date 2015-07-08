@@ -50,9 +50,9 @@
 </div> <!--end slider row-->
 
 
-<div class="row home-features"> <!-- start tagline -->
+<div class="row home-features" id="home-tagline"> <!-- start tagline -->
     <div class="col-md-12">
-        <h1 id="tagline">"If you want to have clean ideas, change them as often as your shirt."  -Francis Picabia</h1>
+        <h1 id="tagline">A Digital Archive of Historical LGBT T-Shirts</h1>
 
     </div>
 </div>
@@ -67,7 +67,7 @@
     </div><!-- end about-->
     
     <div class="col-md-4"> <!--tag cloud -->
-    <h2><?php echo __('Tag Cloud'); ?></h2>
+    <h2 id="tagcloud"><?php echo __('Tag Cloud'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(10), '/items/browse', 9); ?>
     </div>
 </div>
