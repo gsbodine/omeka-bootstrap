@@ -236,6 +236,9 @@ ul#secondary-nav{
   font-weight: 500;
 
 }
+h1 > .exhibit-page {
+  padding-left: 15px;
+}
 
 /********BROWSE PAGE STYLES*********/
 .item-title > h3 {
