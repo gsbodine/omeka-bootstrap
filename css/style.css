@@ -239,6 +239,28 @@ ul#secondary-nav{
 h1 > .exhibit-page {
   padding-left: 15px;
 }
+#exhibit-pages ul {
+  padding-left: 0px;
+  list-style-type: none;
+  margin-left: 0 !important;
+}
+#exhibit-pages ul > li {
+  padding: 5px;
+  padding-left: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 5px 0 5px 0;
+}
+
+#exhibit-pages ul > li:hover {
+  background-color: #eee;
+}
+#exhibit-pages {
+  border-left: solid 1px #eee;
+}
+#exhibit-pages > h4 {
+  padding-left: 10px;
+}
 
 /********BROWSE PAGE STYLES*********/
 .item-title > h3 {
