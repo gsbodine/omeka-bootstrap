@@ -66,7 +66,7 @@
               </button>
 
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
                 <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav')?>
             
             <ul class="nav navbar-nav">
