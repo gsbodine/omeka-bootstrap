@@ -9,10 +9,7 @@
                     <p><?php echo $copyright; ?></p>
                 <?php endif; ?>
             </div>
-            <div class="pull-left">
-            <a href="#"><i class="fa fa-2x fa-twitter"></i></a>
-            </div>
-            <div class="pull-right">
+            <div class="omeka-props-footer pull-right">
                 <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
             </div>
             <div>
