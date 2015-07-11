@@ -34,7 +34,7 @@
                     <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
                         <p class="lead"><?php echo $itemDescription; ?></p>
                     <?php else: ?>
-                        <h4>Description</h4>
+                        
                         <p class="alert"><strong>Sorry!</strong> No description recorded yet.</p>
                     <?php endif; ?>
                 </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-md-4">
                 <!-- Item Creator Information -->
-                    <h4><i class="fa fa-user fa-lg"></i> Author: </h4>
+                    <h4><i class="fa fa-user fa-lg"></i> Creator: </h4>
                     <div>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
                         <?php echo $itemCreator; ?>
@@ -86,14 +86,35 @@
                     
                 </div>
             </div>
-            
+            <div class="row"><hr />
+                <!-- Identifier -->
+                <div class="col-md-4">
+                    <h4><i class="fa fa-bookmark fa-lg"></i><?php echo __(' Identifier'); ?></h4>
+                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Identifier'))): ?>
+                        <?php echo $itemCreator; ?>
+                    <?php else: ?>
+                        None recorded.
+                    <?php endif; ?>
+                </div>
+                <!-- Contributor -->
+                <div class="col-md-4">
+                    <h4><i class="fa fa-university fa-lg"></i><?php echo __(' Contributor'); ?></h4>
+                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Contributor'))): ?>
+                        <?php echo $itemCreator; ?>
+                    <?php else: ?>
+                        None recorded.
+                    <?php endif; ?>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
             <!-- If the item belongs to a collection, the following creates a link to that collection. -->
             
                 
             <!-- The following prints a list of all tags associated with the item -->
             <div class="row">
                 <div class="col-md-12">
-                    <hr />
+                                    <hr />
                     <h4><i class="fa fa-tags fa-large"></i> Tags</h4>
                     <div class="tags well well-small">
                         <?php if (tag_string($item) != null) {
@@ -106,6 +127,18 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Rights -->
+                    <div class="col-md-12"><hr />
+                        <h4><i class="fa fa-copyright fa-lg"></i><?php echo __(' Rights'); ?></h4>
+                        <?php if ($itemCreator = metadata($item,array('Dublin Core','Rights'))): ?>
+                            <?php echo $itemCreator; ?>
+                        <?php else: ?>
+                            None recorded.
+                        <?php endif; ?>
+                    </div>
+            </div>
+            
+             <div class="row">
                 <div class="col-md-12">
                     <hr />
                     <!-- The following prints a citation for this item. -->
