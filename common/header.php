@@ -67,9 +67,15 @@
 
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav navbar-right')?>
-                
+                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav')?>
+            
+            <ul class="nav navbar-nav">
+                <li><a href="https://twitter.com/WearingGayHist"  target="__blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+            </ul>
+            
             </div>
+            
+            
         </nav>
         </div>
         <div class="container" id="wrapper">

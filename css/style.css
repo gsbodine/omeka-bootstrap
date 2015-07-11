@@ -148,6 +148,9 @@ a:hover {
 .pager > ul {
   padding-left: 0;
 }
+.navbar-ex1-collapse {
+  float: right;
+}
 /**********Exhibit STYLES**************/
 /*#secondary-nav {
   margin-left: 0;
