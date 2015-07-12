@@ -1,10 +1,10 @@
-Omeka Bootstrap
+Wearing Gay History Omeka Bootstrap Theme
 ===============
 
 An Omeka theme based on the popular [Twitter Bootstrap](http://twitter.github.io/bootstrap/) front-end framework.
 
-This theme was originally developed for (and alongside) the [Crowd-Ed plugin](http://github.com/gsbodine/crowd-ed).
+This theme was cloned from Daniel-KM's [version](https://github.com/Daniel-KM/omeka-bootstrap) of Omeka-Bootstrap and Gerald Bodine's [Bootstrap theme](https://github.com/gsbodine/omeka-bootstrap) which was originally developed for the [Martha Berry Digital Archive](https://mbda.berry.edu) site.
 
-The original outcome of this theme (based on Bootstrap 2.3.2 and running on Omeka 2.0.x) is viewable on the [Martha Berry Digital Archive](https://mbda.berry.edu) site.
+This theme was moved to Bootstrap 3.3.1 and the [Codrops Animated Responsive Image Grid](https://github.com/codrops/AnimatedResponsiveImageGrid) was added to the homepage for use on the [Wearing Gay History Digital Archive](http://www.wearinggayhistory.com).
 
-Work has just begun on making a more genericized version based on Bootstrap 3.
+
