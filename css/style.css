@@ -36,6 +36,7 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   font-family: 'Lato';
   font-weight: 200;
 }
+
 #wrapper {
   background-color: #fff;
   margin-top: 25px;
@@ -80,15 +81,20 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   border: solid 1px #eee;
   padding: 3px;
 }
-#featured-item > h2  {
+/*#featured-item > h2  {
   font-size: 25px;
+}*/
+.exhibit.record > a > img {
+  float: left;
+  height: 125px;
+  margin-right: 20px;
 }
 #featured-item > .item.record > h3 {
   font-size: 21px;
 }
-#featured-exhibit > h2{
+/*#featured-exhibit > h2{
   font-size: 25px;
-}
+}*/
 #recent-items > h2{
   font-size: 25px;
 }
