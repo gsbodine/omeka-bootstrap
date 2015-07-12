@@ -1,10 +1,11 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
 <div class="row"><!--start sliderrow-->
-    <div class="col-md-12">  
-        <div class="slider-pro " id="my-slider">
-            <div class="sp-slides">
-                <?php $items = get_random_featured_items('5', true); ?>
+    <div class="col-md-offset-1 col-md-10 col-md-offset-1">  
+        <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
+            <img class="ri-loading-image" src="images/loading.gif"/>
+            <ul>
+                <?php $items = get_random_featured_items('100', true); ?>
 
                 <?php if ($items): ?>
                       
@@ -13,41 +14,21 @@
                 $title = metadata($item, array('Dublin Core', 'Title'));
                 $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));
                 ?>   
-                <div class="sp-slide">
-                    <!-- Get the image -->
-                    <?php if (metadata($item, 'has thumbnail')) {
+                <li><?php if (metadata($item, 'has thumbnail')) {
                         echo link_to_item(
-                            item_image('fullsize', array('class' => 'sp-image'), 0, $item),
+                            item_image('square_thumbnail', array('class' => ''), 0, $item),
                             array('class' => 'image'), 'show', $item
                         );
                     }
-                    ?>
-                </div> <!--close sp-slide -->
+                    ?></li>
                 <?php endforeach; ?>
-                    <div class="sp-thumbnails">
-                    <?php foreach ($items as $item2): ?>  
-                    <?php
-                     $title2 = metadata($item2, array('Dublin Core', 'Title'));
-                    $description2 = metadata($item2, array('Dublin Core', 'Description'), array('snippet' => 150));
-                    ?>
+                 <?php endif; ?>   
 
-                    <div class="sp-thumbnail">
-                        <div class="sp-thumnail-title"><?php echo link_to($item2, 'show', strip_formatting($title2)); ?></div>
-                        <?php if ($description2): ?>
-                        <div class="sp-thumbnail-description"><?php echo $description2; ?></div>
-                    </div>
-                            
-                     <?php endif; ?>   
-                    <?php endforeach; ?>
-
-                <?php else: ?>
-                    <p><?php echo __('No featured items are available.'); ?></p>
-                <?php endif; ?>
-                 </div>
-            </div> <!-- close sp-slides -->
-        </div> <!-- close slider-pro -->
-    </div>      
-</div> <!--end slider row-->
+                
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 <div class="row home-features" id="home-tagline"> <!-- start tagline -->
@@ -59,16 +40,21 @@
 
 
 <div class="row home-features"> <!-- start about & tag cloud -->
-    <div class="col-md-8"> <!--about-->
-        <?php if (get_theme_option('Homepage Text')): ?>
-            <p><?php echo get_theme_option('Homepage Text'); ?></p>
-        <?php endif; ?>
-        <?php fire_plugin_hook('public_content_top', array('view' => $this)); ?>
+    <div class="col-md-4 home-stories"> <!--about-->
+        <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
+            && plugin_is_active('ExhibitBuilder')
+            && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
+        <!-- Featured Exhibit -->
+            <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
+        <?php endif; ?> 
     </div><!-- end about-->
     
-    <div class="col-md-4"> <!--tag cloud -->
-    <h2 id="tagcloud"><?php echo __('Tag Cloud'); ?></h2>
+    <div class="col-md-4 home-themes"> <!--tag cloud -->
+    <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(10), '/items/browse', 9); ?>
+    </div>
+    <div class="col-md-4 home-map">
+    <h2>Map</h2>
     </div>
 </div>
 

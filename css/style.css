@@ -80,8 +80,13 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   border: solid 1px #eee;
   padding: 3px;
 }
-#featured-item > h2  {
+/*#featured-item > h2  {
   font-size: 25px;
+}*/
+.exhibit.record > a > img {
+  float: left;
+  height: 125px;
+  margin-right: 20px;
 }
 #featured-item > .item.record > h3 {
   font-size: 21px;
