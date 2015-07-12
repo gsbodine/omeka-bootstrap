@@ -165,7 +165,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="bottompagination">
             <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>

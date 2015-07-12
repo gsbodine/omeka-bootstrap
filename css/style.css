@@ -23,6 +23,8 @@ body, p {
   line-height: 25px;
 }
 body {
+  font-family: 'Lato';
+  font-weight: 300;
 background-color: #f8f8f8;
 background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squares.png);
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -58,16 +60,29 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   padding: 15px 15px;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-  background-color: #a0c263;
+  background-color: #196371;
 }
 .label-primary {
-  background-color: #a0c263;
+  background-color: #48C5DB;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+.label-primary[href]:hover{
+  background-color: #196371;
 }
 .previous >a, .next > a {
   padding: 3px 10px 3px 10px !important;
   font-size: 13px;
 }
-
+.pagination>.active>span{
+  background-color: #196371;
+}
+#bottompagination{
+  margin-top: 20px;
+}
+#comments-container {
+  font-family: 'Lato';
+}
 /********HOMEPAGE FEATURED ITEMS*********/
 #featured-row {
   border-top: 3px green solid;
