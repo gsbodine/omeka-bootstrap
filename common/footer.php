@@ -24,6 +24,18 @@
         Omeka.showAdvancedForm();
         Omeka.dropDown();
     });
+    jQuery(document).ready(function () {
+        //$(".nav")
+       $(".nav li:has(ul)").addClass("dropdown");
+        $(".nav ul").addClass("dropdown-menu");
+        $(".dropdown a").addClass("top-level")
+        $( ".dropdown a:first" ).replaceWith( '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></a>' );
+        $(".dropdown a").setAttribute("data-toggle","dropdown");
+        $(".dropdown a").setAttribute("role","button");
+        $(".dropdown a").setAttribute("aria-haspopup","true");
+        $(".dropdown a").setAttribute("aria-expanded","false");
+    });
+    
     </script>
     
     
