@@ -55,7 +55,7 @@
     </div>
     <div class="col-md-4 home-map">
     <h2>Map</h2>
-    <a href="http://www.wearinggayhistory.com/geolocation/map/browse"> <img src='http://localhost:8888/wgh/themes/WearingGayHistoryTheme/images/mapimg.jpg' style="width:290;"/></a>
+    <a href="http://www.wearinggayhistory.com/geolocation/map/browse"> <img src='http://localhost:8888/wgh/themes/WearingGayHistoryTheme/images/mapimg.jpg' style="width:290px;"/></a>
     </div>
 </div>
 
