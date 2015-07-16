@@ -43,6 +43,7 @@
     echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+    <?php include_once("analyticstracking.php") ?>
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
     <?php if ($temp_banner) : ?>
    
