@@ -180,6 +180,15 @@ a:hover {
 #logo {
   margin: 10px 0 10px 65px;
 }
+@media only screen and (max-width: 768px)  {
+  #logo {
+    margin: 10px 0 10px 0px;
+    width:80%;
+  }
+  #logoimg > a > img{
+    width: 350px;
+  }
+}
 #home-intro {
   border-bottom: orange 3px solid;
 }

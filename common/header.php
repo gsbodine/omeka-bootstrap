@@ -59,7 +59,7 @@
         
     <div class="container" id="logo">
         <div class="row">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12" id="logoimg">
         <?php echo link_to_home_page(theme_logo()); ?>
         </div>
         </div>
