@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html class="<?php echo get_theme_option('Style Sheet'); ?>" lang="<?php echo get_html_lang(); ?>">
 <head>
-    <link rel="stylesheet" type="text/css" href="themes/WearingGayHistoryTheme/css/mosaic-style.css" />
+    <?php
+        if(is_current_url('/')) { 
+            echo '<link rel="stylesheet" type="text/css" href="themes/WearingGayHistoryTheme/css/mosaic-style.css" />';
+        }
+        ?>
+    
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +40,7 @@
     queue_css_file('style');
     echo head_css();
     ?>
+    
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JavaScripts -->
     <?php queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu')); ?>
