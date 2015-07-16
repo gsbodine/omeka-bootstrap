@@ -38,6 +38,8 @@
     ?>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JavaScripts -->
+    <?php queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu')); ?>
+    <?php echo head_js(); ?>
     <?php // see footer for bootstrap-related js...
     queue_js_file('globals');
     echo head_js(); ?>
