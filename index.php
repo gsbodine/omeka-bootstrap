@@ -40,7 +40,7 @@
 
 
 <div class="row home-features"> <!-- start about & tag cloud -->
-    <div class="col-md-4 home-stories"> <!--about-->
+    <div class="col-md-4 col-sm-12 home-stories"> <!--about-->
         <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
             && plugin_is_active('ExhibitBuilder')
             && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
@@ -49,13 +49,13 @@
         <?php endif; ?> 
     </div><!-- end about-->
     
-    <div class="col-md-4 home-themes"> <!--tag cloud -->
+    <div class="col-md-4 col-sm-12 home-themes"> <!--tag cloud -->
     <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(10), '/items/browse', 9); ?>
     </div>
-    <div class="col-md-4 home-map">
+    <div class="col-md-4 col-sm-12 home-map">
     <h2>Map</h2>
-    <a href="http://www.wearinggayhistory.com/geolocation/map/browse"> <img src='http://localhost:8888/wgh/themes/WearingGayHistoryTheme/images/mapimg.jpg' style="width:290px;"/></a>
+    <a href="http://www.wearinggayhistory.com/geolocation/map/browse"> <img src='http://wearinggayhistory.com/themes/WearingGayHistoryTheme/images/mapimg.jpg' style="width:290px;"/></a>
     </div>
 </div>
 
