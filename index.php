@@ -3,7 +3,7 @@
 <div class="row"><!--start sliderrow-->
     <div class="col-md-offset-1 col-md-10 col-md-offset-1">  
         <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
-            <img class="ri-loading-image" src="images/loading.gif"/>
+            <img class="ri-loading-image" src="themes/WearingGayHistoryTheme/images/loading.gif"/>
             <ul>
                 <?php $items = get_random_featured_items('100', true); ?>
 

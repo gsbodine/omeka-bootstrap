@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="<?php echo get_theme_option('Style Sheet'); ?>" lang="<?php echo get_html_lang(); ?>">
 <head>
-    <link rel="stylesheet" href="themes/WearingGayHistoryTheme/css/slider-pro.min.css"/>
     <link rel="stylesheet" type="text/css" href="themes/WearingGayHistoryTheme/css/mosaic-style.css" />
     
     <meta charset="utf-8">
