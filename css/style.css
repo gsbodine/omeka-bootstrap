@@ -89,6 +89,17 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
 .staffimgs {
   margin-top: 20px;
 }
+.panel-group {
+  padding-top: 20px;
+}
+.staff {
+  border-bottom: solid 1px #ddd;
+  margin-bottom: 10px;
+}
+.about-img {
+  padding-left: 20px;
+  float: right;
+}
 /********HOMEPAGE FEATURED ITEMS*********/
 #featured-row {
   border-top: 3px green solid;
