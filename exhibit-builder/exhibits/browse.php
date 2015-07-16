@@ -25,7 +25,8 @@ echo head(array(
 <?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
-    <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
+    <div class="row">
+    <div class="exhibit col-md-12 <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
         <h2><?php echo link_to_exhibit(); ?></h2>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
         <div class="description"><?php echo $exhibitDescription; ?></div>
@@ -33,6 +34,7 @@ echo head(array(
         <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
         <p class="tags"><?php echo $exhibitTags; ?></p>
         <?php endif; ?>
+    </div>
     </div>
 <?php endforeach; ?>
 
