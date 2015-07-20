@@ -30,13 +30,12 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 1px;
 }
 body, p {
-  /*font-family: 'Lato' !important;*/
   font-weight: 200;
   font-size: 15px;
   line-height: 25px;
 }
 body {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
 background-color: #f8f8f8;
 background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squares.png);
