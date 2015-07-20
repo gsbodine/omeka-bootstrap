@@ -5,6 +5,25 @@
     Description: Main style sheet for the Wearing Gay History Omeka Bootstrap Theme.
 */
 
+.floatright {
+  float: right;
+  margin: 10px 35px 10px 40px;
+  padding-bottom: 0px;
+
+}
+.floatright img {
+  margin-bottom: 0px;
+  margin-top: 15px;
+  padding: 2px;
+  
+}
+.floatright figcaption {
+  font-family: 'Quattrocento Sans';
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  text-align: center;
+}
 
 
 
