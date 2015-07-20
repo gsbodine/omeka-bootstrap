@@ -11,18 +11,12 @@
   padding-bottom: 0px;
 
 }
-.floatright img {
-  margin-bottom: 0px;
-  margin-top: 15px;
-  padding: 2px;
-  
-}
-.floatright figcaption {
-  font-family: 'Quattrocento Sans';
+.caption {
+  float: right;
+  clear: right;
+  width: 430px;
   font-size: 12px;
-  padding-top: 8px;
-  padding-bottom: 10px;
-  text-align: center;
+  line-height: 15px;
 }
 
 
