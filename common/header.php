@@ -42,6 +42,7 @@
     ?>
     
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Didact+Gothic' rel='stylesheet' type='text/css'>
     <!-- JavaScripts -->
     <?php queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu')); ?>
     <?php echo head_js(); ?>
