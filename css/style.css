@@ -490,7 +490,7 @@ a#advanced-search.button {
 }
 .hTagcloud > .popularity > li {
   margin-bottom: 0px;
-  padding: 7px 7px 7px 7px;
+  padding: 3px 5px 3px 5px;
 
 }
 .hTagcloud > .popularity > li:hover {

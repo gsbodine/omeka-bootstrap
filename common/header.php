@@ -82,6 +82,7 @@
             
             <ul class="nav navbar-nav">
                 <li><a href="https://twitter.com/WearingGayHist"  target="__blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/Wearinggayhistory"  target="__blank"><i class="fa fa-lg fa-facebook"></i></a></li>
             </ul>
             
             </div>
