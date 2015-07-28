@@ -51,7 +51,7 @@
     
     <div class="col-md-4 col-sm-12 home-themes"> <!--tag cloud -->
     <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
-        <?php echo tag_cloud(get_recent_tags(20), '/items/browse', 9); ?>
+        <?php echo tag_cloud(get_recent_tags(15), '/items/browse', 9); ?>
         <a style="margin-left:10px;" href="http://www.wearinggayhistory.com/items/tags" class="btn btn-default">View More</a>
     </div>
     <div class="col-md-4 col-sm-12 home-map">
