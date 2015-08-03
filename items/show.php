@@ -87,6 +87,15 @@
                 </div>
             </div>
             <div class="row"><hr />
+                <!-- Subject -->
+                <div class="col-md-4">
+                     <h4><i class="fa fa-book fa-lg"></i><?php echo __(' Subject'); ?></h4>
+                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Subject'))): ?>
+                        <?php echo $itemCreator; ?>
+                    <?php else: ?>
+                        None recorded.
+                    <?php endif; ?>
+                </div>
                 <!-- Identifier -->
                 <div class="col-md-4">
                     <h4><i class="fa fa-bookmark fa-lg"></i><?php echo __(' Identifier'); ?></h4>
@@ -104,8 +113,6 @@
                     <?php else: ?>
                         None recorded.
                     <?php endif; ?>
-                </div>
-                <div class="col-md-4">
                 </div>
             </div>
             <!-- If the item belongs to a collection, the following creates a link to that collection. -->
