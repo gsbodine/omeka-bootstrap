@@ -37,7 +37,7 @@
         queue_css_file('bootstrap.min');
     }
     else {
-        queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
+        queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     }
     queue_css_file('style');
     echo head_css();

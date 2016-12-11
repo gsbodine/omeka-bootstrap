@@ -27,7 +27,7 @@
     </script>
 
     <?php
-    // Omeka 2 and Bootstrap 3.1.1 use the same jQuery (1.10).
+    // Omeka 2.4 and Bootstrap 3.3.7 use the same jQuery (1.12).
     $config = Zend_Registry::get('bootstrap')->getResource('Config');
     $useInternalAssets = isset($config->theme->useInternalAssets)
        ? (bool) $config->theme->useInternalAssets
@@ -40,7 +40,7 @@
     <?php if (get_theme_option('Use Internal Bootstrap') == '1') :?>
     <script src="<?php echo src('bootstrap.min', 'javascripts', 'js'); ?>"></script>
     <?php else: ?>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
     <?php if(is_current_url('/')):
