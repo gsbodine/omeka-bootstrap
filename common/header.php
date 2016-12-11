@@ -3,7 +3,7 @@
 <head>
     <?php
         if(is_current_url('/')) {
-            echo '<link rel="stylesheet" type="text/css" href="themes/WearingGayHistoryTheme/css/mosaic-style.css" />';
+            echo '<link rel="stylesheet" type="text/css" href="' . css_src('mosaic-style') . '" />';
         }
         ?>
 

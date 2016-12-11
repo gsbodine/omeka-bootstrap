@@ -1,19 +1,19 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
 <div class="row"><!--start sliderrow-->
-    <div class="col-md-offset-1 col-md-10 col-md-offset-1">  
+    <div class="col-md-offset-1 col-md-10 col-md-offset-1">
         <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
-            <img class="ri-loading-image" src="themes/WearingGayHistoryTheme/images/loading.gif"/>
+            <img class="ri-loading-image" src="<?php echo src('images/loading.gif'); ?>"/>
             <ul>
                 <?php $items = get_random_featured_items('100', true); ?>
 
                 <?php if ($items): ?>
-                      
+
                 <?php foreach ($items as $item): ?>
                 <?php
                 $title = metadata($item, array('Dublin Core', 'Title'));
                 $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));
-                ?>   
+                ?>
                 <li><?php if (metadata($item, 'has thumbnail')) {
                         echo link_to_item(
                             item_image('square_thumbnail', array('class' => ''), 0, $item),
@@ -22,9 +22,9 @@
                     }
                     ?></li>
                 <?php endforeach; ?>
-                 <?php endif; ?>   
+                 <?php endif; ?>
 
-                
+
             </ul>
         </div>
     </div>
@@ -46,9 +46,9 @@
             && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
         <!-- Featured Exhibit -->
             <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-        <?php endif; ?> 
+        <?php endif; ?>
     </div><!-- end about-->
-    
+
     <div class="col-md-4 col-sm-12 home-themes"> <!--tag cloud -->
     <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(15), '/items/browse', 9); ?>

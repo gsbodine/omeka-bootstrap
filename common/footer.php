@@ -43,10 +43,9 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
-    <?php if(is_current_url('/')) {
-    echo '<script src="themes/WearingGayHistoryTheme/javascripts/modernizr.custom.26633.js"></script>';
-    echo '<script src="themes/WearingGayHistoryTheme/javascripts/jquery.gridrotator.js"></script>';
-    }
+    <?php if(is_current_url('/')):
+    echo js_tag('modernizr.custom.26633');
+    echo js_tag('jquery.gridrotator');
     ?>
      <script type="text/javascript">
                jQuery(document).ready(function() {
@@ -79,5 +78,6 @@
                 } );
             });
         </script>
+    <?php endif; ?>
 </body>
 </html>
