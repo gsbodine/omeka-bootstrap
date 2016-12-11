@@ -30,9 +30,6 @@
     <?php fire_plugin_hook('public_head', array('view' => $this)); ?>
 
     <!-- Stylesheets -->
-    <?php if ($temp_banner = get_theme_option('temp banner text')) {
-        queue_css_file('beta');
-    } ?>
     <?php if (get_theme_option('Use Internal Bootstrap') == '1') {
         queue_css_file('bootstrap.min');
         queue_css_file('font-awesome.min');
@@ -42,6 +39,13 @@
     }
     queue_css_url('//fonts.googleapis.com/css?family=Lato:300,400,700|Didact+Gothic');
     queue_css_file('style');
+    $displayBanner = get_theme_option('Display Corner Banner');
+    if ($displayBanner) {
+        queue_css_file('corner-banner');
+    }
+    if (get_theme_option('Display Grid Rotator') && is_current_url('/')) {
+        queue_css_file('mosaic-style');
+    }
     echo head_css();
     ?>
 
