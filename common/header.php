@@ -80,12 +80,19 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
                 <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav')?>
-
-            <ul class="nav navbar-nav">
-                <li><a href="https://twitter.com/WearingGayHist"  target="__blank"><i class="fa fa-lg fa-twitter"></i></a></li>
-                <li><a href="https://www.facebook.com/Wearinggayhistory"  target="__blank"><i class="fa fa-lg fa-facebook"></i></a></li>
-            </ul>
-
+                <?php
+                $twitter = get_theme_option('Link Twitter');
+                $facebook = get_theme_option('Link Facebook');
+                if ($twitter || $facebook): ?>
+                <ul class="nav navbar-nav">
+                    <?php if ($twitter): ?>
+                    <li><a href="<?php echo $twitter; ?>" target="__blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($facebook): ?>
+                    <li><a href="<?php echo $facebook; ?>" target="__blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+                    <?php endif; ?>
+                </ul>
+                <?php endif; ?>
             </div>
 
         </nav>
