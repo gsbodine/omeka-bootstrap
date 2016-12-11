@@ -30,7 +30,7 @@ echo head(array(
                         <div class="col-sm-2 col-md-2">
                             <?php if (metadata('collection',array('Dublin Core', 'Contributor'))): ?>
                             <div class="element well well-sm">
-                                <p><i class="icon-user"></i> <strong><?php echo __('Collector(s)'); ?></strong></p>
+                                <p><span class="glyphicon glyphicon-user"></span> <strong><?php echo __('Collector(s)'); ?></strong></p>
                                 <div class="element-text">
                                     <p><?php echo metadata('collection',array('Dublin Core', 'Contributor')); ?></p>
                                 </div>

@@ -6,7 +6,7 @@ echo head(array('title' => $pageTitle,
 ));
 ?>
 <div id="primary">
-    <h1><i class="icon-search"></i> <?php echo $pageTitle; ?></h1>
+    <h1><i class="glyphicon glyphicon-search"></i> <?php echo $pageTitle; ?></h1>
 
     <nav class="items-nav navigation" id="secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>

@@ -94,11 +94,11 @@ $formAttributes['method'] = 'GET';
                                     array('name' => "advanced[$i][terms]",
                                         'size' => 20),
                                     @$rows['terms']); ?>
-                                <button type="button" class="remove_search btn btn-danger btn-sm" disabled="disabled" style="display: none;"><i class="icon-minus-sign icon-white"></i> Remove Field</button>
+                                <button type="button" class="remove_search btn btn-danger btn-sm" disabled="disabled" style="display: none;"><span class="glyphicon glyphicon-minus-sign icon-white"></span><?php echo __('Remove Field'); ?></button>
                             </div>
                         <?php endforeach; ?>
                         </div>
-                        <button type="button" class="add_search btn btn-info btn-sm"><i class="icon-plus-sign icon-white"></i> <?php echo __('Add a Field'); ?></button>
+                        <button type="button" class="add_search btn btn-info btn-sm"><span class="glyphicon glyphicon-plus-sign icon-white"></span> <?php echo __('Add a Field'); ?></button>
                     </div>
                 </div>
             </div>
