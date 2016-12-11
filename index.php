@@ -22,22 +22,19 @@
                     }
                     ?></li>
                 <?php endforeach; ?>
-                 <?php endif; ?>
 
+                <?php endif; ?>
 
             </ul>
         </div>
     </div>
 </div>
 
-
 <div class="row home-features" id="home-tagline"> <!-- start tagline -->
     <div class="col-md-12">
-        <h1 id="tagline">A Digital Archive of Historical LGBT T-Shirts</h1>
-
+        <h1 id="tagline"><?php echo option('site_title'); ?></h1>
     </div>
 </div>
-
 
 <div class="row home-features"> <!-- start about & tag cloud -->
     <div class="col-md-4 col-sm-12 home-stories"> <!--about-->
@@ -52,20 +49,13 @@
     <div class="col-md-4 col-sm-12 home-themes"> <!--tag cloud -->
     <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(15), '/items/browse', 9); ?>
-        <a style="margin-left:10px;" href="http://www.wearinggayhistory.com/items/tags" class="btn btn-default">View More</a>
+        <a style="margin-left:10px;" href="<?php echo url('items/tags'); ?>" class="btn btn-default">View More</a>
     </div>
+    <?php if (plugin_is_active('Geolocation')): ?>
     <div class="col-md-4 col-sm-12 home-map">
     <h2>Map</h2>
-    <a href="http://www.wearinggayhistory.com/geolocation/map/browse"> <img src='http://wearinggayhistory.com/themes/WearingGayHistoryTheme/images/mapimg.jpg' style="width:290px;"/></a>
+    <a href="<?php echo url('geolocation/map/browse'); ?>"> <?php echo __('Display Geolocation Map.'); ?></a>
     </div>
+    <?php endif; ?>
 </div>
-
-
-
-
-
-
-
-
-
-<?php echo foot(); ?>
+<?php echo foot();
