@@ -44,7 +44,7 @@
     <?php endif; ?>
 
     <?php if(is_current_url('/')):
-    echo js_tag('modernizr.custom.26633');
+    echo js_tag('modernizr-custom');
     echo js_tag('jquery.gridrotator');
     ?>
      <script type="text/javascript">
