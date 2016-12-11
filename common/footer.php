@@ -43,7 +43,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
-    <?php if(is_current_url('/')):
+    <?php if(is_current_url('/')): ?>
+    <?php if (get_theme_option('Display Grid Rotator')):
     echo js_tag('modernizr-custom');
     echo js_tag('jquery.gridrotator');
     ?>
@@ -78,6 +79,7 @@
                 } );
             });
         </script>
+    <?php endif; ?>
     <?php endif; ?>
 </body>
 </html>

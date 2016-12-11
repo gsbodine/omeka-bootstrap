@@ -1,34 +1,23 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
+<?php if (get_theme_option('Display Grid Rotator')): ?>
 <div class="row"><!--start sliderrow-->
     <div class="col-md-offset-1 col-md-10 col-md-offset-1">
         <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
             <img class="ri-loading-image" src="<?php echo src('images/loading.gif'); ?>"/>
             <ul>
                 <?php $items = get_random_featured_items('100', true); ?>
-
-                <?php if ($items): ?>
-
                 <?php foreach ($items as $item): ?>
-                <?php
-                $title = metadata($item, array('Dublin Core', 'Title'));
-                $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));
-                ?>
-                <li><?php if (metadata($item, 'has thumbnail')) {
-                        echo link_to_item(
-                            item_image('square_thumbnail', array('class' => ''), 0, $item),
-                            array('class' => 'image'), 'show', $item
-                        );
-                    }
-                    ?></li>
+                <li><?php
+                    echo link_to_item(
+                        item_image('square_thumbnail', array('class' => ''), 0, $item),
+                        array('class' => 'image'), 'show', $item); ?></li>
                 <?php endforeach; ?>
-
-                <?php endif; ?>
-
             </ul>
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 <div class="row home-features" id="home-tagline"> <!-- start tagline -->
     <div class="col-md-12">

@@ -30,7 +30,7 @@
     <?php fire_plugin_hook('public_head', array('view' => $this)); ?>
 
     <!-- Stylesheets -->
-    <?php if (get_theme_option('Use Internal Bootstrap') == '1') {
+    if (get_theme_option('Use Internal Bootstrap')) {
         queue_css_file('bootstrap.min');
         queue_css_file('font-awesome.min');
     } else {
@@ -60,8 +60,10 @@
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
-    <?php if ($temp_banner) : ?>
-
+    <?php if ($displayBanner): ?>
+    <span id="corner-banner">
+        <em><?php echo $displayBanner; ?></em>
+    </span>
     <?php endif; ?>
     <div>
 
