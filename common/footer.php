@@ -10,7 +10,7 @@
                 <?php endif; ?>
             </div>
             <div class="omeka-props-footer pull-right">
-                <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+                <p><?php echo __('Proudly powered by <a href="https://omeka.org">Omeka</a>.'); ?></p>
             </div>
             <div>
                 <?php fire_plugin_hook('public_footer'); ?>
@@ -18,16 +18,14 @@
         </footer>
         </div>
 </div><!--end wrap-->
-    
+
      <script type="text/javascript">
     jQuery(document).ready(function () {
         Omeka.showAdvancedForm();
         Omeka.dropDown();
     });
-    
     </script>
-    
-    
+
     <?php
     // Omeka 2 and Bootstrap 3.1.1 use the same jQuery (1.10).
     $config = Zend_Registry::get('bootstrap')->getResource('Config');
@@ -45,12 +43,12 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
-    <?php if(is_current_url('/')) { 
+    <?php if(is_current_url('/')) {
     echo '<script src="themes/WearingGayHistoryTheme/javascripts/modernizr.custom.26633.js"></script>';
     echo '<script src="themes/WearingGayHistoryTheme/javascripts/jquery.gridrotator.js"></script>';
     }
     ?>
-     <script type="text/javascript">             
+     <script type="text/javascript">
                jQuery(document).ready(function() {
                     $( '#ri-grid' ).gridrotator( {
                     rows : 3,
@@ -79,7 +77,6 @@
                         columns : 3
                     },
                 } );
-            
             });
         </script>
 </body>
