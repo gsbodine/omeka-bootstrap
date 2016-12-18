@@ -174,7 +174,10 @@ a:hover {
   margin-top: 0;
 }
 .page-header > h1 {
-  margin-top: 10px;
+  margin-top: 0;
+}
+.page-header h1 {
+  margin-top: 0;
 }
 .pager {
   margin-top: 0;

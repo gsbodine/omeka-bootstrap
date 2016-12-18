@@ -7,7 +7,7 @@ echo head(array(
 ?>
 <div id="primary">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
@@ -18,9 +18,9 @@ echo head(array(
             </nav>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1>
         </div>
     </div>
 <?php if ($selectedMetadata = get_theme_option('Display Preselected Metadata')):
@@ -32,28 +32,28 @@ else:
     <div class="row">
         <div class="col-md-6">
             <div class="row">
-            <div class="col-md-12">
-                <?php echo all_element_texts('item'); ?>
-            </div>
+                <div class="col-xs-12">
+                    <?php echo all_element_texts('item'); ?>
+                </div>
             </div>
 
             <!-- If the item belongs to a collection, the following creates a link to that collection. -->
             <?php if (get_collection_for_item($item)): ?>
             <div class="row">
-            <div class="col-md-12">
-                <hr />
-                <div id="collection">
-                    <h4 style="display:inline"><span class="glyphicon glyphicon-book"></span> <?php echo __('Collection'); ?>: </h4>
-                    <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
+                <div class="col-xs-12">
+                    <hr />
+                    <div id="collection">
+                        <h4 style="display:inline"><span class="glyphicon glyphicon-book"></span> <?php echo __('Collection'); ?>: </h4>
+                        <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
+                    </div>
                 </div>
-            </div>
             </div>
             <?php endif; ?>
 
             <!-- The following prints a list of all tags associated with the item -->
             <?php // if (metadata('item', 'has tags')): ?>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <hr />
                     <h4><span class="fa fa-tags fa-large"></span> <?php echo __('Tags'); ?></h4>
                     <div class="tags well well-small">
@@ -69,21 +69,21 @@ else:
             <?php // endif; ?>
             <!-- The following prints a citation for this item. -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <hr />
                     <h4><span class="fa fa-retweet fa-lg"></span> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>
             <div class="row">
-                <div id="item-output-formats" class="col-md-12">
+                <div id="item-output-formats" class="col-xs-12">
                     <hr />
                     <h4><span class="glyphicon glyphicon-export"></span> <?php echo __('Output Formats'); ?></h4>
                     <div class="element-text"><?php echo output_format_list(); ?></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <hr />
                     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
                 </div>
@@ -111,7 +111,7 @@ else:
 <?php endif; ?>
     <br />
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>

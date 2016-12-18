@@ -66,12 +66,12 @@
     <div>
     <header id="header" role="banner" class="container">
         <div class="row">
-            <div id="site-title" class="col-sm-6 col-md-6">
+            <div id="site-title" class="col-sm-6">
                 <div class="logoimg">
                     <h1><?php echo link_to_home_page(str_replace('>', ' class="img-responsive">', theme_logo())); ?></h1>
                 </div>
             </div>
-            <div id="search-container" class="col-sm-6 col-md-6" role="search">
+            <div id="search-container" class="col-sm-6" role="search">
                 <?php echo search_form(array(
                     'show_advanced' => get_theme_option('Use Advanced Search'),
                     'submit_value' => __('Search'),

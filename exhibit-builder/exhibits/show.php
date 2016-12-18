@@ -4,26 +4,24 @@ echo head(array(
     'bodyclass' => 'exhibits show',
 ));
 ?>
-<div class="row">
-<div class="col-md-12">
-<h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
-</div>
+<div class="primary">
+<div class="row page-header">
+    <div class="col-xs-12">
+        <h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
+    </div>
 </div>
 <div class="col-md-9">
-
-
-<nav id="exhibit-child-pages">
-    <?php echo exhibit_builder_child_page_nav(); ?>
-</nav>
-
-<div role="main">
-    <?php exhibit_builder_render_exhibit_page(); ?>
-</div>
+    <nav id="exhibit-child-pages">
+        <?php echo exhibit_builder_child_page_nav(); ?>
+    </nav>
+    <div role="main">
+        <?php exhibit_builder_render_exhibit_page(); ?>
+    </div>
 </div>
 <div class="col-md-3">
-<nav id="exhibit-pages">
-    <?php echo exhibit_builder_page_nav(); ?>
-</nav>
+    <nav id="exhibit-pages">
+        <?php echo exhibit_builder_page_nav(); ?>
+    </nav>
 </div>
 
 <nav class="pager" id="exhibit-page-navigation">
@@ -40,6 +38,7 @@ echo head(array(
     <div id="exhibit-nav-up">
     <?php echo exhibit_builder_page_trail(); ?>
     </div>
+</nav>
 </div>
 
-<?php echo foot(); ?>
+<?php echo foot();

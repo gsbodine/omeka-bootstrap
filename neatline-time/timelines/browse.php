@@ -12,11 +12,9 @@ echo head($head);
 ?>
 
 <div id="primary">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="page-header">
-                <h1><span class="glyphicon glyphicon-time"></span> <?php echo $title; ?></h1>
-            </div>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><span class="glyphicon glyphicon-time"></span> <?php echo $title; ?></h1>
         </div>
     </div>
     <?php
@@ -39,5 +37,5 @@ echo head($head);
     <?php else: ?>
     <p><?php echo __('You have no timelines.'); ?></p>
     <?php endif; ?>
-</div> <!-- end primary. -->
+</div><?php // end primary. ?>
 <?php echo foot();

@@ -3,8 +3,9 @@
     'bodyclass' => 'exhibits summary',
 ));
 ?>
+<div class="primary">
 <div class="row">
-<div class="col-md-12">
+<div class="col-xs-12">
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
 </div>
 </div>
@@ -38,4 +39,5 @@
 </nav>
 </div>
 </div>
-<?php echo foot(); ?>
+</div>
+<?php echo foot();

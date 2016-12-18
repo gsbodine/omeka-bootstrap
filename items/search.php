@@ -7,11 +7,9 @@ echo head(array(
 ));
 ?>
 <div id="primary">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="page-header">
-                <h1><span class="glyphicon glyphicon-search"></span> <?php echo $pageTitle; ?></h1>
-            </div>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><span class="glyphicon glyphicon-search"></span> <?php echo $pageTitle; ?></h1>
         </div>
     </div>
     <nav class="items-nav navigation secondary-nav">
@@ -21,5 +19,5 @@ echo head(array(
     <?php echo $this->partial('items/search-form.php',
         array('formAttributes' =>
             array('id' => 'advanced-search-form'))); ?>
-</div> <!-- end primary. -->
+</div><?php // end primary. ?>
 <?php echo foot();

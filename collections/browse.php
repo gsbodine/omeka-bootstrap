@@ -5,8 +5,10 @@ echo head(array(
     'bodyclass' => 'collections browse',
 )); ?>
 <div id="primary">
-    <div class="page-header">
-         <h1><?php echo $title; ?></h1>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><?php echo $title; ?></h1>
+        </div>
     </div>
     <?php if ($pagination_links = pagination_links()): ?>
     <div class="row">
@@ -15,7 +17,7 @@ echo head(array(
     <?php endif ?>
     <div class="row">
     <?php foreach(loop('collections') as $collection): ?>
-        <div class="col-sm-6 col-md-push-0">
+        <div class="col-sm-6">
             <div class="row">
                 <h2><?php echo link_to_collection(); ?></h2>
                 <div class="element">
@@ -51,5 +53,5 @@ echo head(array(
     <div class="row">
         <?php fire_plugin_hook('public_collections_browse', array('collections' => $collections, 'view' => $this)); ?>
     </div>
-</div><?php // end primary ?>
+</div><?php // end primary. ?>
 <?php echo foot();

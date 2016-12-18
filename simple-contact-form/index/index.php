@@ -8,7 +8,11 @@ echo head(array(
 ?>
 <div id="primary">
     <?php echo flash(); ?>
-    <h1><?php echo html_escape(get_option('simple_contact_page_contact_title')); ?></h1>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><?php echo html_escape(get_option('simple_contact_page_contact_title')); ?></h1>
+         </div>
+    </div>
     <div id="form-instructions">
         <?php echo get_option('simple_contact_page_contact_text'); // HTML ?>
     </div>

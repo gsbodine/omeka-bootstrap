@@ -5,7 +5,12 @@ echo head(array(
     'bodyclass' => 'exhibits browse',
 ));
 ?>
-<h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+<div id="primary">
+    <div id="exhibits-title" class="row page-header">
+        <div class="col-xs-12">
+            <h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+        </div>
+    </div>
 <?php if (count($exhibits) > 0): ?>
 <nav class="navigation" id="secondary-nav">
     <?php echo nav(array(
@@ -26,7 +31,7 @@ echo head(array(
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
     <div class="row">
-    <div class="exhibit col-md-12 <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
+    <div class="exhibit col-xs-12 <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
         <h2><?php echo link_to_exhibit(); ?></h2>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
         <div class="description"><?php echo $exhibitDescription; ?></div>
@@ -44,4 +49,5 @@ echo head(array(
 <p><?php echo __('There are no exhibits available yet.'); ?></p>
 <?php endif; ?>
 
-<?php echo foot(); ?>
+</div>
+<?php echo foot();

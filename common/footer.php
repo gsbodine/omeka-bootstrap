@@ -1,6 +1,6 @@
         </div><!-- end content -->
         <div class="row">
-        <footer class="col-md-12">
+        <footer class="col-xs-12">
             <div id="custom-footer-text">
                 <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
                 <p><?php echo $footerText; ?></p>

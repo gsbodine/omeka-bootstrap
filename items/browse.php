@@ -6,12 +6,10 @@ echo head(array(
 ));
 ?>
 <div id="primary">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="page-header">
-                <h1><span class="glyphicon glyphicon-list"></span> <?php echo $pageTitle;?> <small><?php echo __('(%s items total)', $total_results); ?></small></h1>
-            </div>
-        </div>
+    <div class="row page-header">
+	    <div class="col-xs-12">
+        <h1><span class="glyphicon glyphicon-list"></span> <?php echo $pageTitle;?> <small><?php echo __('(%s items total)', $total_results); ?></small></h1>
+    </div>
     </div>
     <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
@@ -28,7 +26,7 @@ echo head(array(
 <?php endif; ?>
 <?php if (get_theme_option('Display Items Carousel')): ?>
     <div class="row">
-        <div class="col-lg-offset-2 col-sm-8 col-md-8">
+        <div class="col-lg-offset-2 col-sm-8">
             <div id="itemsCarousel" class="carousel slide">
                 <div class="carousel-inner">
                 <?php foreach(loop('items') as $item): ?>
@@ -68,7 +66,7 @@ echo head(array(
 <?php foreach(loop('items') as $item): ?>
     <div class="item">
         <div class="row">
-            <div class="col-sm-2 col-md-2">
+            <div class="col-sm-2">
             <?php if (metadata($item, 'has thumbnail')): ?>
                 <div class="item-img">
                     <?php echo link_to_item(item_image('thumbnail', array('class' => 'image img-responsive'))); ?>
@@ -79,7 +77,7 @@ echo head(array(
                 </div>
             <?php endif; ?>
             </div>
-            <div class="col-sm-7 col-md-7">
+            <div class="col-sm-7">
                 <div class="item-title">
                     <h3><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink', 'snippet' => 250)); ?></h3>
                 </div>
@@ -101,7 +99,7 @@ echo head(array(
                     <p class="citation"><?php echo item_citation(); ?></p>
                 </div> */ ?>
             </div>
-            <div class="col-sm-3 col-md-3">
+            <div class="col-sm-3">
                 <?php if (metadata($item,'has tags')): ?>
                 <div class="browse-items-tags well well-sm">
                     <p><i class="fa fa-tag"></i> <strong><?php echo __('Tags'); ?></strong></p>
@@ -121,5 +119,5 @@ echo head(array(
     </div>
 <?php endif; ?>
     <?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
- </div> <!-- end primary. -->
+ </div> <?php // end primary. ?>
 <?php echo foot();

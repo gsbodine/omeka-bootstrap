@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <!-- Item Description -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <h4><span class="fa fa-thumb-tack fa-lg"></span> <?php echo __('Description'); ?></h4>
                 <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
                     <p class="lead"><?php echo $itemDescription; ?></p>
@@ -14,7 +14,7 @@
 
         <!-- If the item belongs to a collection, the following creates a link to that collection. -->
         <?php if (get_collection_for_item($item)): ?>
-        <div class="row"><div class="col-md-12">
+        <div class="row"><div class="col-xs-12">
             <hr />
             <div id="collection">
                 <h4 style="display:inline"><span class="glyphicon glyphicon-book"></span> <?php echo __('Collection'); ?>: </h4>
@@ -24,7 +24,7 @@
         <?php endif; ?>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
             <hr />
             </div>
         </div>
@@ -95,7 +95,7 @@
 
         <!-- The following prints a list of all tags associated with the item -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <hr />
                 <h4><span class="fa fa-tags fa-large"></span> Tags</h4>
                 <div class="tags well well-small">
@@ -110,7 +110,7 @@
         </div>
         <div class="row">
             <!-- Rights -->
-                <div class="col-md-12"><hr />
+                <div class="col-xs-12"><hr />
                     <h4><span class="fa fa-copyright fa-lg"></span><?php echo __(' Rights'); ?></h4>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Rights'))): ?>
                         <?php echo $itemCreator; ?>
@@ -120,7 +120,7 @@
                 </div>
         </div>
          <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <hr />
                 <!-- The following prints a citation for this item. -->
                 <h4><span class="fa fa-retweet fa-lg"></span> <?php echo __('Citation'); ?></h4>
@@ -128,7 +128,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <hr />
                 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
             </div>
