@@ -478,3 +478,7 @@ footer {
   font-size: 10px;
 }
 
+/******SEARCH PAGE STYLES*******/
+#advanced-search-form .inline {
+    width: auto;
+}

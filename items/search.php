@@ -17,6 +17,7 @@ echo head(array(
     <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
     </nav>
+    <br />
     <?php echo $this->partial('items/search-form.php',
         array('formAttributes' =>
             array('id' => 'advanced-search-form'))); ?>
