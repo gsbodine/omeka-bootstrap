@@ -34,6 +34,26 @@ echo head(array(
         <?php echo $paginationLinks; ?>
     </div>
 <?php endif; ?>
+<?php
+    if ($total_results > 1):
+        $sortLinks[__('Title')] = 'Dublin Core,Title';
+        $sortLinks[__('Creator')] = 'Dublin Core,Creator';
+        $sortLinks[__('Date Added')] = 'added';
+    ?>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="sort-links" class="pull-right">
+                <span class="sort-label label label-default"><?php echo __('Sort by:'); ?></span>
+                    <?php
+                        echo bootstrap_browse_sort_links($sortLinks, array(
+                            'list_attr' => array('id' => 'sort-links-list', 'class' => 'btn-group', 'role' => 'group', 'aria-label' => __('Sort by:')),
+                            'link_attr' => array('class' => 'btn btn-default btn-sm'),
+                        ));
+                    ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 <?php if ($carousel): ?>
     <div class="row">
         <div class="col-lg-offset-2 col-lg-8">

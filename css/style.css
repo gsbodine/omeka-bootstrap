@@ -497,6 +497,20 @@ footer a {
 #advanced-search-form .inline {
     width: auto;
 }
+
+#sort-links-list {
+    padding-left: 12px;
+}
+.asc a::after {
+    content: " ";
+}
+.desc a::after {
+    content: " ";
+}
+.desc a::after, .asc a::after {
+    font-family: "FontAwesome";
+}
+
 #item-filters ul {
     clear: both;
     list-style-type: none;

@@ -147,6 +147,36 @@ function bootstrap_simple_search($buttonText = null, $formProperties = array('id
 }
 
 /**
+ * Wrapper of browse_sort_links() to manage classes of list of links for sorting
+ * displayed records.
+ *
+ * @uses browse_sort_links()
+ * @param array $links The links to sort the headings. Should correspond to
+ *  the metadata displayed.
+ * @param array $wrapperTags The tags and attributes to use for the browse headings
+ * - 'list_tag' The HTML tag to use for the containing list
+ * - 'link_tag' The HTML tag to use for each list item (the browse headings)
+ * - 'list_attr' Attributes to apply to the containing list tag
+ * - 'link_attr' Attributes to apply to the list item tag
+ *
+ * @return string
+ */
+function bootstrap_browse_sort_links($links, $wrapperTags = array())
+{
+    $sortLinks = browse_sort_links($links, $wrapperTags);
+    return str_replace(
+        array(
+            'class="sorting asc" class="',
+            'class="sorting desc" class="',
+        ),
+        array(
+            'class="sorting asc ',
+            'class="sorting desc ',
+        ),
+        $sortLinks);
+}
+
+/**
  * Helper to build the grid rotator.
  *
  * @return string
