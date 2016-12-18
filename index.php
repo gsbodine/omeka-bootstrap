@@ -78,12 +78,12 @@ endif;
         <a style="margin-left:10px;" href="<?php echo url('items/tags'); ?>" class="btn btn-default"><?php echo __('View More'); ?></a>
         <?php endif; ?>
     </div>
-    <?php if (plugin_is_active('Geolocation')): ?>
     <div class="col-md-4 home-map">
-    <h2><?php echo __('Map'); ?></h2>
-    <a href="<?php echo url('geolocation/map/browse'); ?>"> <?php echo __('Display Geolocation Map.'); ?></a>
-    </div>
+    <?php if (get_theme_option('Display Homepage Map') && plugin_is_active('Geolocation')): ?>
+        <h2><?php echo __('Map'); ?></h2>
+        <a href="<?php echo url('geolocation/map/browse'); ?>"> <?php echo __('Display Geolocation Map.'); ?></a>
     <?php endif; ?>
+    </div>
 </div>
 
 <div class="row home-features">
