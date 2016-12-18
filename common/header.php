@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html class="<?php echo get_theme_option('Style Sheet'); ?>" lang="<?php echo get_html_lang(); ?>">
 <head>
-    <?php
-        if(is_current_url('/')) {
-            echo '<link rel="stylesheet" type="text/css" href="' . css_src('mosaic-style') . '" />';
-        }
-        ?>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php if ($description = option('description')): ?>
@@ -30,6 +24,7 @@
     <?php fire_plugin_hook('public_head', array('view' => $this)); ?>
 
     <!-- Stylesheets -->
+    <?php
     if (get_theme_option('Use Internal Bootstrap')) {
         queue_css_file('bootstrap.min');
         queue_css_file('font-awesome.min');
@@ -49,8 +44,6 @@
     echo head_css();
     ?>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Didact+Gothic' rel='stylesheet' type='text/css'>
     <!-- JavaScripts -->
     <?php queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu')); ?>
     <?php echo head_js(); ?>
@@ -102,8 +95,7 @@
                 </ul>
                 <?php endif; ?>
             </div>
-
-        </nav>
-        </div>
-        <div class="container" id="wrapper">
+         </div>
+    </nav>
+    <div class="container" id="wrapper">
         <div id="content">
