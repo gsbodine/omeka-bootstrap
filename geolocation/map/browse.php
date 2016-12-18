@@ -18,11 +18,9 @@ echo head(array('title' => $title, 'bodyclass' => 'map browse'));
 ?>
 
 <div id="primary">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="page-header">
-                <h1><span class="glyphicon glyphicon-globe"></span> <?php echo $title; ?></h1>
-            </div>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><span class="glyphicon glyphicon-globe"></span> <?php echo $title; ?></h1>
         </div>
     </div>
 
@@ -35,7 +33,8 @@ echo item_search_filters();
 echo pagination_links();
 ?>
 
-<div id="geolocation-browse">
+<div class="row">
+    <div id="geolocation-browse" class="col-xs-12">
     <?php
     $accessible_markup = get_option('geolocation_accessible_markup');
     if ($accessible_markup):
@@ -53,11 +52,17 @@ echo pagination_links();
     </figcaption>
     </figure>
     <?php endif; ?>
-
+    </div>
+</div>
     <?php if (get_option('geolocation_browse_append_search')): ?>
+<div class="row">
+    <div class="col-xs-12">
+        <h2><?php echo __('Filter items on the map'); ?></h2>
     <div id="search_block">
         <?php echo items_search_form(array('id'=>'search'), $_SERVER['REQUEST_URI']); ?>
     </div>
+    </div>
+</div>
     <?php endif; ?>
-</div> <!-- end primary. -->
+</div><?php // end primary. ?>
 <?php echo foot();

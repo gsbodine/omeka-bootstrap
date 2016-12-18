@@ -63,6 +63,14 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
 </div>
 <?php endif; ?>
 
+<div class="row">
+<?php
+// Allow other plugins to append to the form (pass the type to allow decisions
+// on a type-by-type basis).
+fire_plugin_hook('contribution_type_form', array('type'=>$type, 'view'=>$this));
+?>
+</div>
+
 <?php $user = current_user(); ?>
 <?php if(( get_option('contribution_open') || get_option('contribution_strict_anonymous') ) && !$user) : ?>
 <div class="form-group">
@@ -86,8 +94,11 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
 </div>
 
 <?php else: ?>
+<div class="bs-callout bs-callout-info">
     <p><?php echo __('You are logged in as: %s', '<strong>' . metadata($user, 'name') . '</strong>'); ?></p>
+</div>
 <?php endif; ?>
+
     <?php
     //pull in the user profile form if it is set
     if( isset($profileType) ): ?>
@@ -120,10 +131,4 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
         </fieldset>
         </div>
         <?php endif; ?>
-
-<?php
-// Allow other plugins to append to the form (pass the type to allow decisions
-// on a type-by-type basis).
-fire_plugin_hook('contribution_type_form', array('type'=>$type, 'view'=>$this));
-?>
 <?php endif;

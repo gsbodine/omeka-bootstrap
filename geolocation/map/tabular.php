@@ -17,8 +17,8 @@ echo head(array('title' => $title, 'bodyclass' => 'map browse_tabular'));
     </nav>
 
     <div class="row">
-    <div id="geolocation-tabular" class="col-xs-12">
-        <table>
+    <div id="geolocation-tabular" class="table-responsive col-xs-12">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col"><?php echo __('Title'); ?></th>
@@ -54,6 +54,5 @@ echo head(array('title' => $title, 'bodyclass' => 'map browse_tabular'));
         </p>
     </div>
     </div>
-</div>
-<?php // end primary. ?>
+</div><?php // end primary. ?>
 <?php echo foot();

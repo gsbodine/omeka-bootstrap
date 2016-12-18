@@ -358,6 +358,9 @@ margin-right: 5px;
 }
 
 /******ITEM PAGE STYLES*******/
+#geolocation-browse {
+    padding-top: 15px;
+}
 #geolocation {
     border-top: 1px solid #ddd;
     margin-top: 25px;
@@ -657,4 +660,7 @@ h2.guest-user-widget-label {
     color: #737373;
     margin-bottom: 10px;
     margin-top: 5px;
+}
+#geolocation_address {
+    width: 100%;
 }
