@@ -115,6 +115,36 @@ if (!Omeka) {
         });
     };
 
+    Omeka.displayGridRotator = function() {
+        $( '#ri-grid' ).gridrotator( {
+            preventClick : false,
+            rows: 3,
+            columns: 8,
+            maxStep: 2,
+            interval: 2000,
+            w1024: {
+                rows: 3,
+                columns: 6
+            },
+            w768: {
+                rows: 3,
+                columns: 5
+            },
+            w480: {
+                rows: 3,
+                columns: 4
+            },
+            w320: {
+                rows: 3,
+                columns : 4
+            },
+            w240: {
+                rows: 3,
+                columns: 3
+            },
+        });
+    };
+
     $(document).ready(function () {
         $('.omeka-media').on('error', function () {
             if (this.networkState === HTMLMediaElement.NETWORK_NO_SOURCE ||
@@ -123,37 +153,34 @@ if (!Omeka) {
                 $(this).replaceWith(this.innerHTML);
             }
         });
+
+        /**
+         * @copyright Garrick S. Bodine, 2012
+         * @license http://www.gnu.org/licenses/gpl-3.0.txt
+         */
+        // for theming the form helper buttons with Bootstrap button defaults classes
+        // when it is not a button.
+        // $("#submit_search").addClass("btn");
+
+        // for adding the 'active' class, which is Bootstrap's equivalent of Omeka's
+        // 'current' class for on-current-page links
+        $(".current").addClass("active");
+
+//        $('.carousel').carousel();
+
+        // making tags look like labels and adding the icons
+        $('a[rel="tag"]').addClass("label label-primary").prepend('<span class="glyphicon glyphicon-tag icon-white"></span> ');
+        $(".popular").addClass("btn btn-default").prepend('<span class="glyphicon glyphicon-tag"></span> ');
+        $('.v-popular,.vv-popular,.vvv-popular').addClass("btn btn-small btn-info").prepend('<span class="glyphicon glyphicon-tag"></span> ');
+        $('.vvvv-popular,.vvvvv-popular,.vvvvvv-popular').addClass("btn btn-primary").prepend('<span class="glyphicon glyphicon-tag"></span> ');
+        $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large btn-success").prepend('<span class="glyphicon glyphicon-tag"></span> ');
+
+//        $('.dropdown-toggle').dropdown();
+
+        // activating popovers on desired page boxen
+//        $('.pop-box').popover();
+
+        $(".tooltipper").tooltip();
     });
+
 })(jQuery);
-
-/*
- * @copyright Garrick S. Bodine, 2012
- * @license http://www.gnu.org/licenses/gpl-3.0.txt
- */
-
-jQuery(document).ready(function($){
-
-    // for theming the form helper buttons with Bootstrap button defaults classes
-    // when it is not a button.
-    // $("#submit_search").addClass("btn");
-
-    // for adding the 'active' class, which is Bootstrap's equivalent of Omeka's
-    // 'current' class for on-current-page links
-    $(".current").addClass("active");
-
-//    $('.carousel').carousel();
-
-    // making tags look like labels and adding the icons
-    $('a[rel="tag"]').addClass("label label-primary").prepend('<span class="glyphicon glyphicon-tag icon-white"></span> ');
-    $(".popular").addClass("btn btn-default").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-    $('.v-popular,.vv-popular,.vvv-popular').addClass("btn btn-small btn-info").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-    $('.vvvv-popular,.vvvvv-popular,.vvvvvv-popular').addClass("btn btn-primary").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-    $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large btn-success").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-
-//    $('.dropdown-toggle').dropdown();
-
-    // activating popovers on desired page boxen
-//    $('.pop-box').popover();
-
-    $(".tooltipper").tooltip();
-});

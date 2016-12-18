@@ -38,7 +38,15 @@
         queue_css_file('corner-banner');
     }
     if (get_theme_option('Display Grid Rotator') && is_current_url('/')) {
-        queue_css_file('mosaic-style');
+        queue_css_file('grid-rotator-style');
+    ?>
+        <noscript>
+        <link rel="stylesheet" type="text/css" href="<?php css_src('grid-rotator-fallback') ?>" />
+        </noscript>
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="<?php css_src('grid-rotator-fallback') ?>" />
+        <![endif]-->
+    <?php
     }
     echo head_css();
     ?>

@@ -39,4 +39,48 @@ function filterPublicNavigationMain($nav)
     //$nav[] = array('class' => 'nav');
     return $nav;
 }
-?>
+
+/**
+ * Helper to build the grid rotator.
+ *
+ * @return string
+ */
+function displayGridRotator($items)
+{
+    if (empty($items)) {
+        return '';
+    }
+    ?>
+    <div class="row"><!--start sliderrow-->
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+            <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
+                <img class="ri-loading-image" src="<?php echo src('images/grid-rotator/loading.gif'); ?>"/>
+                <ul>
+                    <?php
+                    // The grid rotator needs at least a number of items equal to
+                    // the number of rows and columns (3 x 8, (see globals.js), so
+                    // the grid is completed with previous items until ok.
+                    $number = 3 * 8;
+                    $itemUrls = array();
+                    foreach ($items as $item) {
+                        $itemUrls[] = link_to_item(
+                            item_image('square_thumbnail', array('class' => ''), 0, $item),
+                            array('class' => 'image'), 'show', $item);
+                    }
+                    $missing = $number - count($items);
+                    if ($missing > 0 && $missing < $number) {
+                        $loop = ceil($number / count($items));
+                        $urls = $itemUrls;
+                        for ($i = 0; $i < $loop; $i++) {
+                            $itemUrls = array_merge($itemUrls, $urls);
+                        }
+                    }
+                    shuffle($itemUrls);
+                    echo '<li>' . implode('</li><li>', $itemUrls) . '</li>';
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php
+    }

@@ -29,53 +29,30 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
+    <?php
+    if (is_current_url('/')):
+        $displayGridRotator = (boolean) get_theme_option('Display Grid Rotator');
+        if ($displayGridRotator):
+            echo js_tag('modernizr-custom');
+            echo js_tag('jquery.gridrotator');
+        endif;
+    else:
+        $displayGridRotator = false;
+    endif;
+    ?>
+
      <script type="text/javascript">
     jQuery(document).ready(function () {
         <?php if (get_theme_option('Use Advanced Search')): ?>
         Omeka.showAdvancedForm();
         <?php endif; ?>
         Omeka.dropDown();
+        <?php if ($displayGridRotator): ?>
+        Omeka.displayGridRotator();
+        <?php endif; ?>
     });
     </script>
 
-    <?php if(is_current_url('/')): ?>
-    <?php if (get_theme_option('Display Grid Rotator')):
-    echo js_tag('modernizr-custom');
-    echo js_tag('jquery.gridrotator');
-    ?>
-     <script type="text/javascript">
-               jQuery(document).ready(function() {
-                    $( '#ri-grid' ).gridrotator( {
-                    rows : 3,
-                    preventClick : false,
-                    columns : 8,
-                    maxStep : 2,
-                    interval : 2000,
-                    w1024 : {
-                        rows : 3,
-                        columns : 6
-                    },
-                    w768 : {
-                        rows : 3,
-                        columns : 5
-                    },
-                    w480 : {
-                        rows : 3,
-                        columns : 4
-                    },
-                    w320 : {
-                        rows : 3,
-                        columns : 4
-                    },
-                    w240 : {
-                        rows : 3,
-                        columns : 3
-                    },
-                } );
-            });
-        </script>
-    <?php endif; ?>
-    <?php endif; ?>
     <?php if (get_theme_option('Use Google Analytics') && $googleAccount = get_theme_option('Google Analytics Account')): ?>
     <?php echo common('analyticstracking.php', array('account' => $googleAccount)); ?>
     <?php endif; ?>
