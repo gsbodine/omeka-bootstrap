@@ -213,19 +213,22 @@ class Twitter_Form extends Zend_Form
      */
     protected function addActionsDisplayGroupElement($element)
     {
-        $displayGroup = $this->getDisplayGroup("zfBootstrapFormActions");
+        $displayGroup = $this->getDisplayGroup("actions");
 
         if ($displayGroup === null) {
-            $displayGroup = $this->addDisplayGroup(
+            $this->addDisplayGroup(
                 array($element),
-                "zfBootstrapFormActions",
+                "actions",
                 array(
-                    "decorators" => array(
-                        "FormElements",
-                        array(array("innerwrapper" => "HtmlTag"), array("tag" => "div", "class" => "col-sm-offset-2 col-sm-10")),
-                        array("HtmlTag", array("tag" => "div", "class" => "form-group"))
-                    )
-                ));
+                    'disableLoadDefaultDecorators' => true,
+                )
+            );
+            $displayGroup = $this->getDisplayGroup('actions');
+            $displayGroup->setDecorators(array(
+                'FormElements',
+                array(array('displaygroupinnerwrapper' => 'HtmlTag'), array('tag' => 'div', 'class' => 'col-sm-offset-2 col-sm-10')),
+                array(array('outerwrapper' => 'HtmlTag'), array('tag' => 'div', 'class' => 'form-group'))
+            ));
         } else {
             $displayGroup->addElement($element);
         }
