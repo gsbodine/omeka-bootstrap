@@ -72,9 +72,11 @@ endif;
     </div><?php // end about ?>
 
     <div class="col-md-4 home-themes"><?php // tag cloud ?>
-    <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
+        <?php if (get_theme_option('Display Homepage Tags')): ?>
+        <h2 id="tagcloud"><?php echo __('Themes'); ?></h2>
         <?php echo tag_cloud(get_recent_tags(15), '/items/browse', 9); ?>
-        <a style="margin-left:10px;" href="<?php echo url('items/tags'); ?>" class="btn btn-default">View More</a>
+        <a style="margin-left:10px;" href="<?php echo url('items/tags'); ?>" class="btn btn-default"><?php echo __('View More'); ?></a>
+        <?php endif; ?>
     </div>
     <?php if (plugin_is_active('Geolocation')): ?>
     <div class="col-md-4 home-map">
