@@ -9,7 +9,7 @@ class Twitter_Form extends Zend_Form
      * Twitter form types definitions
      */
     const FORM_TYPE_BASIC = 'basic';
-    //const FORM_TYPE_INLINE = 'inline';
+    const FORM_TYPE_INLINE = 'inline';
     const FORM_TYPE_HORIZONTAL = 'horizontal';
 
     /**
@@ -148,7 +148,7 @@ class Twitter_Form extends Zend_Form
             || $element instanceof Zend_Form_Element_Password
             || $element instanceof Zend_Form_Element_Select
         ) {
-            $element->setAttrib('class', $element->getAttrib('class') . ' form-control');
+            $element->setAttrib('class', trim($element->getAttrib('class') . ' form-control'));
         }
 
         if ($element instanceof Zend_Form_Element_Captcha) {
@@ -166,23 +166,6 @@ class Twitter_Form extends Zend_Form
      */
     public function render(Zend_View_Interface $view = null)
     {
-        /**
-         * @var $element Zend_Form_Element
-         */
-        foreach ($this->getElements() as $element) {
-            if ($this->getType() !== self::FORM_TYPE_HORIZONTAL) {
-                $element->removeDecorator("innerwrapper");
-
-                /**
-                 * @var $label Zend_Form_Decorator_Label
-                 */
-                $label = $element->getDecorator('label');
-                if ($label) {
-                    $label->setOption('class', trim(str_replace('col-sm-2', '', $label->getOption('class'))));
-                }
-            }
-        }
-
         $this->setAttrib('class', trim(sprintf('form-%s %s', $this->getType(), $this->getAttrib('class'))));
 
         return parent::render($view);
@@ -195,14 +178,29 @@ class Twitter_Form extends Zend_Form
      */
     protected function getElementDecorators()
     {
-        return array(
-            "ViewHelper",
-            array(new Twitter_Form_Decorator_Errors(), array("placement" => "append")),
-            array("Description", array("tag" => "span", "class" => "help-block")),
-            array(array("innerwrapper" => "HtmlTag"), array("tag" => "div", "class" => "col-sm-10")),
-            array("Label", array("class" => "control-label col-sm-2")),
-            array(array("outerwrapper" => "HtmlTag"), array("tag" => "div", "class" => "form-group"))
-        );
+        $formType = $this->getType();
+        switch ($formType) {
+            case self::FORM_TYPE_HORIZONTAL:
+                return array(
+                    'ViewHelper',
+                    array(new Twitter_Form_Decorator_Errors(), array('placement' => 'append')),
+                    array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                    array(array('innerwrapper' => 'HtmlTag'), array('tag' => 'div', 'class' => 'col-sm-10')),
+                    array('Label', array('class' => 'control-label col-sm-2')),
+                    array(array('outerwrapper' => 'HtmlTag'), array('tag' => 'div', 'class' => 'form-group'))
+                );
+
+            case self::FORM_TYPE_INLINE:
+            case self::FORM_TYPE_BASIC:
+            default:
+                return array(
+                    'ViewHelper',
+                    array(new Twitter_Form_Decorator_Errors(), array('placement' => 'append')),
+                    array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                    array('Label', array('class' => 'control-label')),
+                    array(array('outerwrapper' => 'HtmlTag'), array('tag' => 'div', 'class' => 'form-group'))
+                );
+        }
     }
 
     /**
@@ -244,7 +242,7 @@ class Twitter_Form extends Zend_Form
      */
     public function setType($type)
     {
-        if (in_array($type, array(self::FORM_TYPE_BASIC, self::FORM_TYPE_HORIZONTAL, /*self::FORM_TYPE_INLINE*/))) {
+        if (in_array($type, array(self::FORM_TYPE_BASIC, self::FORM_TYPE_HORIZONTAL, self::FORM_TYPE_INLINE))) {
             $this->type = $type;
         }
 
