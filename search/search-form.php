@@ -6,18 +6,20 @@
             'placeholder' => __('Search'),
         )); ?>
         <span class="input-group-btn">
+    <?php if ($options['show_advanced']): ?>
+            <a href="#" id="show-advanced" class="show-advanced button btn btn-default" role="button" tabindex="0">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+    <?php endif; ?>
             <?php echo $this->formButton('submit_search', $options['submit_value'], array(
                 'type' => 'submit',
                 'class' => 'btn btn-default',
                 'content' => '<span class="glyphicon glyphicon-search"></span>',
                 'escape' => false,
             )); ?>
-    <?php if ($options['show_advanced']): ?>
-            <a href="#" id="show-advanced" class="show-advanced button btn btn-default" role="button" tabindex="0">
-                <span class="glyphicon glyphicon-plus"></span>
-            </a>
         </span>
     </div>
+    <?php if ($options['show_advanced']): ?>
     <div id="advanced-form">
     <div class="popover-form">
         <fieldset id="query-types">
@@ -34,7 +36,7 @@
                 'checked' => in_array($key, $filters['record_types']),
                 'id' => 'record_types-' . $key,
                 'form' => 'search-form',
-            )); ?> <?php echo $this->formLabel('record_types-' . $key, $value);?><br />
+            )); ?> <?php echo $this->formLabel('record_types-' . $key, $value); ?><br />
             <?php endforeach; ?>
         </fieldset>
         <?php elseif (is_admin_theme()): ?>
@@ -44,8 +46,6 @@
     </div>
     </div>
     <?php else: ?>
-        </span>
-    </div>
         <?php echo $this->formHidden('query_type', $filters['query_type']); ?>
         <?php foreach ($filters['record_types'] as $type): ?>
         <?php echo $this->formHidden('record_types[]', $type); ?>
