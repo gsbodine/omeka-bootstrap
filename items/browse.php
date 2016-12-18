@@ -60,15 +60,13 @@ echo head(array(
             <div id="owl-carousel" class="owl-carousel">
                 <?php foreach(loop('items') as $item): ?>
                 <div class="item">
+                <div class="carousel-img" style="text-align: center">
                 <?php if (metadata($item, 'has thumbnail')): ?>
-                    <div class="carousel-img" style="text-align: center">
-                        <?php echo link_to_item(item_image('thumbnail', array('class' => 'img-responsive img-polaroid')), null, null, $item); ?>
-                    </div>
+                    <?php echo link_to_item(item_image('thumbnail', array('class' => 'img-responsive img-polaroid')), null, null, $item); ?>
                 <?php else: ?>
-                    <div class="carousel-img" style="text-align: center">
-                        <div class="image none"></div>
-                    </div>
+                    <div class="image none"></div>
                  <?php endif; ?>
+                    </div>
                     <div class="carousel-caption">
                         <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h4>
                         <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
@@ -110,15 +108,13 @@ echo head(array(
     <div class="item">
         <div class="row">
             <div class="col-sm-2">
+                <div class="item-img">
             <?php if (metadata($item, 'has thumbnail')): ?>
-                <div class="item-img">
                     <?php echo link_to_item(item_image('thumbnail', array('class' => 'image img-responsive'))); ?>
-                </div>
             <?php else: ?>
-                <div class="item-img">
                     <div class="image none"></div>
-                </div>
             <?php endif; ?>
+                </div>
             </div>
             <div class="col-sm-7">
                 <div class="item-title">
