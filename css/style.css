@@ -646,3 +646,9 @@ h2.guest-user-widget-label {
     padding: 15px;
     text-transform: unset;
 }
+
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
