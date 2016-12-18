@@ -5,6 +5,14 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+$this->addHelperPath(
+    __DIR__
+        . DIRECTORY_SEPARATOR . 'libraries'
+        . DIRECTORY_SEPARATOR . 'Twitter'
+        . DIRECTORY_SEPARATOR . 'View'
+        . DIRECTORY_SEPARATOR . 'Helper',
+    'Twitter_View_Helper_');
+
 //Twitter and Facebook are external links with an icon, that Zend can't manage.
 // When uncommented, this filter works fine, but without icons.
 // add_filter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME, 'themeFilterPublicNavigationMain');
