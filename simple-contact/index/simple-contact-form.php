@@ -1,27 +1,27 @@
 <div id="simple-contact">
 <?php echo $this->form('contact_form', $options['form_attributes']); ?>
     <div class="field form-group">
-        <?php echo $this->formLabel('name', __('Your Name'), array('class' => 'control-label sr-only')); ?>
+        <?php echo $this->formLabel('name', __('Your Name'), array('class' => 'sr-only')); ?>
         <div class="col-xs-12">
             <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                <?php echo $this->formText('name', $options['name'], array('class' => 'form-control', 'placeholder' => __('Your Name'))); ?>
+                <?php echo $this->formText('name', $options['name'], array('placeholder' => __('Your Name'))); ?>
             </div>
         </div>
     </div>
     <div class="field form-group">
-        <?php echo $this->formLabel('email', __('Your Email'), array('class' => 'control-label sr-only')); ?>
+        <?php echo $this->formLabel('email', __('Your Email'), array('class' => 'sr-only')); ?>
         <div class="col-xs-12">
             <div class="input-group">
                 <span class="input-group-addon">@</span>
-                <?php echo $this->formText('email', $options['email'], array('class' => 'form-control', 'placeholder' => __('Your Email'))); ?>
+                <?php echo $this->formText('email', $options['email'], array('placeholder' => __('Your Email'))); ?>
             </div>
         </div>
     </div>
     <div class="field form-group">
-        <?php echo $this->formLabel('message', __('Your Message'), array('class' => 'control-label sr-only')); ?>
+        <?php echo $this->formLabel('message', __('Your Message'), array('class' => 'sr-only')); ?>
         <div class="col-xs-12">
-            <?php echo $this->formTextarea('message', $options['message'], array('class' => 'form-control', 'rows' => '10', 'placeholder' => __('Your message'))); ?>
+            <?php echo $this->formTextarea('message', $options['message'], array('rows' => '10', 'placeholder' => __('Your message'), 'class' => 'form-control')); ?>
         </div>
     </div>
 

@@ -65,7 +65,7 @@ enableContributionAjaxForm(<?php echo js_escape(url($contributionPath . '/type-f
                         <?php $options = get_table_options('ContributionType' ); ?>
                         <?php $typeId = isset($type) ? $type->id : '' ; ?>
                         <?php echo $this->formSelect( 'contribution_type', $typeId,
-                                array('multiple' => false, 'id' => 'contribution-type', 'class' => 'form-control') , $options); ?>
+                                array('multiple' => false, 'id' => 'contribution-type') , $options); ?>
                     </div>
                 </div>
                 <div class="form-group">

@@ -22,7 +22,7 @@ echo head(array(
                 <div class="form-group">
                     <label for="email" class="control-label col-sm-2 required"><?php echo __('Email'); ?></label>
                     <div class="col-sm-10">
-                        <?php echo $this->formText('email', @$_POST['email'], array('class' => 'form-control')); ?>
+                        <?php echo $this->formText('email', @$_POST['email']); ?>
                     </div>
                 </div>
                 <div class="form-group">

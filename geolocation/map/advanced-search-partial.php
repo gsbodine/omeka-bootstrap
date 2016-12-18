@@ -21,10 +21,10 @@ if (get_option('geolocation_use_metric_distances')) {
 ?>
 
 <div class="field form-group">
-    <?php echo $this->formLabel('geolocation-address', __('Geographic Address'), array('class' => 'control-label col-xs-2')); ?>
-    <div class="col-xs-10">
+    <?php echo $this->formLabel('geolocation-address', __('Geographic Address')); ?>
+    <div class="col-sm-10">
     <div class="inputs input-group">
-        <?php echo $this->formText('geolocation-address',  $address, array('size' => '40', 'class' => 'form-control')); ?>
+        <?php echo $this->formText('geolocation-address',  $address, array('size' => '40')); ?>
         <?php // echo $this->formText('geolocation-description', $description, array('size' => '40')); ?>
         <?php echo $this->formHidden('geolocation-latitude', $currentLat); ?>
         <?php echo $this->formHidden('geolocation-longitude', $currentLng); ?>
@@ -33,10 +33,10 @@ if (get_option('geolocation_use_metric_distances')) {
 </div>
 
 <div class="field form-group">
-    <?php echo $this->formLabel('geolocation-radius', $distanceLabel, array('class' => 'control-label col-xs-2')); ?>
-    <div class="col-xs-10">
+    <?php echo $this->formLabel('geolocation-radius', $distanceLabel); ?>
+    <div class="col-sm-10">
     <div class="inputs input-group">
-        <?php echo $this->formText('geolocation-radius', $radius, array('size' => '40', 'class' => 'form-control')); ?>
+        <?php echo $this->formText('geolocation-radius', $radius, array('size' => '40')); ?>
     </div>
     </div>
 </div>

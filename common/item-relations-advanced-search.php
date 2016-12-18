@@ -2,8 +2,8 @@
   $provideRelationComments = get_option('item_relations_provide_relation_comments');
 ?>
 <div class="field form-group form-inline">
-    <?php echo $this->formLabel('item_relations_property_id', __('Item Relations'), array('class' => 'control-label col-xs-2')); ?>
-    <div class="col-xs-10">
+    <?php echo $this->formLabel('item_relations_property_id', __('Item Relations')); ?>
+    <div class="col-sm-10">
     <div class="inputs input-group">
         <div class="radio">
             <label>
@@ -22,7 +22,7 @@
     ?>
     </span>
     <div class="inputs input-group">
-        <?php echo $this->formSelect('item_relations_property_id', @$_GET['item_relations_property_id'], array('class' => 'form-control inline'), $formSelectProperties); ?>
+        <?php echo $this->formSelect('item_relations_property_id', @$_GET['item_relations_property_id'], array('class' => 'inline'), $formSelectProperties); ?>
     </div>
     <span class="explanation help-block">
         <?php
@@ -35,7 +35,7 @@
     </span>
     <?php if ($provideRelationComments) : ?>
     <div class="inputs input-group">
-        <?php echo $this->formText('item_relations_comment', @$_GET['item_relations_comment'], array('size' => '40', 'class' => 'form-control')); ?>
+        <?php echo $this->formText('item_relations_comment', @$_GET['item_relations_comment'], array('size' => '40')); ?>
     </div>
     <span class="explanation help-block">
         <?php

@@ -20,13 +20,13 @@ echo head(array(
             <p><?php echo html_escape(__('Hello %s. Your username is %s.', $user->name , $user->username)); ?></p>
             <form method="post" accept-charset="utf-8" class="form-horizontal">
                 <div class="form-group">
-                    <?php echo $this->formLabel('new_password1', __('Create a Password'), array('class' => 'control-label col-sm-2 required')); ?>
+                    <?php echo $this->formLabel('new_password1', __('Create a Password'), array('class' => 'required')); ?>
                     <div class="col-sm-10">
                         <?php echo $this->formPassword('new_password1', null, array('class' => 'text-input form-control')); ?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <?php echo $this->formLabel('new_password2', __('Re-type the Password'), array('class' => 'control-label col-sm-2 required')); ?>
+                    <?php echo $this->formLabel('new_password2', __('Re-type the Password'), array('class' => 'required')); ?>
                     <div class="col-sm-10">
                         <?php echo $this->formPassword('new_password2', null, array('class' => 'text-input form-control')); ?>
                     </div>

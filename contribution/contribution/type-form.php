@@ -13,7 +13,7 @@ $allowMultipleFiles = $isAllowed && $type->multiple_files;
 // When a file is required, the upload element is displayed before other ones.
 if ($isRequired): ?>
 <div id="files-form" class="form-group drawer-contents">
-    <?php echo $this->formLabel('file', __('Upload a file'), array('class' => 'control-label col-sm-2')); ?>
+    <?php echo $this->formLabel('file', __('Upload a file')); ?>
     <div id="files-metadata" class="col-sm-10">
         <div id="upload-files" class="files">
             <?php echo $this->formFile($allowMultipleFiles ? 'file[0]' : 'file', array('class' => 'fileinput button')); ?>
@@ -31,7 +31,7 @@ foreach ($type->getTypeElements() as $contributionTypeElement) {
 
 <?php if (!$isRequired && $isAllowed): ?>
 <div id="files-form" class="form-group drawer-contents">
-    <?php echo $this->formLabel('file', __('Upload a file (Optional)'), array('class' => 'control-label col-sm-2')); ?>
+    <?php echo $this->formLabel('file', __('Upload a file (Optional)')); ?>
     <div id="files-metadata" class="col-sm-10">
         <div id="upload-files" class="files">
             <?php echo $this->formFile($allowMultipleFiles ? 'file[0]' : 'file', array('class' => 'fileinput button')); ?>
@@ -55,9 +55,9 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
 
 <?php if ($type->add_tags) : ?>
 <div id="tag-form" class="form-group">
-    <?php echo $this->formLabel('tags',__('Add Tags'), array('class' => 'control-label col-sm-2')); ?>
+    <?php echo $this->formLabel('tags',__('Add Tags')); ?>
     <div class="col-sm-10">
-        <?php echo $this->formText('tags', isset($tags) ? $tags : '', array('class' => 'form-control')); ?>
+        <?php echo $this->formText('tags', isset($tags) ? $tags : ''); ?>
         <p id="add-tags-explanation" class="help-block"><?php echo __('Separate tags with %s', option('tag_delimiter')); ?></p>
     </div>
 </div>
@@ -68,9 +68,9 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
 <div class="form-group">
     <?php
         if (get_option('contribution_strict_anonymous')) {
-            echo $this->formLabel('contribution_email', __('Email (Optional)'), array('class' => 'control-label col-sm-2'));
+            echo $this->formLabel('contribution_email', __('Email (Optional)'));
         } else {
-            echo $this->formLabel('contribution_email', __('Email (Required)'), array('class' => 'control-label col-sm-2'));
+            echo $this->formLabel('contribution_email', __('Email (Required)'));
         }
     ?>
     <div class="col-sm-10">
@@ -80,7 +80,7 @@ Omeka.Items.enableAddFiles(<?php echo js_escape(__('Add Another File')); ?>);
         } else {
             $email = '';
         }
-        echo $this->formText('contribution_email', $email, array('class' => 'form-control'));
+        echo $this->formText('contribution_email', $email);
     ?>
     </div>
 </div>

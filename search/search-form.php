@@ -2,12 +2,12 @@
     <div class="input-group">
         <?php echo $this->formText('query', $filters['query'], array(
             'title' => __('Search'),
-            'class' => 'input-medium search-query form-control',
+            'class' => 'search-query',
             'placeholder' => __('Search'),
         )); ?>
         <span class="input-group-btn">
     <?php if ($options['show_advanced']): ?>
-            <a href="#" id="show-advanced" class="show-advanced button btn btn-default" role="button" tabindex="0">
+            <a href="#" id="show-advanced" class="show-advanced btn btn-default" role="button" tabindex="0">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
     <?php endif; ?>
