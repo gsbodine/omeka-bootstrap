@@ -353,6 +353,20 @@ h1 > .exhibit-page {
 #advanced-form input[type="radio"] {
   margin-right: 5px;
 }
+.popover-form {
+    font-weight: inherit;
+    font-size: inherit;
+}
+.popover-form fieldset {
+    padding-bottom: 20px;
+}
+.popover-form label {
+    font-weight: 400;
+}
+.popover-form legend {
+    font-size: inherit;
+    font-weight: bold;
+}
 
 /******ITEM PAGE STYLES*******/
 #geolocation {
