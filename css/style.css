@@ -26,7 +26,7 @@
 
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   letter-spacing: 1px;
 }
 body, p {
@@ -249,7 +249,7 @@ a:hover {
     border-top-right-radius: 5px ;
 }
 .exhibit-title {
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   letter-spacing: 1px;
 }
 .exhibit-nav-level-1 > li:hover {
@@ -409,7 +409,7 @@ a#advanced-search.button {
 /******TAGS*******/
 .vvvvvvvv-popular {
   font-size: 140%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -418,7 +418,7 @@ a#advanced-search.button {
 }
 .vvvvvvv-popular {
   font-size: 135%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -427,7 +427,7 @@ a#advanced-search.button {
 }
 .vvvvvv-popular {
   font-size: 130%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -436,7 +436,7 @@ a#advanced-search.button {
 }
 .vvvvv-popular {
   font-size: 125%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -445,7 +445,7 @@ a#advanced-search.button {
 }
 .vvvv-popular {
   font-size: 120%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -454,7 +454,7 @@ a#advanced-search.button {
 }
 .vvv-popular {
   font-size: 115%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -463,7 +463,7 @@ a#advanced-search.button {
 }
 .vv-popular {
   font-size: 110%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -472,7 +472,7 @@ a#advanced-search.button {
 }
 .v-popular {
   font-size: 105%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }
@@ -481,7 +481,7 @@ a#advanced-search.button {
 }
 .popular {
   font-size: 100%;
-  font-family: 'Didact Gothic';
+  font-family: sans-serif;
   background-color: transparent;
   border: none;
 }

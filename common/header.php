@@ -32,7 +32,6 @@
         queue_css_url('//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
         queue_css_url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     }
-    queue_css_url('//fonts.googleapis.com/css?family=Lato:300,400,700|Didact+Gothic');
     queue_css_file('style');
     $displayBanner = get_theme_option('Display Corner Banner');
     if ($displayBanner) {
