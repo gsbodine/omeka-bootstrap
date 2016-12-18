@@ -6,8 +6,11 @@
  */
 
 //Twitter and Facebook are external links with an icon, that Zend can't manage.
-// When uncommented, this filter works fine.
+// When uncommented, this filter works fine, but without icons.
 // add_filter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME, 'themeFilterPublicNavigationMain');
+// Useless, because the secondary nav is a simple menu.
+// add_filter(public_navigation_items, 'themeFilterPublicNavigationItems');
+
 function themeFilterPublicNavigationMain($nav)
 {
     $navBootstrap = array(
@@ -20,6 +23,63 @@ function themeFilterPublicNavigationMain($nav)
             'label' => $label,
             'uri' => $uri,
         );
+    }
+    return $nav;
+}
+
+/**
+ * Create the bootstrap menu.
+ *
+ * @note Bootstrap 3 doesn't support more that one level of sub-menus.
+ *
+ * @todo Use standard Zend methods or a custom helper and manage all icons.
+ *
+ * @param Zend_View_Helper_Navigation_Menu $nav
+ * @param boolean $options See default below.
+ * @return Zend_View_Helper_Navigation_Menu|string The nav or the html
+ * representation of the nav when external links are added.
+ */
+function bootstrap_nav(Zend_View_Helper_Navigation_Menu $nav, $options = array())
+{
+    // Default values from Zend_View_Helper_Navigation_Menu. Specific values for
+    // bootstrap are ulClass, parent class, render parent class and partial.
+    $defaultOptions = array(
+        'ulClass' => 'nav navbar-nav',
+        'innerIndent' => '    ',
+        'minDepth' => null,
+        'maxDepth' => null,
+        'onlyActiveBranch' => false,
+        'expandSiblingNodesOfActiveBranch' => false,
+        'ulId' => null,
+        'addPageClassToLi' => false,
+        'activeClass' => 'active',
+        'parentClass' => 'dropdown',
+        'renderParentClass' => true,
+        'partial' => 'common/menu.php',
+        // This is a non-standard option.
+        'addExternalLinks' => false,
+    );
+    $options = array_merge($defaultOptions, $options);
+
+    $nav->setUlClass($options['ulClass']);
+    $nav->setInnerIndent($options['innerIndent']);
+    $nav->setMinDepth($options['minDepth']);
+    $nav->setMaxDepth($options['maxDepth']);
+    $nav->setOnlyActiveBranch($options['onlyActiveBranch']);
+    $nav->setExpandSiblingNodesOfActiveBranch($options['expandSiblingNodesOfActiveBranch']);
+    $nav->setUlId($options['ulId']);
+    $nav->addPageClassToLi($options['addPageClassToLi']);
+    $nav->setActiveClass($options['activeClass']);
+    $nav->setParentClass($options['parentClass']);
+    $nav->setRenderParentClass($options['renderParentClass']);
+    $nav->setPartial($options['partial']);
+
+    // External links are links with icons, currently not managed fully.
+
+    // When there are right menus at right and external links, this special
+    // function should be used instead the simple second part of the navbar.
+    if ($options['addExternalLinks']) {
+        return bootstrapAddExternalLinks($nav);
     }
     return $nav;
 }

@@ -97,18 +97,10 @@
                 <?php endif; ?>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                <?php $nav = public_nav_main();
-                // Set the main classes.
-                $nav->setUlClass('nav navbar-nav navbar-left');
-
-                // Set the dropdown attribs to links.
-                $nav->menu()->setPartial('common/menu.php');
-
-                // When there are right menus at right and external links, this
-                // special function should be used instead the simple second
-                // part of the navbar below.
-                // echo bootstrapAddExternalLinks($nav);
-
+                <?php $nav = bootstrap_nav(public_nav_main(), array(
+                    'ulClass' => 'nav navbar-nav navbar-left',
+                    'addExternalLinks' => false,
+                ));
                 echo $nav;
 
                 // Set a second part of the navbar.

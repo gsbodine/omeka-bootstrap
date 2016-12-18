@@ -2,9 +2,19 @@
 /**
  * Helper to render a menu for bootsrap.
  *
+ * @note Bootstrap 3 doesn't support more that one level of sub-menus.
+ *
  * Adapted from Zend_View_Helper_Navigation_Menu::_renderMenu()
  *
+ * Differences:
+ * - add a span with icon for dropdown.
+ * - add a class for ul ul,
+ * - set custom html attribs to page
+ *
  * @todo Convert into a standard helper.
+ *
+ * @url https://framework.zend.com/manual/1.12/en/zend.view.helpers.html
+ * @url http://www.haclong.org/en/content/creating-menu-zend-navigation.html
  *
  * Not managed: prefixForId.
  */
@@ -25,6 +35,17 @@ $addPageClassToLi = $menu->getAddPageClassToLi();
 $activeClass = $menu->getActiveClass();
 $parentClass = $menu->getParentClass();
 $renderParentClass = $menu->getRenderParentClass();
+
+$customHtmlAttribs = array(
+    'class' => 'dropdown-toggle',
+    'data-toggle' => 'dropdown',
+    'role' => 'button',
+    'aria-haspopup' => 'true',
+    'aria-expanded' => 'false',
+);
+
+$ulUlClass = 'dropdown-menu';
+$spanDropdown = '<span class="caret"></span>';
 
 $html = '';
 
@@ -174,6 +195,12 @@ foreach ($iterator as $page) {
                 'id'    => $ulId,
             );
         }
+        // Add a class for sub-menus.
+        else {
+            $attribs = array(
+                'class' => $ulUlClass,
+            );
+        }
 
         // We don't need a prefix for the menu ID (backup)
 //                $skipValue = $nav->_skipPrefixForId;
@@ -211,12 +238,15 @@ foreach ($iterator as $page) {
         $liClasses[] = $page->getClass();
     }
     // Add CSS class for parents to LI?
+    $addSpanDropdown = false;
     if ($renderParentClass && $page->hasChildren()) {
         // Check max depth
         if ((is_int($maxDepth) && ($depth + 1 < $maxDepth))
             || !is_int($maxDepth)
         ) {
             $liClasses[] = $parentClass;
+            $page->setCustomHtmlAttribs($customHtmlAttribs);
+            $addSpanDropdown = true;
         }
     }
 
@@ -224,7 +254,10 @@ foreach ($iterator as $page) {
             . _navHtmlAttribs(array('class' => implode(' ', $liClasses)))
             . '>' . $nav->getEOL()
             . $myIndent . str_repeat($innerIndent, 2)
-            . $nav->htmlify($page)
+            // TODO Add a type of page in order to set a link with an icon.
+            . ($addSpanDropdown
+                ? str_replace('</a>', $spanDropdown . '</a>', $nav->htmlify($page))
+                : $nav->htmlify($page))
             . $nav->getEOL();
 
     // store as previous depth for next iteration
