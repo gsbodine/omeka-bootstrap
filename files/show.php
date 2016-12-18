@@ -19,6 +19,7 @@ echo head(array(
     </div>
     <div class="row">
         <div class="col-md-6">
+            <p><?php echo __('Attached to item "%s".', link_to_item(null, array(), 'show', $file->getItem())); ?>
             <div id="file-metadata">
                 <?php echo all_element_texts('file'); ?>
             </div>
