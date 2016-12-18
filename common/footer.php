@@ -58,6 +58,31 @@
                 return $("#advanced-form").html();
             }
         });
+
+        $('#show-advanced').on('shown.bs.popover', function (e) {
+            $('#advanced-form').html('');
+
+            // The current values should be set manually for a complex reason.
+            $('.popover-form input[name=query_type]').on('change', function () {
+                var value = $(this).val();
+                // Don't use prop() for compatibility.
+                $(".popover-form input[name=query_type][value=" + value + "]").attr('checked', 'checked');
+                $(".popover-form input[name=query_type]:not([value=" + value + "])").removeAttr('checked');
+            });
+
+            $('.popover-form input[name="record_types[]"]').on('change', function () {
+                if ($(this).attr('checked')) {
+                    $(this).removeAttr('checked');
+                } else {
+                    $(this).attr('checked', 'checked');
+                }
+            });
+        });
+
+        $('#show-advanced').on('hide.bs.popover', function (e) {
+            var content = $(this).data('bs.popover').$tip.find('.popover-content');
+            $('#advanced-form').html(content.html());
+        });
     });
     </script>
     <?php endif; ?>
