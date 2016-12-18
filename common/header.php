@@ -101,6 +101,9 @@
                 // Set the main classes.
                 $nav->setUlClass('nav navbar-nav navbar-left');
 
+                // Set the dropdown attribs to links.
+                $nav->menu()->setPartial('common/menu.php');
+
                 // When there are right menus at right and external links, this
                 // special function should be used instead the simple second
                 // part of the navbar below.
