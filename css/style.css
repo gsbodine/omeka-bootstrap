@@ -37,8 +37,10 @@ body, p {
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+/*
 background-color: #f8f8f8;
 background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squares.png);
+*/
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 #tagline, #tagline-author {
