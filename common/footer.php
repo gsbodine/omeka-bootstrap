@@ -21,7 +21,9 @@
 
      <script type="text/javascript">
     jQuery(document).ready(function () {
+        <?php if (get_theme_option('Use Advanced Search')): ?>
         Omeka.showAdvancedForm();
+        <?php endif; ?>
         Omeka.dropDown();
     });
     </script>
