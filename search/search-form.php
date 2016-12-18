@@ -29,6 +29,7 @@
             ), $query_types); ?>
         </fieldset>
         <?php if ($record_types): ?>
+            <?php if (count($record_types) > 1): ?>
         <fieldset id="record-types">
             <legend><?php echo __('Search only these record types:'); ?></legend>
             <?php foreach ($record_types as $key => $value): ?>
@@ -39,6 +40,9 @@
             )); ?> <?php echo $this->formLabel('record_types-' . $key, $value); ?><br />
             <?php endforeach; ?>
         </fieldset>
+            <?php else: ?>
+                <?php echo $this->formHidden('record_types[]', reset($filters['record_types'])); ?>
+            <?php endif; ?>
         <?php elseif (is_admin_theme()): ?>
             <p><a href="<?php echo url('settings/edit-search'); ?>"><?php echo __('Go to search settings to select record types to use.'); ?></a></p>
         <?php endif; ?>
