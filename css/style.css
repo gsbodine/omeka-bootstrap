@@ -664,3 +664,15 @@ h2.guest-user-widget-label {
 #geolocation_address {
     width: 100%;
 }
+input.geolocation-address,
+input.geolocation-latitude,
+input.geolocation-longitude {
+    width: inherit;
+}
+@media only screen and (min-width: 768px) {
+    input.geolocation-address,
+    input.geolocation-description {
+        display: inline-block;
+        width: 48%;
+    }
+}

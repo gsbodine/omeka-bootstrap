@@ -67,7 +67,7 @@ if (get_option('geolocation_use_metric_distances')) {
                         form.submit();
                     } else {
                         // If no point was found, give us an alert
-                        alert('Error: "' + address + '" was not found!');
+                        alert(<?php echo json_encode(__('Error')); ?> + ': "' + address + '" ' + <?php echo json_encode(__('was not found!')); ?>);
                     }
                 });
             }
