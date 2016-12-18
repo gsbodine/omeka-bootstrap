@@ -20,9 +20,9 @@
         <div class="col-sm-4 col-md-4">
             <?php if ($collection->hasContributor()): ?>
             <div class="element">
-                <h4>Collector(s)</h4>
+                <h4><?php echo __('Collector(s)'); ?></h4>
                 <div class="element-text">
-                    <p><?php echo metadata('collection',array('Dublin Core', 'Contributor'), array('delimiter' => ', ')); ?></p>
+                    <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('delimiter' => ', ')); ?></p>
                 </div>
             <?php endif; ?>
          </div>
@@ -34,12 +34,18 @@
         </div>
     </div>
     <div class="row">
+        <?php $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-polaroid" alt="' . __('No file') . '" />'; ?>
         <?php foreach(loop('items') as $item): ?>
         <div class="col-sm-3 col-md-3">
             <div class="well" style="text-align:center;">
-                <div><?php echo link_to_item(item_image('square_thumbnail', array('class' => 'img-rounded img-responsive img-polaroid'))); ?></div>
+                <div><?php if (metadata($item, 'has files')):
+                    echo link_to_item(item_image('square_thumbnail', array('class' => 'img-rounded img-responsive img-polaroid')));
+                else:
+                    echo link_to_item($noFile, array('class' => 'image none'), 'show', $item);
+                endif; ?>
+                </div>
                 <br />
-                <p><small><strong><?php echo metadata('item', array('Dublin Core', 'Title')); ?></strong></small></p>
+                <p class="caption"><span><?php echo metadata('item', array('Dublin Core', 'Title')); ?></span></p>
             </div>
         </div>
         <?php endforeach ?>

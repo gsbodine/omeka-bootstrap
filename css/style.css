@@ -11,16 +11,22 @@
   padding-bottom: 0px;
 
 }
-.caption {
-  float: right;
-  clear: right;
-  width: 400px;
-  font-size: 12px;
-  line-height: 15px;
+
+.well .caption {
+    font-weight: bold;
+    font-size: small;
+    /* min-height: 48px; */
+    /* max-height: 48px; */
 }
-
-
-
+.well .caption span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+    /* min-height: 48px; */
+    /* max-height: 48px; */
+}
 
 /**********GENERAL STYLES**************/
 
