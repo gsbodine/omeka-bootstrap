@@ -596,3 +596,10 @@ footer a {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.references {
+    padding-left: 0;
+}
+.references ul {
+    padding-left: 0;
+}
