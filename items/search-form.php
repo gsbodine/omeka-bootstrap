@@ -2,24 +2,23 @@
 if (!empty($formActionUri)):
     $formAttributes['action'] = $formActionUri;
 else:
-    $formAttributes['action'] = url(array(
-        'controller'=>'items',
-        'action'=>'browse',
-    ));
+    $formAttributes['action'] = url(array('controller'=>'items',
+                                          'action'=>'browse'));
 endif;
 $formAttributes['method'] = 'GET';
 ?>
+
 <form <?php echo tag_attributes($formAttributes); ?>>
     <div id="search-keywords" class="field">
         <?php echo $this->formLabel('keyword-search', __('Search for Keywords')); ?>
         <div class="inputs">
-            <?php
+        <?php
             echo $this->formText(
                 'search',
                 @$_REQUEST['search'],
                 array('id' => 'keyword-search', 'size' => '40')
             );
-            ?>
+        ?>
         </div>
     </div>
     <div id="search-narrow-by-fields" class="field">
@@ -31,7 +30,7 @@ $formAttributes['method'] = 'GET';
         if (!empty($_GET['advanced'])) {
             $search = $_GET['advanced'];
         } else {
-            $search = array(array('field' => '', 'type' => '' , 'value' => ''));
+            $search = array(array('field'=>'','type'=>'','value'=>''));
         }
 
         //Here is where we actually build the search form
@@ -45,46 +44,74 @@ $formAttributes['method'] = 'GET';
                 //[terms] = 'foobar'
                 //etc
                 echo $this->formSelect(
+                    "advanced[$i][joiner]",
+                    @$rows['joiner'],
+                    array(
+                        'title' => __("Search Joiner"),
+                        'id' => null,
+                        'class' => 'advanced-search-joiner'
+                    ),
+                    array(
+                        'and' => __('AND'),
+                        'or' => __('OR'),
+                    )
+                );
+                echo $this->formSelect(
                     "advanced[$i][element_id]",
                     @$rows['element_id'],
-                    array(),
+                    array(
+                        'title' => __("Search Field"),
+                        'id' => null,
+                        'class' => 'advanced-search-element'
+                    ),
                     get_table_options('Element', null, array(
                         'record_types' => array('Item', 'All'),
-                        'sort' => 'alphaBySet')
+                        'sort' => 'orderBySet')
                     )
                 );
                 echo $this->formSelect(
                     "advanced[$i][type]",
                     @$rows['type'],
-                    array(),
+                    array(
+                        'title' => __("Search Type"),
+                        'id' => null,
+                        'class' => 'advanced-search-type'
+                    ),
                     label_table_options(array(
                         'contains' => __('contains'),
                         'does not contain' => __('does not contain'),
                         'is exactly' => __('is exactly'),
                         'is empty' => __('is empty'),
-                        'is not empty' => __('is not empty'))
+                        'is not empty' => __('is not empty'),
+                        'starts with' => __('starts with'),
+                        'ends with' => __('ends with'))
                     )
                 );
                 echo $this->formText(
                     "advanced[$i][terms]",
                     @$rows['terms'],
-                    array('size' => '20')
+                    array(
+                        'size' => '20',
+                        'title' => __("Search Terms"),
+                        'id' => null,
+                        'class' => 'advanced-search-terms'
+                    )
                 );
                 ?>
-                <button type="button" class="remove_search" disabled="disabled" style="display: none;">-</button>
+                <button type="button" class="remove_search" disabled="disabled" style="display: none;"><span class="glyphicon glyphicon-minus"></span> <?php echo __('Remove field'); ?></button>
             </div>
         <?php endforeach; ?>
         </div>
-        <button type="button" class="add_search"><?php echo __('Add a Field'); ?></button>
+        <button type="button" class="add_search"><span class="glyphicon glyphicon-plus"></span> <?php echo __('Add a Field'); ?></button>
     </div>
 
     <div id="search-by-range" class="field">
         <?php echo $this->formLabel('range', __('Search by a range of ID#s (example: 1-4, 156, 79)')); ?>
         <div class="inputs">
         <?php
-        echo $this->formText('range', @$_GET['range'],
-            array('size' => '40')
-        );
+            echo $this->formText('range', @$_GET['range'],
+                array('size' => '40')
+            );
         ?>
         </div>
     </div>
@@ -97,7 +124,7 @@ $formAttributes['method'] = 'GET';
                 'collection',
                 @$_REQUEST['collection'],
                 array('id' => 'collection-search'),
-                get_table_options('Collection')
+                get_table_options('Collection', null, array('include_no_collection' => true))
             );
         ?>
         </div>
@@ -109,7 +136,7 @@ $formAttributes['method'] = 'GET';
         <?php
             echo $this->formSelect(
                 'type',
-                @$_REQUEST['item-type-search'],
+                @$_REQUEST['type'],
                 array('id' => 'item-type-search'),
                 get_table_options('ItemType')
             );
@@ -117,7 +144,7 @@ $formAttributes['method'] = 'GET';
         </div>
     </div>
 
-    <?php if (is_allowed('Users', 'browse')): ?>
+    <?php if(is_allowed('Users', 'browse')): ?>
     <div class="field">
     <?php
         echo $this->formLabel('user-search', __('Search By User'));?>
@@ -145,7 +172,8 @@ $formAttributes['method'] = 'GET';
         </div>
     </div>
 
-    <?php if (is_allowed('Items', 'showNotPublic')): ?>
+
+    <?php if (is_allowed('Items','showNotPublic')): ?>
     <div class="field">
         <?php echo $this->formLabel('public', __('Public/Non-Public')); ?>
         <div class="inputs">
@@ -156,7 +184,7 @@ $formAttributes['method'] = 'GET';
                 array(),
                 label_table_options(array(
                     '1' => __('Only Public Items'),
-                    '0' => __('Only Non-Public Items'),
+                    '0' => __('Only Non-Public Items')
                 ))
             );
         ?>
@@ -174,7 +202,7 @@ $formAttributes['method'] = 'GET';
                 array(),
                 label_table_options(array(
                     '1' => __('Only Featured Items'),
-                    '0' => __('Only Non-Featured Items'),
+                    '0' => __('Only Non-Featured Items')
                 ))
             );
         ?>
@@ -183,7 +211,8 @@ $formAttributes['method'] = 'GET';
 
     <?php fire_plugin_hook('public_items_search', array('view' => $this)); ?>
     <div>
-        <input class="submit form-control" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" type="submit">
+        <?php if (!isset($buttonText)) $buttonText = __('Search for items'); ?>
+        <input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="<?php echo $buttonText ?>">
     </div>
 </form>
 
