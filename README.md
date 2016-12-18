@@ -12,6 +12,9 @@ for use on the [Wearing Gay History Digital Archive].
 
 This release is a genericized version based on Bootstrap 3.3.7.
 
+On the homepage, This theme incorporates the [Codrops Animated Responsive Image Grid]
+and/or the jQuery [Owl Carousel].
+
 
 Installation
 ------------
@@ -96,6 +99,8 @@ Carousel:
 [Crowd-Ed plugin]: https://github.com/gsbodine/crowd-ed
 [Martha Berry Digital Archive]: https://mbda.berry.edu
 [Wearing Gay History Digital Archive]: https://www.wearinggayhistory.com
+[Codrops Animated Responsive Image Grid]: https://github.com/codrops/AnimatedResponsiveImageGrid
+[Owl Carousel]: http://www.owlgraphic.com/owlcarousel/
 [theme issues]: https://github.com/Daniel-KM/omeka-bootstrap/issues
 [Garrick S. Bodine]: https://github.com/gsbodine
 [Amanda Regan]: https://github.com/regan008
