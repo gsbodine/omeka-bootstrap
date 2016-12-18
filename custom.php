@@ -1,8 +1,60 @@
 <?php
 /**
+ * @copyright See readme.
  * @copyright Garrick S. Bodine, 2012
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
+
+//Twitter and Facebook are external links with an icon, that Zend can't manage.
+// When uncommented, this filter works fine.
+// add_filter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME, 'themeFilterPublicNavigationMain');
+function themeFilterPublicNavigationMain($nav)
+{
+    $navBootstrap = array(
+        'Twitter' => get_theme_option('Link Twitter'),
+        'Facebook' => get_theme_option('Link Facebook'),
+    );
+    $navBootstrap = array_filter($navBootstrap);
+    foreach ($navBootstrap as $label => $uri) {
+        $nav[] = array(
+            'label' => $label,
+            'uri' => $uri,
+        );
+    }
+    return $nav;
+}
+
+/**
+ * Add Twitter and Facebook links, if any, to a nav.
+ *
+ * Twitter and Facebook are external links with an icon, that Zend can't manage,
+ * so the links are added directly.
+ *
+ * @param Zend_View_Helper_Navigation_Menu|string $nav
+ * @return string The html representation of the nav.
+ */
+function bootstrapAddExternalLinks($nav)
+{
+    $navBootstrap = array(
+        'twitter' => get_theme_option('Link Twitter'),
+        'facebook' => get_theme_option('Link Facebook'),
+    );
+    $externalLinks = '';
+    $baseLink = '<li><a href="%s" target="__blank" class="navbar-link"><span class="fa fa-lg fa-%s"></span></a></li>';
+
+    $navBootstrap = array_filter($navBootstrap);
+    foreach ($navBootstrap as $label => $uri) {
+        $externalLinks .= sprintf($baseLink, $uri, $label);
+    }
+
+    if (!is_string($nav)) {
+        $nav = $nav->__toString();
+    }
+    if ($externalLinks) {
+        $nav = substr($nav, 0, strlen($nav) - 5) . $externalLinks . '</ul>';
+    }
+    return $nav;
+}
 
 // basically, this is just the Omeka simple_search minus the hardcoded fieldset and some added Bootstrap classes:
 function bootstrap_simple_search($buttonText = null, $formProperties = array('id' => 'simple-search'), $uri = null)
@@ -32,12 +84,6 @@ function bootstrap_simple_search($buttonText = null, $formProperties = array('id
 
     $html .= '</div></form>';
     return $html;
-}
-
-function filterPublicNavigationMain($nav)
-{
-    //$nav[] = array('class' => 'nav');
-    return $nav;
 }
 
 /**

@@ -1,35 +1,18 @@
-/*
-    Document: site
-    Created on: July 2015
-    Author: Amanda Regan <aregan2@gmu.edu>
-    Description: Main style sheet for the Wearing Gay History Omeka Bootstrap Theme.
-*/
-
 .floatright {
   float: right;
   margin: 10px 35px 10px 40px;
   padding-bottom: 0px;
 
 }
-
-.well .caption {
-    font-weight: bold;
-    font-size: small;
-    /* min-height: 48px; */
-    /* max-height: 48px; */
-}
-.well .caption span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    max-width: 100%;
-    /* min-height: 48px; */
-    /* max-height: 48px; */
+.caption {
+  float: right;
+  clear: right;
+  width: 400px;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 /**********GENERAL STYLES**************/
-
 
 h1,h2,h3,h4,h5,h6 {
   font-family: sans-serif;
@@ -155,30 +138,8 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   font-size: 21px;
 }
 */
+
 /********HEADER STYLES*********/
-nav {
-  border: none;
-}
-.navbar-header {
-  padding: 10px 0 7px 0;
-}
-#wrap {
-  padding: 0 50px 0 50px;
-  border: none;
-  background: rgba(72,197,219,1);
-  background: -moz-linear-gradient(left, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(72,197,219,1)), color-stop(65%, rgba(143,238,255,1)), color-stop(100%, rgba(143,238,255,1)));
-  background: -webkit-linear-gradient(left, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
-  background: -o-linear-gradient(left, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
-  background: -ms-linear-gradient(left, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
-  background: linear-gradient(to right, rgba(72,197,219,1) 0%, rgba(143,238,255,1) 65%, rgba(143,238,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48c5db', endColorstr='#8feeff', GradientType=1 );       
-  }
-@media only screen and (max-width: 768px) {
-  #bs-example-navbar-collapse-1 {
-    float: left;
-  }
-}
 .navbar-toggle {
   border-color: #196371;
 }

@@ -80,35 +80,50 @@
         </div>
         <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
     </header>
-    <nav class="navbar" id="wrap">
+    <?php // Eventually remove the container to set the menu through screen. ?>
+    <div class="container">
+    <nav class="navbar navbar-default" id="nav-wrap">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <?php // Brand and toggle get grouped for better mobile display ?>
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only"><?php echo __('Toggle navigation'); ?></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only"><?php echo __('Toggle navigation'); ?></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <?php if ($navbarBrandText = get_theme_option('Navbar Brand Text')): ?>
+                <a class="navbar-brand" href="#"><?php echo $navbarBrandText; ?></a>
+                <?php endif; ?>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-collapse collapse" id="navbar">
                 <?php $nav = public_nav_main();
-                echo $nav->setUlClass('nav navelement navbar-nav'); ?>
-                <?php
+                // Set the main classes.
+                $nav->setUlClass('nav navbar-nav navbar-left');
+
+                // When there are right menus at right and external links, this
+                // special function should be used instead the simple second
+                // part of the navbar below.
+                // echo bootstrapAddExternalLinks($nav);
+
+                echo $nav;
+
+                // Set a second part of the navbar.
                 $twitter = get_theme_option('Link Twitter');
                 $facebook = get_theme_option('Link Facebook');
                 if ($twitter || $facebook): ?>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <?php if ($twitter): ?>
-                    <li><a href="<?php echo $twitter; ?>" target="__blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+                    <li><a href="<?php echo $twitter; ?>" target="__blank" class="navbar-link"><span class="fa fa-lg fa-twitter"></span></a></li>
                     <?php endif; ?>
                     <?php if ($facebook): ?>
-                    <li><a href="<?php echo $facebook; ?>" target="__blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+                    <li><a href="<?php echo $facebook; ?>" target="__blank" class="navbar-link"><span class="fa fa-lg fa-facebook"></span></a></li>
                     <?php endif; ?>
                 </ul>
                 <?php endif; ?>
             </div>
          </div>
     </nav>
+    </div>
     <div class="container" id="wrapper">
         <div id="content">
