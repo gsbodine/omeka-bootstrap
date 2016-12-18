@@ -43,19 +43,22 @@ $formAttributes['method'] = 'GET';
                 //[type] = 'contains'
                 //[terms] = 'foobar'
                 //etc
-                echo $this->formSelect(
-                    "advanced[$i][joiner]",
-                    @$rows['joiner'],
-                    array(
-                        'title' => __("Search Joiner"),
-                        'id' => null,
-                        'class' => 'advanced-search-joiner'
-                    ),
-                    array(
-                        'and' => __('AND'),
-                        'or' => __('OR'),
-                    )
-                );
+                $newOmeka = version_compare(OMEKA_VERSION, '2.5', '>');
+                if ($newOmeka) {
+                    echo $this->formSelect(
+                        "advanced[$i][joiner]",
+                        @$rows['joiner'],
+                        array(
+                            'title' => __("Search Joiner"),
+                            'id' => null,
+                            'class' => 'advanced-search-joiner'
+                        ),
+                        array(
+                            'and' => __('AND'),
+                            'or' => __('OR'),
+                        )
+                    );
+                }
                 echo $this->formSelect(
                     "advanced[$i][element_id]",
                     @$rows['element_id'],
@@ -69,6 +72,19 @@ $formAttributes['method'] = 'GET';
                         'sort' => 'orderBySet')
                     )
                 );
+                $advancedOptions = array(
+                    'contains' => __('contains'),
+                    'does not contain' => __('does not contain'),
+                    'is exactly' => __('is exactly'),
+                    'is empty' => __('is empty'),
+                    'is not empty' => __('is not empty'),
+                );
+                if ($newOmeka) {
+                    $advancedOptions += array(
+                        'starts with' => __('starts with'),
+                        'ends with' => __('ends with'),
+                    );
+                }
                 echo $this->formSelect(
                     "advanced[$i][type]",
                     @$rows['type'],
@@ -77,15 +93,7 @@ $formAttributes['method'] = 'GET';
                         'id' => null,
                         'class' => 'advanced-search-type'
                     ),
-                    label_table_options(array(
-                        'contains' => __('contains'),
-                        'does not contain' => __('does not contain'),
-                        'is exactly' => __('is exactly'),
-                        'is empty' => __('is empty'),
-                        'is not empty' => __('is not empty'),
-                        'starts with' => __('starts with'),
-                        'ends with' => __('ends with'))
-                    )
+                    label_table_options($advancedOptions)
                 );
                 echo $this->formText(
                     "advanced[$i][terms]",
