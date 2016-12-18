@@ -236,3 +236,29 @@ function bootstrap_flash($bsColor = 'primary')
     }
     return $flash;
 }
+
+/**
+ * Set bootstrap decorators to a form.
+ *
+ * @todo Uses a bootstrap form directly via a config of Zend / Omeka or overwrite all form and element classes.
+ *
+ * @param Zend_Form $form
+ * @param string $formType "inline" or "horizontal". In Bootstrap, default is
+ * vertical (basic).
+ * @return Zend_Form
+ */
+function bootstrap_form(Zend_Form $form, string $formType = 'basic')
+{
+    if ($form instanceof Omeka_Form) {
+        // TODO Manage special Omeka elements?
+        // Omeka_Form_Element_SessionCsrfToken;
+        // Omeka_Form_Element_Input;
+        // Omeka_Form_DisplayGroup;
+        $form->setAutoApplyOmekaStyles(false);
+    }
+    require_once 'libraries'
+        . DIRECTORY_SEPARATOR . 'Twitter'
+        . DIRECTORY_SEPARATOR . 'Form'
+        . DIRECTORY_SEPARATOR . 'Redecorate.php';
+    return Twitter_Form_Redecorate::redecorate($form, $formType);
+}

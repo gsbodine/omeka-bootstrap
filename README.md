@@ -85,6 +85,11 @@ Carousel:
 
 *  Copyright (c) 2013 Bartosz Wojciechowski
 
+[Bootstrap3-Zend-Framework], based on [Bootstrap-Zend-Framework]:
+
+* Copyright (c) 2012-2013 Sebastian Hoitz, komola GmbH hoitz@komola.de
+* See other contributors in [ZF-Twitter-Bootstrap]
+
 
 [Omeka]: https://omeka.org
 [Twitter Bootstrap]: https://getbootstrap.com
@@ -94,4 +99,7 @@ Carousel:
 [theme issues]: https://github.com/Daniel-KM/omeka-bootstrap/issues
 [Garrick S. Bodine]: https://github.com/gsbodine
 [Amanda Regan]: https://github.com/regan008
+[Bootstrap-Zend-Framework]: https://github.com/komola/Bootstrap-Zend-Framework
+[Bootstrap3-Zend-Framework]: https://github.com/paladisco/Bootstrap3-Zend-Framework
+[ZF-Twitter-Bootstrap]: https://github.com/lciolecki/zf-twitter-bootstrap
 [Daniel-KM]: https://github.com/Daniel-KM "Daniel Berthereau"
