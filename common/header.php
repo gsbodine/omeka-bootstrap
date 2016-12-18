@@ -120,6 +120,9 @@
             </div>
          </div>
     </nav>
+    <?php if ($breadcrumb = get_theme_option('Display Breadcrumb Trail')):
+        echo common('breadcrumb', array('title' => @$title, 'mode' => $breadcrumb));
+    endif; ?>
     </div>
     <div class="container" id="wrapper">
         <div id="content">

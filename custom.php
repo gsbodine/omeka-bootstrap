@@ -273,3 +273,84 @@ function bootstrap_form(Zend_Form $form, string $formType = 'basic')
         . DIRECTORY_SEPARATOR . 'Redecorate.php';
     return Twitter_Form_Redecorate::redecorate($form, $formType);
 }
+
+/**
+ * Returns a breadcrumb for a given page (without the home page).
+ *-
+ * @see simple_pages_display_breadcrumbs()
+ * @uses public_url(), html_escape()
+ * @param integer|null The id of the page.  If null, it uses the current simple page.
+ * @return array
+ */
+function bootstrap_breadcrumb_simple_page($pageId = null)
+{
+    $breadcrumbs = array();
+
+    $db = get_db();
+    if (empty($pageId)) {
+        $page = get_current_record('simple_pages_page', false);
+    } else {
+        $page = get_record_by_id('SimplePagesPage', $pageId);
+    }
+
+    if ($page) {
+        $ancestorPages = $db->getTable('SimplePagesPage')->findAncestorPages($page->id);
+        $bPages = array_merge(array($page), $ancestorPages);
+
+        // make sure all of the ancestors and the current page are published
+        foreach($bPages as $bPage) {
+            if (!$bPage->is_published) {
+                return array();
+            }
+        }
+
+        // find the page links
+        $pageLinks = array();
+        foreach($bPages as $bPage) {
+            if ($bPage->id == $page->id) {
+                $pageLinks[] = html_escape($bPage->title);
+            } else {
+                $pageLinks[] = '<a href="' . public_url($bPage->slug) .  '">' . html_escape($bPage->title) . '</a>';
+            }
+        }
+        $pageLinks[] = '<a href="'. public_url('') . '">' . __('Home') . '</a>';
+
+        // Remove the home page, because it is added separately.
+        array_pop($pageLinks);
+        $breadcrumbs = array_reverse($pageLinks);
+    }
+
+    return $breadcrumbs;
+}
+
+/**
+ * Return a trail of parent pages, ending in the current page's name.
+ *
+ * @see exhibit_builder_page_trail()
+ * @param ExhibitPage|null $exhibitPage The page to print the trail to.
+ * @return array
+ */
+function bootstrap_breadcrumb_exhibit_page($exhibitPage = null)
+{
+    if (!$exhibitPage) {
+        $exhibitPage = get_current_record('exhibit_page');
+    }
+    $exhibit = get_record_by_id('Exhibit', $exhibitPage->exhibit_id);
+
+    $currentPage = $exhibitPage;
+    $parents = array();
+    while ($currentPage->parent_id) {
+        $currentPage = $currentPage->getParent();
+        array_unshift($parents, $currentPage);
+    }
+
+    $breadcrumbs = array();
+    foreach ($parents as $parent) {
+        $text = metadata($parent, 'title');
+        $breadcrumbs[] = exhibit_builder_link_to_exhibit($exhibit, $text, array(), $parent);
+        release_object($parent);
+    }
+
+    $breadcrumbs[] = metadata($exhibitPage, 'title');
+    return $breadcrumbs;
+}

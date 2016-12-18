@@ -12,6 +12,11 @@ echo head(array(
 ));
 ?>
 <div id="primary">
+    <?php // Don't duplicate the main breadcrumb, but set it if needed.
+    if (!($breadcrumb = get_theme_option('Display Breadcrumb Trail'))):
+        echo common('breadcrumb', array('title' => @$title, 'mode' => $breadcrumb));
+    endif; ?>
+
     <?php if (!$is_home_page): ?>
     <div class="row page-header">
         <div class="col-xs-12">
