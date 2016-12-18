@@ -158,27 +158,23 @@ if (!Omeka) {
          * @copyright Garrick S. Bodine, 2012
          * @license http://www.gnu.org/licenses/gpl-3.0.txt
          */
-        // for theming the form helper buttons with Bootstrap button defaults classes
-        // when it is not a button.
-        // $("#submit_search").addClass("btn");
-
         // for adding the 'active' class, which is Bootstrap's equivalent of Omeka's
         // 'current' class for on-current-page links
         $(".current").addClass("active");
 
-        // making tags look like labels and adding the icons
+        // Making tags look like labels and adding the icons for items/browse or items/show.
         $('a[rel="tag"]').addClass("label label-primary").prepend('<span class="glyphicon glyphicon-tag icon-white"></span> ');
-        $(".popular").addClass("btn btn-default").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-        $('.v-popular,.vv-popular,.vvv-popular').addClass("btn btn-small btn-info").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-        $('.vvvv-popular,.vvvvv-popular,.vvvvvv-popular').addClass("btn btn-primary").prepend('<span class="glyphicon glyphicon-tag"></span> ');
-        $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large btn-success").prepend('<span class="glyphicon glyphicon-tag"></span> ');
+        // For the full tag cloud in items/tags
+        $('.hTagcloud .popularity li').prepend('<span class="glyphicon glyphicon-tag"></span> ');
+        $(".popular").addClass("btn btn-default");
+        $('.v-popular,.vv-popular,.vvv-popular').addClass("btn btn-small btn-info");
+        $('.vvvv-popular,.vvvvv-popular,.vvvvvv-popular').addClass("btn btn-primary");
+        $('.vvvvvvv-popular,.vvvvvvvv-popular').addClass("btn btn-large btn-success");
 
-//        $('.dropdown-toggle').dropdown();
+        // $('.dropdown-toggle').dropdown();
 
         // activating popovers on desired page boxen
-//        $('.pop-box').popover();
-
-        $(".tooltipper").tooltip();
+        // $('.pop-box').popover();
     });
 
 })(jQuery);

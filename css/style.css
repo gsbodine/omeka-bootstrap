@@ -400,7 +400,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvvvvvvv-popular > i {
+.vvvvvvvv-popular > span {
   color: #333;
 }
 .vvvvvvv-popular {
@@ -409,7 +409,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvvvvvv-popular > i {
+.vvvvvvv-popular > span {
   color: #333;
 }
 .vvvvvv-popular {
@@ -418,7 +418,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvvvvv-popular > i {
+.vvvvvv-popular > span {
   color: #333;
 }
 .vvvvv-popular {
@@ -427,7 +427,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvvvv-popular > i {
+.vvvvv-popular > span {
   color: #333;
 }
 .vvvv-popular {
@@ -436,7 +436,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvvv-popular > i {
+.vvvv-popular > span {
   color: #333;
 }
 .vvv-popular {
@@ -445,7 +445,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vvv-popular > i {
+.vvv-popular > span {
   color: #333;
 }
 .vv-popular {
@@ -454,7 +454,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.vv-popular > i {
+.vv-popular > span {
   color: #333;
 }
 .v-popular {
@@ -463,7 +463,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.v-popular > i {
+.v-popular > span {
   color: #333;
 }
 .popular {
@@ -472,7 +472,7 @@ h1 > .exhibit-page {
   background-color: transparent;
   border: none;
 }
-.popular > i {
+.popular > span {
   color: #333;
 }
 .hTagcloud > .popularity > li {
@@ -487,6 +487,7 @@ h1 > .exhibit-page {
 .popularity, #tagcloud {
   padding-left: 10px;
 }
+
 footer {
   margin-top: 25px;
   padding-top: 15px;
@@ -523,6 +524,16 @@ footer {
 }
 .bs-callout + #pagination-top,
 .bs-callout + #pagination-top .pagination {
+    margin-top: 0;
+}
+.bs-callout + #pagination-top .pagination {
+    margin-top: 0;
+}
+.items.browse .items-nav ~ .item {
+    margin-top: 20px;
+}
+.items.browse .bs-callout ~ .item,
+.items.browse .pagination-top ~ .item {
     margin-top: 0;
 }
 
