@@ -8,7 +8,7 @@ echo head(array(
 <div id="primary">
     <div id="exhibits-title" class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+            <h1><span class="glyphicon glyphicon-eye-open"></span> <?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
         </div>
     </div>
 <?php if (count($exhibits) > 0): ?>
@@ -51,7 +51,7 @@ echo head(array(
                 <h3><?php echo link_to_exhibit(null, array('class' => 'permalink', 'snippet' => 250)); ?></h3>
             </div>
             <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 500))): ?>
-            <div class="description"><?php echo $exhibitDescription; ?></div>
+            <div class="exhibit-description"><?php echo $exhibitDescription; ?></div>
             <?php endif; ?>
         </div>
         <div class="col-sm-3">

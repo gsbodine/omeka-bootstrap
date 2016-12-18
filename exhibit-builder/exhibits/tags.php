@@ -8,7 +8,7 @@ echo head(array(
 <div id="primary">
     <div id="exhibits-title" class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $title; ?></h1>
+            <h1><span class="glyphicon glyphicon-eye-open"></span> <?php echo $title; ?></h1>
         </div>
     </div>
 <nav class="navigation exhibits-tags" id="secondary-nav">

@@ -1,8 +1,10 @@
-<?php echo head(array(
-    'title' => metadata('item', array('Dublin Core', 'Title')),
+<?php
+$title = metadata('item', array('Dublin Core', 'Title'));
+echo head(array(
+    'title' => $title,
     'bodyclass' => 'item exhibit-item-show',
 )); ?>
-<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
+<h1><span class="glyphicon glyphicon-eye-open"></span> <?php echo $title; ?></h1>
 <div id="primary">
     <?php echo all_element_texts('item'); ?>
 </div><!-- end primary -->

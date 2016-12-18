@@ -223,21 +223,27 @@ h1 > .exhibit-page {
     margin-left: 0 !important;
 }
 #exhibit-pages ul > li {
-    padding: 5px;
-    padding-left: 10px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    padding-left: 10px;
+}
+#exhibit-pages ul li a {
+    display:block;
+    padding: 5px 5px 5px 10px;
     margin: 5px 0 5px 0;
 }
-
-#exhibit-pages ul > li:hover {
+#exhibit-pages ul li a:hover,
+#exhibit-pages ul li a:focus {
     background-color: #eee;
 }
 #exhibit-pages {
     border-left: solid 1px #eee;
 }
 #exhibit-pages > h4 {
-    padding-left: 10px;
+    padding-left: 20px;
+}
+#exhibit-pages ul li.active > a {
+    color: #000;
 }
 
 /********BROWSE PAGE STYLES*********/
