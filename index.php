@@ -32,7 +32,7 @@ endif;
     </div>
     <?php if (plugin_is_active('Geolocation')): ?>
     <div class="col-md-4 col-sm-12 home-map">
-    <h2>Map</h2>
+    <h2><?php echo __('Map'); ?></h2>
     <a href="<?php echo url('geolocation/map/browse'); ?>"> <?php echo __('Display Geolocation Map.'); ?></a>
     </div>
     <?php endif; ?>

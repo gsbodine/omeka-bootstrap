@@ -4,9 +4,14 @@
   padding-bottom: 0px;
 }
 .caption {
-  /* width: 400px; */
-  font-size: 12px;
-  line-height: 15px;
+    /* width: 400px; */
+    font-size: 12px;
+    line-height: 15px;
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /**********GENERAL STYLES**************/
