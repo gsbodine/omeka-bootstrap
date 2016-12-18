@@ -77,6 +77,14 @@ Copyright
 * Copyright Amanda Regan, 2015
 * Copyright Daniel Berthereau, 2014-2016
 
+Grid Rotator:
+
+* Copyright 2012, Codrops
+
+Carousel:
+
+*  Copyright (c) 2013 Bartosz Wojciechowski
+
 
 [Omeka]: https://omeka.org
 [Twitter Bootstrap]: https://getbootstrap.com
