@@ -96,10 +96,10 @@ echo head(array(
                 <div><strong><?php echo __('Collection'); ?></strong></div>
                 <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
                 <?php endif; ?>
-                <!-- <div>
-                    <h5>Citation</h5>
-                    <p class="citation"><?php //echo item_citation(); ?></p>
-                </div> -->
+                <?php /* <div>
+                    <h5><?php echo __('Citation'); ?></h5>
+                    <p class="citation"><?php echo item_citation(); ?></p>
+                </div> */ ?>
             </div>
             <div class="col-sm-3 col-md-3">
                 <?php if (metadata($item,'has tags')): ?>
