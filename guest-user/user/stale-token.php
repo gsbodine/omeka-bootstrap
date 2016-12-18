@@ -8,7 +8,7 @@ echo head(array(
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $pageTitle; ?></h1>
+            <h1><span class="glyphicon glyphicon-user"></span> <?php echo $pageTitle; ?></h1>
             <?php echo bootstrap_flash('info'); ?>
         </div>
     </div>

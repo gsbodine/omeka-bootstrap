@@ -8,7 +8,7 @@ echo head(array(
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $pageTitle; ?></h1>
+            <h1><span class="glyphicon glyphicon-user"></span> <?php echo $pageTitle; ?></h1>
             <p id="login-links">
                 <span id="backtologin"><?php echo link_to('users', 'login', __('Back to Log In')); ?></span>
             </p>

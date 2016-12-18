@@ -34,7 +34,7 @@ enableContributionAjaxForm(<?php echo js_escape(url($contributionPath . '/type-f
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $title; ?></h1>
+            <h1><span class="glyphicon glyphicon-oil"></span> <?php echo $title; ?></h1>
             <?php echo bootstrap_flash('info'); ?>
         </div>
     </div>
