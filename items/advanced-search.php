@@ -1,11 +1,5 @@
 <?php
 $pageTitle = __('Advanced Search');
-if (!$isPartial):
-    head(array(
-        'title' => $pageTitle,
-        'bodyclass' => 'advanced-search',
-        'bodyid' => 'advanced-search-page',
-    ));
 
 if ($formActionUri):
     $formAttributes['action'] = $formActionUri;
@@ -14,8 +8,18 @@ else:
 endif;
 
 $formAttributes['method'] = 'GET';
+
+if (!$isPartial):
+head(array(
+    'title' => $pageTitle,
+    'bodyclass' => 'advanced-search',
+    'bodyid' => 'advanced-search-page',
+));
 ?>
 <div id="primary">
+<?php
+endif;
+?>
     <div class="row page-header">
         <div class="col-xs-12">
             <h1><?php echo $pageTitle; ?></h1>
