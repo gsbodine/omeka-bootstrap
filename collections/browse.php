@@ -14,7 +14,7 @@ echo head(array(
     <div class="row">
         <div class="pagination pagination-centered"><?php echo $pagination_links; ?></div>
     </div>
-    <?php endif ?>
+    <?php endif; ?>
     <div class="row">
     <?php foreach(loop('collections') as $collection): ?>
         <div class="col-sm-6">

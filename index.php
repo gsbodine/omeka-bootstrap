@@ -25,7 +25,7 @@ echo head(array(
 <div id="owl-carousel" class="owl-carousel">
     <?php foreach ($images as $image): ?>
     <div>
-       <img src="<?php echo src($image, 'images/carousel'); ?>" alt="slide">
+       <img src="<?php echo src($image, 'images/carousel'); ?>" class="img-responsive" alt="slide">
     </div>
     <?php endforeach; ?>
 </div>
@@ -52,12 +52,14 @@ endif;
 ?>
 
 <?php $homepageText = get_theme_option('Homepage Text'); ?>
-<div class="row home-features" id="home-tagline"> <!-- start tagline -->
+<?php if ($homepageText): ?>
+<div class="row home-features home-text" id="home-tagline"> <!-- start tagline -->
     <div class="col-xs-12">
-        <h1 id="tagline"><?php echo option('site_title'); ?></h1>
+        <?php /* <h1 id="tagline"><?php echo option('site_title'); ?></h1> */ ?>
         <?php echo $homepageText; ?>
     </div>
 </div>
+<?php endif; ?>
 
 <div class="row home-features"> <?php // start about & tag cloud ?>
     <div class="col-md-4 home-stories"> <!--about-->

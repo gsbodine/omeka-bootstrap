@@ -271,7 +271,7 @@ $formAttributes['method'] = 'GET';
                     <?php endif; ?>
                 </div>
             </div>
-            <?php endif ?>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-xs-12">
                     <?php is_admin_theme() ? fire_plugin_hook('admin_append_to_advanced_search') : fire_plugin_hook('public_append_to_advanced_search'); ?>

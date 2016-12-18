@@ -6,8 +6,8 @@
     <?php if ($description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>">
     <?php endif; ?>
-    <?php /* <link rel="shortcut icon" href="<?php echo src('favicon.ico'); ?>" type="image/x-icon" /> */ ?>
-    <?php /* <link rel="apple-touch-icon" href="<?php echo src('images/favicon.svg'); ?>" /> */ ?>
+    <?php /* <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" type="image/x-icon" /> */ ?>
+    <?php /* <link rel="apple-touch-icon" href="<?php echo img('favicon.svg'); ?>" type="image/svg+xml" /> */ ?>
     <?php
     echo auto_discovery_link_tags();
 
@@ -16,7 +16,7 @@
     }
     $titleParts[] = option('site_title');
     ?>
-    <title><?php echo implode(' · ', $titleParts); ?></title>
+    <title><?php echo implode(' &middot; ', $titleParts); ?></title>
 
     <?php echo auto_discovery_link_tags(); ?>
 
@@ -57,6 +57,7 @@
     echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+    <!-- <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a> -->
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
     <?php if ($displayBanner): ?>
     <span id="corner-banner">
@@ -82,7 +83,7 @@
     </header>
     <?php // Eventually remove the container to set the menu through screen. ?>
     <div class="container">
-    <nav class="navbar navbar-default" id="nav-wrap">
+    <nav id="nav-wrap" class="navbar navbar-default">
         <div class="container-fluid">
             <?php // Brand and toggle get grouped for better mobile display ?>
             <div class="navbar-header">
