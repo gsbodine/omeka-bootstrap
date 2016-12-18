@@ -1,4 +1,6 @@
 <?php
+// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+
 // Add a new location.
 if (empty($location)) {
     $id = time();

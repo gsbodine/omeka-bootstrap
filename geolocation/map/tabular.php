@@ -1,4 +1,6 @@
 <?php
+// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+
 queue_css_file('geolocation-items-map');
 
 $title = __('Browse Items on the Map') . ' ' . __('(%s total)', $totalItems);

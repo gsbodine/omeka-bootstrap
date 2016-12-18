@@ -1,4 +1,5 @@
 <?php
+// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
 
 $request = Zend_Controller_Front::getInstance()->getRequest();
 

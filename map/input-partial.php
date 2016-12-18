@@ -1,3 +1,6 @@
+<?php
+// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+?>
 <div class="geolocation-list">
     <label class="control-label col-sm-2"><?php echo $allowMultipleLocations ?  __('List of locations') : __('Current location'); ?></label>
     <div class="col-sm-10 table-responsive">
