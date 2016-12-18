@@ -16,10 +16,17 @@ echo head(array(
     <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
     </nav>
-    <div id="pagination-top" class="pagination pagination-centered">
-        <?php echo pagination_links(); ?>
+<?php if ($searchFilters = item_search_filters()): ?>
+    <div class="bs-callout bs-callout-info">
+        <?php echo $searchFilters; ?>
     </div>
-<?php if (get_theme_option('Display Items Carousel') == '1'): ?>
+<?php endif; ?>
+<?php if ($paginationLinks = pagination_links()): ?>
+    <div id="pagination-top">
+        <?php echo $paginationLinks; ?>
+    </div>
+<?php endif; ?>
+<?php if (get_theme_option('Display Items Carousel')): ?>
     <div class="row">
         <div class="col-lg-offset-2 col-sm-8 col-md-8">
             <div id="itemsCarousel" class="carousel slide">
@@ -59,25 +66,28 @@ echo head(array(
     </div>
 <?php else: ?>
 <?php foreach(loop('items') as $item): ?>
-<div class="item row">
-    <div class="col-sm-12 col-md-12">
+    <div class="item">
         <div class="row">
             <div class="col-sm-2 col-md-2">
             <?php if (metadata($item, 'has thumbnail')): ?>
                 <div class="item-img">
-                    <?php echo link_to_item(item_image('thumbnail', array('class' => 'img-responsive'))); ?>
+                    <?php echo link_to_item(item_image('thumbnail', array('class' => 'image img-responsive'))); ?>
+                </div>
+            <?php else: ?>
+                <div class="item-img">
+                    <div class="image none"></div>
                 </div>
             <?php endif; ?>
             </div>
             <div class="col-sm-7 col-md-7">
                 <div class="item-title">
-                    <h3><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h3>
+                    <h3><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink', 'snippet' => 250)); ?></h3>
                 </div>
-                <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'))): ?>
+                <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet' => 250))): ?>
                 <div class="item-description">
                     <p><?php echo $text; ?></p>
                 </div>
-                <?php elseif ($description = metadata('item',array('Dublin Core', 'Description'))): ?>
+                <?php elseif ($description = metadata('item',array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
                 <div class="item-description">
                     <?php echo $description; ?>
                 </div>
@@ -102,13 +112,14 @@ echo head(array(
         </div>
         <hr />
     </div>
-</div>
 <?php fire_plugin_hook('public_items_browse_each', array('view'  =>  $this, 'item' => $item)); ?>
 <?php endforeach; ?>
 <?php endif; ?>
-    <div id="pagination-bottom" class="pagination pagination-centered">
-        <?php echo pagination_links(); ?>
+<?php if ($paginationLinks): ?>
+    <div id="pagination-bottom">
+        <?php echo $paginationLinks; ?>
     </div>
+<?php endif; ?>
     <?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
  </div> <!-- end primary. -->
 <?php echo foot();
