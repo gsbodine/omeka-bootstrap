@@ -55,7 +55,10 @@ function bootstrap_nav(Zend_View_Helper_Navigation_Menu $nav, $options = array()
         'activeClass' => 'active',
         'parentClass' => 'dropdown',
         'renderParentClass' => true,
-        'partial' => 'common/menu.php',
+        'partial' => 'libraries'
+            . DIRECTORY_SEPARATOR . 'Twitter'
+            . DIRECTORY_SEPARATOR . 'Partial'
+            . DIRECTORY_SEPARATOR . 'NavigationMenu.php',
         // This is a non-standard option.
         'addExternalLinks' => false,
     );
