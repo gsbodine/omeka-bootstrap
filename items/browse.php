@@ -5,7 +5,7 @@ echo head(array(
     'bodyclass' => 'items browse',
 ));
 ?>
-<!-- <div id="primary"> -->
+<div id="primary">
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <div class="page-header">
@@ -110,5 +110,5 @@ echo head(array(
         <?php echo pagination_links(); ?>
     </div>
     <?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
-<!-- </div>end primary -->
-<?php echo foot(); ?>
+ </div> <!-- end primary. -->
+<?php echo foot();

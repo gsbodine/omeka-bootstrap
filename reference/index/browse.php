@@ -6,7 +6,13 @@ echo head(array(
 ));
 ?>
 <div id="primary">
-    <h1><span class="glyphicon glyphicon-hand-right"></span> <?php echo $pageTitle; ?></h1>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="page-header">
+                <h1><span class="glyphicon glyphicon-hand-right"></span> <?php echo $pageTitle; ?></h1>
+            </div>
+        </div>
+    </div>
     <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
     </nav>
@@ -54,5 +60,5 @@ echo head(array(
     endif;
     ?>
     </ul>
-</div>
+</div> <!-- end primary. -->
 <?php echo foot();

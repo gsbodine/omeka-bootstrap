@@ -3,13 +3,22 @@
  * The public browse view for Timelines.
  */
 
-$head = array('bodyclass' => 'timelines primary',
-              'title' => html_escape(__('Browse Timelines')));
+$title = __('Browse Timelines');
+$head = array(
+    'title' => html_escape($title),
+    'bodyclass' => 'timelines primary',
+);
 echo head($head);
 ?>
 
-<div class="timelines">
-    <h1><span class="glyphicon glyphicon-time"></span> <?php echo __('Browse Timelines'); ?></h1>
+<div id="primary">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="page-header">
+                <h1><span class="glyphicon glyphicon-time"></span> <?php echo $title; ?></h1>
+            </div>
+        </div>
+    </div>
     <?php
     $linkToNav = get_option('neatline_time_link_to_nav');
     if ($linkToNav == 'browse' || $linkToNav == 'main'): ?>
@@ -30,5 +39,5 @@ echo head($head);
     <?php else: ?>
     <p><?php echo __('You have no timelines.'); ?></p>
     <?php endif; ?>
-</div>
+</div> <!-- end primary. -->
 <?php echo foot();

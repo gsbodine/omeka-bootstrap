@@ -53,5 +53,5 @@ echo head(array('title' => $title, 'bodyclass' => 'map browse_tabular'));
     <p>
         <a href="<?php echo absolute_url('items/map'); ?>"><?php echo __('View as a map'); ?></a>
     </p>
-</div>
+</div> <!-- end primary. -->
 <?php echo foot();

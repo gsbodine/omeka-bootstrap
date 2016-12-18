@@ -59,6 +59,5 @@ echo pagination_links();
         <?php echo items_search_form(array('id'=>'search'), $_SERVER['REQUEST_URI']); ?>
     </div>
     <?php endif; ?>
-</div>
-
+</div> <!-- end primary. -->
 <?php echo foot();
