@@ -626,3 +626,23 @@ ul.error li {
     margin-bottom: unset;
     padding: unset;
 }
+
+/* Guest User & Contribution */
+
+div.guest-user-widget {
+    background-color: unset;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    float: unset;
+    min-height: 200px;
+    height: auto;
+    margin: unset;
+    overflow: auto;
+    width: unset;
+}
+h2.guest-user-widget-label {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: unset;
+    margin: 0 0 0.75em;
+    padding: 15px;
+    text-transform: unset;
+}
