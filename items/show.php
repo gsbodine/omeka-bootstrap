@@ -1,8 +1,11 @@
-<?php echo head(array(
-    'title' => metadata('item', array('Dublin Core', 'Title')),
+<?php
+$pageTitle = metadata('item', array('Dublin Core', 'Title'));
+echo head(array(
+    'title' => $pageTitle,
     'bodyclass' => 'items show',
-)); ?>
-<div id="container">
+));
+?>
+<div id="primary">
     <div class="row">
         <div class="col-md-12">
             <nav class="pager">
@@ -17,11 +20,6 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <?php echo flash(); ?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
             <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
         </div>
     </div>
@@ -30,16 +28,15 @@
             <!-- Item Description -->
             <div class="row">
                 <div class="col-md-12">
-                    <h4><i class="fa fa-thumb-tack fa-lg"></i> Description: </h4>
+                    <h4><span class="fa fa-thumb-tack fa-lg"></span> <?php echo __('Description'); ?></h4>
                     <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
                         <p class="lead"><?php echo $itemDescription; ?></p>
                     <?php else: ?>
-                        
-                        <p class="alert"><strong>Sorry!</strong> No description recorded yet.</p>
+                        <p class="alert"><strong><?php echo __('Sorry!'); ?></strong> <?php echo __('No description recorded yet.'); ?></p>
                     <?php endif; ?>
                 </div>
             </div>
-            
+
             <!-- Item Collection Information (if available) -->
             <?php if (get_collection_for_item($item)): ?>
             <div class="row"><div class="col-md-12">
@@ -49,85 +46,88 @@
                 </div>
             </div></div>
             <?php endif; ?>
-            
-            <div class="row"><div class="col-md-12"><hr /></div></div>
-            
+
+            <div class="row">
+                <div class="col-md-12">
+                <hr />
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-4">
-                <!-- Item Date Information -->    
-                    <h4><i class="fa fa-calendar fa-lg"></i> Date: </h5>
-                    <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
+                <!-- Item Date Information -->
+                    <h4><span class="fa fa-calendar fa-lg"></span> <?php echo __('Date'); ?></h4>
+                    <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function or filter...?>
                         <div><?php echo $itemDate; ?></div>
                     <?php else: ?>
-                        <div>None recorded.</div>
+                        <div><?php echo __('None recorded'); ?></div>
                     <?php endif; ?>
                 </div>
                 <div class="col-md-4">
                 <!-- Item Creator Information -->
-                    <h4><i class="fa fa-user fa-lg"></i> Creator: </h4>
+                    <h4><span class="fa fa-user fa-lg"></span> <?php echo __('Creator'); ?></h4>
                     <div>
-                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
+                    <?php if ($itemCreator = metadata($item, array('Dublin Core', 'Creator'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>
-                        None recorded.
+                        <?php echo __('None recorded'); ?>
                     <?php endif; ?>
                     </div>
                 </div>
                 <div class="col-md-4">
                 <!-- Item Recipient Information (if available) -->
-                  <h4><i class="fa fa-archive fa-lg"></i> Source: </h4>
+                  <h4><span class="fa fa-archive fa-lg"></span> <?php echo __('Source'); ?></h4>
                     <div>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Source'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>
-                        None recorded.
+                        <?php echo __('None recorded'); ?>
                     <?php endif; ?>
                     </div>
-                    
                 </div>
             </div>
             <div class="row"><hr />
                 <!-- Subject -->
                 <div class="col-md-4">
-                     <h4><i class="fa fa-book fa-lg"></i><?php echo __(' Subject'); ?></h4>
+                     <h4><span class="fa fa-book fa-lg"></span><?php echo __(' Subject'); ?></h4>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Subject'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>
-                        None recorded.
+                        <?php echo __('None recorded'); ?>
                     <?php endif; ?>
                 </div>
                 <!-- Identifier -->
                 <div class="col-md-4">
-                    <h4><i class="fa fa-bookmark fa-lg"></i><?php echo __(' Identifier'); ?></h4>
+                    <h4><span class="fa fa-bookmark fa-lg"></span><?php echo __(' Identifier'); ?></h4>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Identifier'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>
-                        None recorded.
+                        <?php echo __('None recorded'); ?>
                     <?php endif; ?>
                 </div>
                 <!-- Contributor -->
                 <div class="col-md-4">
-                    <h4><i class="fa fa-university fa-lg"></i><?php echo __(' Contributor'); ?></h4>
+                    <h4><span class="fa fa-university fa-lg"></span><?php echo __(' Contributor'); ?></h4>
                     <?php if ($itemCreator = metadata($item,array('Dublin Core','Contributor'))): ?>
                         <?php echo $itemCreator; ?>
                     <?php else: ?>
-                        None recorded.
+                        <?php echo __('None recorded'); ?>
                     <?php endif; ?>
                 </div>
             </div>
             <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            
-                
+
+
             <!-- The following prints a list of all tags associated with the item -->
             <div class="row">
                 <div class="col-md-12">
-                                    <hr />
-                    <h4><i class="fa fa-tags fa-large"></i> Tags</h4>
+                    <hr />
+                    <h4><span class="fa fa-tags fa-large"></span> Tags</h4>
                     <div class="tags well well-small">
                         <?php if (tag_string($item) != null) {
                             echo tag_string($item); }
                             else {
-                            echo 'No tags recorded for this item.'; 
+                            echo __('No tags recorded for this item.');
                             }
                         ?>
                     </div>
@@ -136,20 +136,20 @@
             <div class="row">
                 <!-- Rights -->
                     <div class="col-md-12"><hr />
-                        <h4><i class="fa fa-copyright fa-lg"></i><?php echo __(' Rights'); ?></h4>
+                        <h4><span class="fa fa-copyright fa-lg"></span><?php echo __(' Rights'); ?></h4>
                         <?php if ($itemCreator = metadata($item,array('Dublin Core','Rights'))): ?>
                             <?php echo $itemCreator; ?>
                         <?php else: ?>
-                            None recorded.
+                            <?php echo __('None recorded'); ?>
                         <?php endif; ?>
                     </div>
             </div>
-            
+
              <div class="row">
                 <div class="col-md-12">
                     <hr />
                     <!-- The following prints a citation for this item. -->
-                    <h4><i class="fa fa-retweet fa-lg"></i> <?php echo __('Citation'); ?></h4>
+                    <h4><span class="fa fa-retweet fa-lg"></span> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>
@@ -162,12 +162,17 @@
         <!-- The following returns all of the files associated with an item. -->
         <div id="itemfiles" class="col-md-6">
             <!-- <h3><?php echo __('Files'); ?></h3> -->
-            
-           
             <div class="element-text"><?php echo files_for_item(
-                array('imageSize'=>'fullsize','linkToFile'=>true,'linkToMetadata'=>false),//options
-                array('class'=>'file-image'),
-                null); 
+                //options
+                array(
+                    'imageSize' => 'fullsize',
+                    'linkToFile' => true,
+                    'linkToMetadata'=>false,
+                    'imgAttributes' => array('class' => 'img-responsive'),
+                ),
+                // wrapper
+                array('class' => 'file-image'),
+                null);
         ?></div>
         </div>
     </div>
@@ -183,8 +188,5 @@
             </nav>
         </div>
     </div>
-        
-</div>
-<!-- end primary -->
-
-<?php echo foot(); ?>
+</div><?php //end primary ?>
+<?php echo foot();
