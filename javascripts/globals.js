@@ -166,8 +166,6 @@ if (!Omeka) {
         // 'current' class for on-current-page links
         $(".current").addClass("active");
 
-//        $('.carousel').carousel();
-
         // making tags look like labels and adding the icons
         $('a[rel="tag"]').addClass("label label-primary").prepend('<span class="glyphicon glyphicon-tag icon-white"></span> ');
         $(".popular").addClass("btn btn-default").prepend('<span class="glyphicon glyphicon-tag"></span> ');
