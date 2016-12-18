@@ -99,7 +99,7 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar">
                 <?php $nav = bootstrap_nav(public_nav_main(), array(
-                    'ulClass' => 'nav navbar-nav navbar-left',
+                    'ulClass' => 'navigation nav navbar-nav navbar-left',
                     'addExternalLinks' => false,
                 ));
                 echo $nav;
