@@ -177,4 +177,49 @@ if (!Omeka) {
         // $('.pop-box').popover();
     });
 
+    // Adapted from the plugin Taxonomy (taxonomy.js).
+    $(document).bind("omeka:elementformload", function() {
+        $("select.taxonomy-open").each(function() {
+            $(this).change(function() {
+                var val = $(this).val();
+                if (val == 'insert_new_term') {
+                    $(this).next('input.taxonomy-open').show();
+                    $(this).parent().find('button.taxonomy-open').show();
+                    $(this).parent().find('p.taxonomy-open').show();
+
+                } else {
+                    $(this).next('input.taxonomy-open').hide();
+                    $(this).parent().find('button.taxonomy-open').hide();
+                    $(this).parent().find('p.taxonomy-open').hide();
+                }
+            }).change();
+
+            $("button.taxonomy-open").click(function(){
+                var field = $(this).parent().find('input.taxonomy-open');
+                var val = field.val().trim();
+                if (val.length == 0) {
+                    return;
+                }
+                var select = $(this).parent().find('select.taxonomy-open');
+                var exists = false;
+                select.find('option').each(function(){
+                    if (this.value == val) {
+                        exists = true;
+                        return false;
+                    }
+                });
+                if (!exists) {
+                    var insertNewTerm = select.children("option[value='insert_new_term']")[0].outerHTML;
+                    select.children("option[value='insert_new_term']").remove();
+                    select.append('<option value="' + val + '">' + val + '</option>');
+                    select.append(insertNewTerm);
+                }
+                select.val(val);
+                field.val('').hide();
+                $(this).hide();
+                $(this).parent().find('p.taxonomy-open').hide();
+            });
+        });
+    });
+
 })(jQuery);

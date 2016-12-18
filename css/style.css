@@ -652,3 +652,9 @@ h2.guest-user-widget-label {
         display: table-cell;
     }
 }
+/* Copy of help block. */
+.taxonomy-open.description {
+    color: #737373;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
