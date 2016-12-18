@@ -20,7 +20,7 @@ echo head(array(
     </div>
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1>
+            <h1><span class="glyphicon glyphicon-book"></span> <?php echo $pageTitle; ?></h1>
         </div>
     </div>
 <?php if ($selectedMetadata = get_theme_option('Display Preselected Metadata')):
