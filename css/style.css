@@ -477,10 +477,20 @@ margin-right: 5px;
 footer {
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 1px solid #e8e8e8;
-}
-.omeka-props-footer > p {
+    border-top: 1px solid grey;
     font-size: 11px;
+    line-height: 15px;
+    font-weight:normal;
+}
+footer p {
+    font-size: 11px;
+    line-height: 15px;
+}
+footer a {
+    font-weight:bold;
+}
+.omeka-props-footer {
+    font-size: 10px;
 }
 
 /******SEARCH PAGE STYLES*******/

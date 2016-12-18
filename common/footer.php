@@ -1,22 +1,26 @@
         </div><!-- end content -->
-        <div class="row">
-        <footer class="col-xs-12">
-            <div id="custom-footer-text">
-                <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
-                <p><?php echo $footerText; ?></p>
-                <?php endif; ?>
-                <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
-                    <p><?php echo $copyright; ?></p>
-                <?php endif; ?>
+        <footer>
+            <div class="row">
+                <div id="footer-text" class="col-sm-9">
+                    <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
+                    <p><?php echo $footerText; ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
-            <div class="omeka-props-footer pull-right">
-                <p><?php echo __('Proudly powered by <a href="https://omeka.org">Omeka</a>.'); ?></p>
+            <div class="row">
+                <div class="col-sm-9">
+                    <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
+                        <p><?php echo $copyright; ?></p>
+                    <?php endif; ?>
+                </div>
+                <div class="col-sm-3">
+                    <p class="omeka-props-footer text-right"><?php echo __('Proudly powered by <a href="https://omeka.org">Omeka</a>.'); ?></p>
+                </div>
             </div>
             <div>
                 <?php fire_plugin_hook('public_footer'); ?>
             </div>
         </footer>
-        </div>
 </div><!--end wrap-->
 
     <?php
