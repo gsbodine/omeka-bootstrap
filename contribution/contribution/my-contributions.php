@@ -1,20 +1,19 @@
 <?php
-$title = __('My Contributions');
-$bodyClass = 'contribution';
-
+$pageTitle = __('My Contributions');
 echo head(array(
-    'title' => $title,
-    'bodyclass' => $bodyClass,
+    'title' => $pageTitle,
+    'bodyclass' => 'contributions browse',
 )); ?>
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><span class="glyphicon glyphicon-oil"></span> <?php echo $title; ?></h1>
+            <h1><span class="glyphicon glyphicon-oil"></span> <?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
             <?php echo bootstrap_flash('info'); ?>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
+<?php if ($total_results): ?>
 <form method="post" class="form-horizontal">
     <div class="table-responsive">
     <table class="table table-striped table-hover">
@@ -54,5 +53,17 @@ echo head(array(
     <input id="save-changes" class="submit btn" type="submit" value="Save Changes" name="submit">
     </div>
 </form>
+<?php else: ?>
+    <p>
+        <?php echo __('No contribution yet, or removed contributions.'); ?>
+    </p>
+    <p>
+        <?php echo __('Feel free to %scontribute%s or %sbrowse the archive%s.',
+            '<a href="' . contribution_contribute_url() . '">', '</a>',
+            '<a href="' . url('items/browse') . '">', '</a>'); ?>
+    </p>
+<?php endif; ?>
+        </div>
+    </div>
 </div>
 <?php echo foot();
