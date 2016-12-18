@@ -219,4 +219,20 @@ function displayGridRotator($items)
         </div>
     </div>
 <?php
+}
+
+/**
+ * Hack to wrap flash inside a bootstrap class.
+ *
+ * @uses flash()
+ * @param string $bsColor The bootstrap color.
+ * @return string
+ */
+function bootstrap_flash($bsColor = 'primary')
+{
+    $flash = flash();
+    if ($flash) {
+        $flash = str_replace('<div id="flash">', '<div id="flash" class="bs-callout bs-callout-' . $bsColor . '">', $flash);
     }
+    return $flash;
+}

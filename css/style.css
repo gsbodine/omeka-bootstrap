@@ -617,3 +617,12 @@ footer a {
 .references ul {
     padding-left: 0;
 }
+
+#content #flash li,
+ul.error li {
+    border: unset;
+    border-radius: unset;
+    font-size: unset;
+    margin-bottom: unset;
+    padding: unset;
+}

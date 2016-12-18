@@ -7,10 +7,10 @@ echo head(array(
 ));
 ?>
 <div id="primary">
-    <?php echo flash(); ?>
     <div class="row">
         <div class="col-xs-12">
             <h1><span class="glyphicon glyphicon-pencil"></span> <?php echo html_escape(get_option('simple_contact_page_contact_title')); ?></h1>
+            <?php echo bootstrap_flash('danger'); ?>
          </div>
     </div>
     <div id="form-instructions">
