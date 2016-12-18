@@ -542,9 +542,12 @@ footer a {
 .bs-callout + #pagination-top .pagination {
     margin-top: 0;
 }
+.exhibits.browse .exhibits-nav ~ .exhibit,
 .items.browse .items-nav ~ .item {
     margin-top: 20px;
 }
+.exhibits.browse .bs-callout ~ .exhibit,
+.exhibits.browse .pagination-top ~ .exhibit,
 .items.browse .bs-callout ~ .item,
 .items.browse .pagination-top ~ .item {
     margin-top: 0;
