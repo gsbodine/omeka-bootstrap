@@ -1,13 +1,13 @@
 <?php
-$title = __('Browse Collections');
+$pageTitle = __('Browse Collections');
 echo head(array(
-    'title' => $title,
+    'title' => $pageTitle,
     'bodyclass' => 'collections browse',
 )); ?>
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
-            <h1><?php echo $title; ?></h1>
+            <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
         </div>
     </div>
     <?php if ($pagination_links = pagination_links()): ?>
