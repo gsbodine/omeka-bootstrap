@@ -80,9 +80,6 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
 .pagination>.active>span{
   background-color: #196371;
 }
-#bottompagination{
-  margin-top: 20px;
-}
 #comments-container {
   font-family: 'Lato';
 }
