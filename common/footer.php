@@ -45,6 +45,22 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?php endif; ?>
 
+    <?php if (get_theme_option('Use Advanced Search')): ?>
+    <script type="text/javascript">
+    $(function () {
+        $('#show-advanced').popover({
+            placement: 'auto bottom',
+            container: 'body',
+            trigger: 'click',
+            html : true,
+            title: '',
+            content: function() {
+                return $("#advanced-form").html();
+            }
+        });
+    });
+    </script>
+    <?php endif; ?>
     <?php if(is_current_url('/')): ?>
     <?php if (get_theme_option('Display Grid Rotator')):
     echo js_tag('modernizr-custom');

@@ -56,28 +56,36 @@
     </span>
     <?php endif; ?>
     <div>
-
-    <div class="container" id="logo">
+    <header id="header" role="banner" class="container">
         <div class="row">
-        <div class="col-md-12 col-sm-12" id="logoimg">
-        <?php echo link_to_home_page(theme_logo()); ?>
+            <div id="site-title" class="col-sm-6 col-md-6">
+                <div class="logoimg">
+                    <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
+                </div>
+            </div>
+            <div id="search-container" class="col-sm-6 col-md-6" role="search">
+                <?php echo search_form(array(
+                    'show_advanced' => get_theme_option('Use Advanced Search'),
+                    'submit_value' => __('Search'),
+                    'form_attributes' => array('class' => 'form-search navbar-form navbar-right', 'role' => 'form'))); ?>
+            </div>
         </div>
-        </div>
-    </div>
-        <nav class="navbar" id="wrap">
+        <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
+    </header>
+    <nav class="navbar" id="wrap">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"><?php echo __('Toggle navigation'); ?></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
-                <?php $nav = public_nav_main(); echo $nav->setUlClass('nav navelement navbar-nav')?>
+                <?php $nav = public_nav_main();
+                echo $nav->setUlClass('nav navelement navbar-nav'); ?>
                 <?php
                 $twitter = get_theme_option('Link Twitter');
                 $facebook = get_theme_option('Link Facebook');

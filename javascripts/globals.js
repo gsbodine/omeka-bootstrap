@@ -2,34 +2,63 @@ if (!Omeka) {
     var Omeka = {};
 }
 
-(function ($) {
+(function($) {
+    // Skip to content
+    Omeka.skipNav = function() {
+        $("#skipnav").click(function() {
+            $("#content").focus()
+        });
+    };
+
+    // Show advanced options for site-wide search.
     Omeka.showAdvancedForm = function () {
-        var advancedForm = $('#advanced-form');
-        var searchTextbox = $('#search-form input[type=text]');
-        var searchSubmit = $('#search-form input[type=submit]');
-        if (advancedForm) {
-            advancedForm.css("display", "none");
-            searchSubmit.addClass("with-advanced").after('<a href="#" id="advanced-search" class="button">Advanced Search</a>');
-            advancedForm.click(function (event) {
-                event.stopPropagation();
-            });
-            $("#advanced-search").click(function (event) {
-                event.preventDefault();
-                event.stopPropagation();
-                advancedForm.fadeToggle();
-                $(document).click(function (event) {
-                    if (event.target.id == 'query') {
-                        return;
-                    }
-                    advancedForm.fadeOut();
-                    $(this).unbind(event);
-                });
-            });
-        } else {
-            $('#search-form input[type=submit]').addClass("blue button");
+        var advanced_form = $('#advanced-form');
+        var search_submit = $('#search-form button');
+
+        // Set up classes and DOM elements jQuery will use.
+        if (advanced_form.length > 0) {
+            $('#search-container').addClass('with-advanced');
         }
     };
 
+    Omeka.megaMenu = function (menuSelector, customMenuOptions) {
+        if (typeof menuSelector === 'undefined') {
+            menuSelector = '#primary-nav';
+        }
+
+        var menuOptions = {
+            /* prefix for generated unique id attributes, which are required
+             to indicate aria-owns, aria-controls and aria-labelledby */
+            uuidPrefix: "accessible-megamenu",
+
+            /* css class used to define the megamenu styling */
+            menuClass: "nav-menu",
+
+            /* css class for a top-level navigation item in the megamenu */
+            topNavItemClass: "nav-item",
+
+            /* css class for a megamenu panel */
+            panelClass: "sub-nav",
+
+            /* css class for a group of items within a megamenu panel */
+            panelGroupClass: "sub-nav-group",
+
+            /* css class for the hover state */
+            hoverClass: "hover",
+
+            /* css class for the focus state */
+            focusClass: "focus",
+
+            /* css class for the open state */
+            openClass: "open"
+        };
+
+        $.extend(menuOptions, customMenuOptions);
+
+        $(menuSelector).accessibleMegaMenu(menuOptions);
+    };
+
+    // TODO Check to use megamenu or dropdown.
     Omeka.dropDown = function(){
         var dropdownMenu = $('#mobile-nav');
         dropdownMenu.prepend('<a class="menu">Menu</a>');
@@ -49,6 +78,16 @@ if (!Omeka) {
             }
         });
     };
+
+    $(document).ready(function () {
+        $('.omeka-media').on('error', function () {
+            if (this.networkState === HTMLMediaElement.NETWORK_NO_SOURCE ||
+                this.networkState === HTMLMediaElement.NETWORK_EMPTY
+            ) {
+                $(this).replaceWith(this.innerHTML);
+            }
+        });
+    });
 })(jQuery);
 
 /*
@@ -59,8 +98,8 @@ if (!Omeka) {
 jQuery(document).ready(function($){
 
     // for theming the form helper buttons with Bootstrap button defaults classes
-    // for theming the search button with Bootstrap button defaults
-    $("#submit_search").addClass("btn");
+    // when it is not a button.
+    // $("#submit_search").addClass("btn");
 
     // for adding the 'active' class, which is Bootstrap's equivalent of Omeka's
     // 'current' class for on-current-page links
