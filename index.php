@@ -7,15 +7,17 @@ if (get_theme_option('Display Grid Rotator')):
 endif;
 ?>
 
+<?php $homepageText = get_theme_option('Homepage Text'); ?>
 <div class="row home-features" id="home-tagline"> <!-- start tagline -->
     <div class="col-md-12">
         <h1 id="tagline"><?php echo option('site_title'); ?></h1>
+        <?php echo $homepageText; ?>
     </div>
 </div>
 
 <div class="row home-features"> <!-- start about & tag cloud -->
     <div class="col-md-4 col-sm-12 home-stories"> <!--about-->
-        <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
+        <?php if ((get_theme_option('Display Featured Exhibit'))
             && plugin_is_active('ExhibitBuilder')
             && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
         <!-- Featured Exhibit -->
