@@ -8,10 +8,12 @@ echo head(array(
 ?>
 <div id="primary">
     <div class="page-title">
-        <h1><?php echo $pageTitle; ?> <small><?php echo __('By Current Tags'); ?></small></h1>
+        <h1><span class="glyphicon glyphicon-list"></span> <?php echo $pageTitle; ?> <small><span class="glyphicon glyphicon-tags"></span> <?php echo __('By Current Tags'); ?></small></h1>
     </div>
     <div class="col-sm-12 col-md-12">
-        <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
+        <nav class="items-nav navigation secondary-nav">
+            <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
+        </nav>
         <?php
             asort($tags);
             echo tag_cloud($tags, url('items/browse'));

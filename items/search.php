@@ -6,9 +6,8 @@ echo head(array('title' => $pageTitle,
 ));
 ?>
 <div id="primary">
-    <h1><i class="glyphicon glyphicon-search"></i> <?php echo $pageTitle; ?></h1>
-
-    <nav class="items-nav navigation" id="secondary-nav">
+    <h1><span class="glyphicon glyphicon-search"></span> <?php echo $pageTitle; ?></h1>
+    <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
     </nav>
     <?php echo $this->partial('items/search-form.php',

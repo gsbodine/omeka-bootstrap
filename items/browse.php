@@ -9,13 +9,13 @@ echo head(array(
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <div class="page-header">
-                <h1><?php echo $pageTitle;?> <small><?php echo __('(%s items total)', $total_results); ?></small></h1>
+                <h1><span class="glyphicon glyphicon-list"></span> <?php echo $pageTitle;?> <small><?php echo __('(%s items total)', $total_results); ?></small></h1>
             </div>
         </div>
     </div>
-    <div class="nav nav-tabs" id="secondary-nav">
+    <nav class="items-nav navigation secondary-nav">
         <?php echo public_nav_items()->setUlClass('nav nav-pills'); ?>
-    </div>
+    </nav>
     <div id="pagination-top" class="pagination pagination-centered">
         <?php echo pagination_links(); ?>
     </div>
