@@ -37,7 +37,7 @@
     <?php else: ?>
     <script src="//code.jquery.com/jquery.js"></script>
     <?php endif; ?>
-    <?php if (get_theme_option('Use Internal Bootstrap') == '1') :?>
+    <?php if (get_theme_option('Use Internal Bootstrap')) :?>
     <script src="<?php echo src('bootstrap.min', 'javascripts', 'js'); ?>"></script>
     <?php else: ?>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
