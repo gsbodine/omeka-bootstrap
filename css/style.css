@@ -87,42 +87,10 @@ body {
 /********HOMEPAGE FEATURED ITEMS*********/
 #featured-row {
     border-top: 3px green solid;
-    margin: 10px 0 10px 0;
 }
-#featured-item > .item.record > .image > img {
-    border: solid 1px #eee;
-    padding: 3px;
+.image-featured {
+    padding-bottom: 6px;
 }
-#recent-items > .items-list > .item > .item-img > a > img {
-    border: solid 1px #eee;
-}
-padding: 3px;
-/*
-#featured-item > h2 {
-    font-size: 25px;
-}
-*/
-.exhibit.record > a > img {
-    float: left;
-    height: 125px;
-    margin-right: 20px;
-}
-#featured-item > .item.record > h3 {
-    font-size: 21px;
-}
-/*
-#featured-exhibit > h2 {
-    font-size: 25px;
-}
-*/
-/*
-#recent-items > h2 {
-    font-size: 25px;
-}
-#recent-items > .items-list > .item > h3 {
-    font-size: 21px;
-}
-*/
 
 /********HEADER STYLES*********/
 .navbar-toggle {

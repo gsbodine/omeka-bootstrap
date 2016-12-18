@@ -1,16 +1,21 @@
 <div class="collection record">
     <?php
     $title = metadata($collection, 'display_title');
-    $description = metadata($collection, array('Dublin Core', 'Description'), array('snippet' => 150));
+    $image = record_image($collection, 'square_thumbnail', array('class' => 'center-block img-responsive'));
+    $description = metadata($collection, array('Dublin Core', 'Description'), array('no_escape' => true, 'snippet' => 150));
     ?>
     <h3 class="ellipsis"><?php echo link_to($this->collection, 'show', $title); ?></h3>
-    <?php if ($collectionImage = record_image($collection, 'square_thumbnail', array('class' => 'img-responsive'))): ?>
-        <?php echo link_to($this->collection, 'show', $collectionImage, array('class' => 'image')); ?>
+    <div class="image-featured">
+    <?php if ($image): ?>
+        <?php echo link_to($collection, 'show', $image, array('class' => 'image')); ?>
     <?php else: ?>
-        <?php $noFile = '<img src="' . img('no-file.png') . '" class="img-responsive" alt="' . __('No file') . '" />'; ?>
-        <?php echo link_to($this->collection, 'show', $noFile, array('class' => 'image none')); ?>
+        <?php $noFile = '<img src="' . img('no-file.png') . '" class="center-block img-responsive" alt="' . __('No file') . '" />'; ?>
+        <?php echo link_to($collection, 'show', $noFile, array('class' => 'image none')); ?>
     <?php endif; ?>
+    </div>
+    <div class="collection-description">
     <?php if ($description): ?>
-        <p class="collection-description ellipsis"><?php echo $description; ?></p>
+        <div class="ellipsis"><?php echo $description; ?></div>
     <?php endif; ?>
+    </div>
 </div>
