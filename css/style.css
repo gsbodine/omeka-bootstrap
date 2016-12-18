@@ -2,12 +2,9 @@
   float: right;
   margin: 10px 35px 10px 40px;
   padding-bottom: 0px;
-
 }
 .caption {
-  float: right;
-  clear: right;
-  width: 400px;
+  /* width: 400px; */
   font-size: 12px;
   line-height: 15px;
 }
@@ -98,6 +95,7 @@ background-image: url(http://www.transparenttextures.com/patterns/fabric-of-squa
   padding-left: 20px;
   float: right;
 }
+
 /********HOMEPAGE FEATURED ITEMS*********/
 #featured-row {
   border-top: 3px green solid;
