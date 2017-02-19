@@ -277,8 +277,8 @@ function bootstrap_form(Zend_Form $form, string $formType = 'basic')
 /**
  * Returns a breadcrumb for a given page (without the home page).
  *-
- * @see simple_pages_display_breadcrumbs()
- * @uses public_url(), html_escape()
+ * @see simple_pages_display_breadcrumbs ()
+ * @uses public_url (), html_escape ()
  * @param integer|null The id of the page.  If null, it uses the current simple page.
  * @return array
  */
