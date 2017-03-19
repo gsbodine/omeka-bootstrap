@@ -60,7 +60,7 @@
     <!-- end collection-description -->
     <div class="row">
         <div class="col-xs-12">
-            <?php fire_plugin_hook('public_collection_show'); ?>
+            <?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
         </div>
     </div>
 </div><?php // end primary ?>
