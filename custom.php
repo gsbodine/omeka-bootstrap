@@ -258,7 +258,7 @@ function bootstrap_flash($bsColor = 'primary')
  * vertical (basic).
  * @return Zend_Form
  */
-function bootstrap_form(Zend_Form $form, string $formType = 'basic')
+function bootstrap_form(Zend_Form $form, $formType = 'basic')
 {
     if ($form instanceof Omeka_Form) {
         // TODO Manage special Omeka elements?
