@@ -1,6 +1,6 @@
 <div class="item record">
     <?php
-    $title = metadata($item, 'display_title');
+    $title = version_compare(OMEKA_VERSION, '2.5', '>=') ? metadata($item, 'display_title') : metadata($item, array('Dublin Core', 'Title'));
     $description = metadata($item, array('Dublin Core', 'Description'), array('no_escape' => true, 'snippet' => 150));
     ?>
     <h3 class="ellipsis"><?php echo link_to($item, 'show', $title); ?></h3>
