@@ -34,12 +34,12 @@
         </div>
     </div>
     <div class="row">
-        <?php $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-polaroid" alt="' . __('No file') . '" />'; ?>
+        <?php $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-thumbnail" alt="' . __('No file') . '" />'; ?>
         <?php foreach(loop('items') as $item): ?>
         <div class="col-sm-3">
             <div class="well" style="text-align:center;">
                 <div><?php if (metadata($item, 'has files')):
-                    echo link_to_item(item_image('square_thumbnail', array('class' => 'img-rounded img-responsive img-polaroid')));
+                    echo link_to_item(item_image('square_thumbnail', array('class' => 'img-rounded img-responsive img-thumbnail')));
                 else:
                     echo link_to_item($noFile, array('class' => 'image none'), 'show', $item);
                 endif; ?>

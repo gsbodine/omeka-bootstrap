@@ -11,7 +11,7 @@
             array('class' => 'image'), 'show', $item
         );
     else:
-        $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-polaroid" alt="' . __('No file') . '" />';
+        $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-thumbnail" alt="' . __('No file') . '" />';
         echo link_to_item($noFile, array('class' => 'image none'), 'show', $item);
     endif; ?>
     </div>

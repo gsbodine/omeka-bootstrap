@@ -328,9 +328,10 @@ function bootstrap_breadcrumb_simple_page($pageId = null)
  *
  * @see exhibit_builder_page_trail()
  * @param ExhibitPage|null $exhibitPage The page to print the trail to.
+ * @param boolean|false $linkCurrent Whether or not to create a hyperlink for the provided exhibit page too.
  * @return array
  */
-function bootstrap_breadcrumb_exhibit_page($exhibitPage = null)
+function bootstrap_breadcrumb_exhibit_page($exhibitPage = null, $linkCurrent = false)
 {
     if (!$exhibitPage) {
         $exhibitPage = get_current_record('exhibit_page');
@@ -351,6 +352,75 @@ function bootstrap_breadcrumb_exhibit_page($exhibitPage = null)
         release_object($parent);
     }
 
-    $breadcrumbs[] = metadata($exhibitPage, 'title');
+    $breadcrumbs[] = $linkCurrent ? exhibit_builder_link_to_exhibit($exhibit, metadata($exhibitPage, 'title'), array(), $exhibitPage) : metadata($exhibitPage, 'title');
     return $breadcrumbs;
+}
+
+
+/**
+ * Get HTML for all files assigned to an item.
+ *
+ * @package Original: Omeka\Function\View\Item
+ * @uses file_markup()
+ * @param array $options
+ * @param array $wrapperAttributes
+ * @param Item|null $item Check for this specific item record (current item if null).
+ * @return string HTML
+ */
+function custom_files_for_item($options = array(), $wrapperAttributes = array('class' => 'item-file'), $item = null)
+{
+    if (!$item) {
+        $item = get_current_record('item');
+    }
+    return custom_file_markup($item->Files, $options, $wrapperAttributes);
+}
+
+/**
+ * Get HTML for a set of files.
+ *
+ * @package Original: Omeka\Function\View\File
+ * @uses Omeka_View_Helper_FileMarkup::fileMarkup()
+ * @param File $files A file record or an array of File records to display.
+ * @param array $props Properties to customize display for different file types.
+ * @param array $wrapperAttributes Attributes HTML attributes for the div that
+ * wraps each displayed file. If empty or null, this will not wrap the displayed
+ * file in a div.
+ * @return string HTML
+ */
+function custom_file_markup($files, array $props = array(), $wrapperAttributes = array('class' => 'item-file'))
+{
+    if (!is_array($files)) {
+        $files = array($files);
+    }
+    $helper = new Omeka_View_Helper_FileMarkup;
+    $output = '';
+    foreach ($files as $file) {
+        $filename = metadata($file, 'original_filename');
+        //$description = metadata($file, 'description'); //theme doesn't currently show/link to file description data
+        $wrapperAttributes['aria-describedby'] = $filename;
+        $output .= '<figure>';
+        $output .= $helper->fileMarkup($file, $props, $wrapperAttributes);
+        $output .= '<figcaption id="'.$filename.'">'.$filename.'</figcaption>';
+        $output .= '</figure>';
+    }
+    return $output;
+}
+
+function related_exhibit_page($item) {
+    //https://forum.omeka.org/t/linking-to-exhibit-from-item-page-using-custom-php-in-a-theme/2821/6
+    $db = get_db();
+
+    $select = "SELECT ep.* FROM {$db->prefix}exhibit_pages AS ep
+    INNER JOIN {$db->prefix}exhibit_page_blocks AS epb ON epb.page_id = ep.id
+    INNER JOIN {$db->prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
+    WHERE epba.item_id = ?";
+
+    $exhibits = $db->getTable("ExhibitPage")->fetchObjects($select,array($item->id));
+
+    if(!empty($exhibits)) {
+        #foreach($exhibits as $exhibit) {
+        #    echo '<div style="float:right;"><h3><a href="'.exhibit_builder_exhibit_uri($exhibit).'">Biography</a></h3></div>';
+        #}
+        return $exhibits[0];
+    }
 }

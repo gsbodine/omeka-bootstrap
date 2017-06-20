@@ -3,7 +3,8 @@ $pageTitle = __('Browse Collections');
 echo head(array(
     'title' => $pageTitle,
     'bodyclass' => 'collections browse',
-)); ?>
+));
+?>
 <div id="primary">
     <div class="row page-header">
         <div class="col-xs-12">
@@ -22,14 +23,18 @@ echo head(array(
     ?>
     <div class="row">
         <div class="col-xs-12">
-            <div id="sort-links" class="pull-right">
-                <span class="sort-label label label-default"><?php echo __('Sort by:'); ?></span>
+            <div id="sort-links" class="input-group input-group-sm btn-group">
+                <span class="input-group-addon"><?php echo __('Sort by:'); ?></span>
+                <div class="input-group">
                     <?php
                         echo bootstrap_browse_sort_links($sortLinks, array(
-                            'list_attr' => array('id' => 'sort-links-list', 'class' => 'btn-group', 'role' => 'group', 'aria-label' => __('Sort by:')),
-                            'link_attr' => array('class' => 'btn btn-default btn-sm'),
+                            'list_tag'  => 'div',
+                            'list_attr' => array('class' => 'input-group-btn'),
+                            'link_tag'  => 'span',
+                            'link_attr' => array('class' => 'btn btn-default btn-sm', 'role' => 'button')
                         ));
                     ?>
+                </div>
             </div>
         </div>
     </div>
@@ -40,12 +45,15 @@ echo head(array(
             <div class="row">
                 <div class="col-sm-4">
                     <div class="collection-img">
-                        <?php $collectionImage = record_image('collection', 'square_thumbnail', array('class' => 'img-responsive')); ?>
-                        <?php if ($collectionImage): ?>
-                            <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
-                        <?php else: ?>
-                            <div class="image none"></div>
-                        <?php endif; ?>
+                        <?php
+                            $collectionImage = record_image('collection', 'square_thumbnail', array('class' => 'img-responsive'));
+                            $noFile = '<img src="' . img('no-file.png') . '" class="img-rounded img-responsive img-thumbnail" alt="' . __('No file') . '" />';
+                            if ($collectionImage):
+                                echo link_to_collection($collectionImage, array('class' => 'image'));
+                            else:
+                                echo link_to_collection($noFile, array('class' => 'image none'));
+                            endif;
+                        ?>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -61,7 +69,7 @@ echo head(array(
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-sm-8 col-sm-offset-4">
                     <div class="element">
                         <div class="collection-description">
                             <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet' => 150))); ?>
@@ -71,7 +79,7 @@ echo head(array(
                         <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
                     </div>
                     <div>
-                        <p class="view-items-link-browse pull-right"><?php echo link_to_items_in_collection($text = 'View the items in this collection'); ?></p>
+                        <p class="view-items-link-browse"><?php echo link_to_items_in_collection($text = 'View the items in this collection'); ?></p>
 	                </div>
                 </div>
             </div>

@@ -42,14 +42,18 @@ echo head(array(
     ?>
     <div class="row">
         <div class="col-xs-12">
-            <div id="sort-links" class="pull-right">
-                <span class="sort-label label label-default"><?php echo __('Sort by:'); ?></span>
+            <div id="sort-links" class="input-group input-group-sm btn-group">
+                <span class="input-group-addon"><?php echo __('Sort by:'); ?></span>
+                <div class="input-group">
                     <?php
                         echo bootstrap_browse_sort_links($sortLinks, array(
-                            'list_attr' => array('id' => 'sort-links-list', 'class' => 'btn-group', 'role' => 'group', 'aria-label' => __('Sort by:')),
-                            'link_attr' => array('class' => 'btn btn-default btn-sm'),
+                            'list_tag'  => 'div',
+                            'list_attr' => array('class' => 'input-group-btn'),
+                            'link_tag'  => 'span',
+                            'link_attr' => array('class' => 'btn btn-default btn-sm', 'role' => 'button')
                         ));
                     ?>
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +66,7 @@ echo head(array(
                 <div class="item">
                 <div class="carousel-img" style="text-align: center">
                 <?php if (metadata($item, 'has thumbnail')): ?>
-                    <?php echo link_to_item(item_image('thumbnail', array('class' => 'img-responsive img-polaroid')), null, null, $item); ?>
+                    <?php echo link_to_item(item_image('thumbnail', array('class' => 'img-responsive img-thumbnail')), null, null, $item); ?>
                 <?php else: ?>
                     <div class="image none"></div>
                  <?php endif; ?>

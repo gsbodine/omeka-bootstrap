@@ -6,7 +6,7 @@ echo head(array(
 ));
 ?>
 <div id="primary">
-    <div class="row">
+    <div class="row form-group">
         <div class="col-xs-12">
             <nav class="pager">
                 <ul>
@@ -92,8 +92,9 @@ else:
         <!-- The following returns all of the files associated with an item. -->
         <div id="itemfiles" class="col-md-6">
             <?php if (metadata('item', 'has files')): ?>
-            <!-- <h3><?php echo __('Files'); ?></h3> -->
-            <div class="element-text"><?php echo files_for_item(
+            <h3><?php echo metadata('item', 'file_count') == 1 ? __('File') : __('Files'); ?></h3>
+            <div class="element-text"><?php echo custom_files_for_item(
+                // This might be easier for future customization: https://omeka.org/codex/Display_Specific_Metadata_for_an_Item_File
                 //options
                 array(
                     'imageSize' => 'fullsize',
@@ -110,7 +111,7 @@ else:
     </div>
 <?php endif; ?>
     <br />
-    <div class="row">
+    <div class="row form-group">
         <div class="col-xs-12">
             <nav class="pager">
                 <ul>

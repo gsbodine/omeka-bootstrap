@@ -64,7 +64,6 @@
         <em><?php echo $displayBanner; ?></em>
     </span>
     <?php endif; ?>
-    <div>
     <header id="header" role="banner" class="container">
         <div class="row">
             <div id="site-title" class="col-sm-6">

@@ -66,7 +66,8 @@ if (is_current_url('/')):
                                 if (empty($collection)) {
                                     $breadcrumbs[] = link_to_items_browse(__('Browse'));
                                 } else {
-                                    $breadcrumbs[] = link_to_items_in_collection(null, array(), 'browse', $collection);
+                                    $breadcrumbs[] = link_to('collections', 'browse', __('Collections'));
+                                    $breadcrumbs[] = link_to_collection_for_item($collection->getProperty('display_title'));
                                 }
                             } elseif ($mode == 'type') {
                                 $itemType = $item->getItemType();
@@ -117,7 +118,8 @@ if (is_current_url('/')):
                         if (empty($collection)) {
                             $breadcrumbs[] = link_to_items_browse(__('Browse'));
                         } else {
-                            $breadcrumbs[] = link_to_items_in_collection(null, array(), 'browse', $collection);
+                            $breadcrumbs[] = link_to('collections', 'browse', __('Collections'));
+                            $breadcrumbs[] = link_to_collection_for_item($collection->getProperty('display_title'));
                         }
                     } elseif ($mode == 'type') {
                         $itemType = $item->getItemType();
@@ -183,6 +185,17 @@ if (is_current_url('/')):
                             $breadcrumbs[] = link_to('exhibits', 'browse', __('Exhibits'));
                             $breadcrumbs[] = exhibit_builder_link_to_exhibit();
                             $breadcrumbs = array_merge($breadcrumbs, bootstrap_breadcrumb_exhibit_page());
+                            break;
+                        case 'show-item':
+                            if (!isset($item) || !$item) {
+                                $item = get_current_record('item');
+                            }
+                            $breadcrumbs[] = link_to('exhibits', 'browse', __('Exhibits'));
+                            $breadcrumbs[] = exhibit_builder_link_to_exhibit();
+                            // Appends hierarchical links of all parent exhibit pages for current item to the breadcrumb array
+                            $breadcrumbs   = array_merge($breadcrumbs, bootstrap_breadcrumb_exhibit_page(related_exhibit_page($item), true));
+                            // Gets us the Item name text for the last part of the breadcrumb trail, removes hyperlink (strip_tags) to item
+                            $breadcrumbs[] = strip_tags(exhibit_builder_link_to_exhibit_item());
                             break;
                     endswitch;
                     break;
