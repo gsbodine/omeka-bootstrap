@@ -336,6 +336,7 @@ margin-right: 5px;
 }
 .popover-form label {
     font-weight: 400;
+    float:none;
 }
 .popover-form legend {
     font-size: inherit;

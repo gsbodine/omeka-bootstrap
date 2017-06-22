@@ -24,8 +24,8 @@
                 <div class="element-text">
                     <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('delimiter' => ', ')); ?></p>
                 </div>
+            </div>
             <?php endif; ?>
-         </div>
          </div>
     </div>
     <div class="row">
