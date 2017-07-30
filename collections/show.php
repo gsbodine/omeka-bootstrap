@@ -45,7 +45,7 @@
                 endif; ?>
                 </div>
                 <br />
-                <p class="caption ellipsis"><span><?php echo metadata('item', array('Dublin Core', 'Title')); ?></span></p>
+                <p class="caption ellipsis"><span><?php echo metadata($item, array('Dublin Core', 'Title')); ?></span></p>
             </div>
         </div>
         <?php endforeach ?>

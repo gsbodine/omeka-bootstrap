@@ -136,7 +136,7 @@
     </div>
     <!-- The following returns all of the files associated with an item. -->
     <div id="itemfiles" class="col-md-6">
-        <?php if (metadata('item', 'has files')): ?>
+        <?php if (metadata($item, 'has files')): ?>
         <!-- <h3><?php echo __('Files'); ?></h3> -->
         <div class="element-text"><?php echo files_for_item(
             //options

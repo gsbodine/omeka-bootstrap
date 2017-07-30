@@ -45,7 +45,7 @@ echo head(array(
         <fieldset id="contribution-item-metadata">
             <label for="contribution-type"><?php echo __('Item Type:'); ?></label>
             <span><?php echo $type->display_name; ?></span>
-            <?php if (metadata('item', 'has files')): ?>
+            <?php if (metadata($item, 'has files')): ?>
             <div id="file-list" class="form-group">
                 <label class="control-label col-sm-2"><?php echo __('Files'); ?></label>
                 <ul class="sortable" style="list-style-type: none;">

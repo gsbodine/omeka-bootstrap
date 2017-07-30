@@ -1,5 +1,5 @@
 <?php
-$pageTitle = metadata('item', array('Dublin Core', 'Title'));
+$pageTitle = metadata($item, array('Dublin Core', 'Title'));
 echo head(array(
     'title' => $pageTitle,
     'bodyclass' => 'items show',
@@ -33,7 +33,7 @@ else:
         <div class="col-md-6">
             <div class="row">
                 <div class="col-xs-12">
-                    <?php echo all_element_texts('item'); ?>
+                    <?php echo all_element_texts($item); ?>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@ else:
             <?php endif; ?>
 
             <!-- The following prints a list of all tags associated with the item -->
-            <?php // if (metadata('item', 'has tags')): ?>
+            <?php // if (metadata($item, 'has tags')): ?>
             <div class="row">
                 <div class="col-xs-12">
                     <hr />
@@ -91,8 +91,8 @@ else:
         </div>
         <!-- The following returns all of the files associated with an item. -->
         <div id="itemfiles" class="col-md-6">
-            <?php if (metadata('item', 'has files')): ?>
-            <h3><?php echo metadata('item', 'file_count') == 1 ? __('File') : __('Files'); ?></h3>
+            <?php if (metadata($item, 'has files')): ?>
+            <h3><?php echo metadata($item, 'file_count') == 1 ? __('File') : __('Files'); ?></h3>
             <div class="element-text"><?php echo custom_files_for_item(
                 // This might be easier for future customization: https://omeka.org/codex/Display_Specific_Metadata_for_an_Item_File
                 //options

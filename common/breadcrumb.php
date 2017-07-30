@@ -79,7 +79,7 @@ if (is_current_url('/')):
                             } elseif ($mode == 'browse') {
                                 $breadcrumbs[] = link_to_items_browse(__('Browse'));
                             }
-                            $breadcrumbs[] = $title ?: metadata('item', array('Dublin Core', 'Title'));
+                            $breadcrumbs[] = $title ?: metadata($item, array('Dublin Core', 'Title'));
                             break;
                         case 'browse':
                         case 'index':
