@@ -13,7 +13,7 @@ echo head(array(
 ?>
 <div id="primary">
     <?php // Don't duplicate the main breadcrumb, but set it if needed.
-    if (!($breadcrumb = get_theme_option('Display Breadcrumb Trail'))):
+    if ($breadcrumb = get_theme_option('Display Breadcrumb Trail')):
         echo common('breadcrumb', array('title' => @$title, 'mode' => $breadcrumb));
     endif; ?>
 
