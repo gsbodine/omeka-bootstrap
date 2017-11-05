@@ -38,7 +38,7 @@ $searchRecordTypes = get_search_record_types();
         <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
             <p class="help-block"><?php echo $searchRecordTypes[$recordType]; ?></p>
             <a href="<?php echo record_url($record, 'show'); ?>"><?php echo $searchText['title'] ? $searchText['title'] : __('[Unknown]'); ?></a>
-            <?php if ($description = metadata($record, array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
+            <?php if (in_array(get_class($record), array('Collection', 'Item', 'File')) && $description = metadata($record, array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
             <div class="<?php echo $recordTypeAttrib; ?>-description">
                 <?php echo $description; ?>
             </div>
