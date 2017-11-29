@@ -361,7 +361,6 @@ function bootstrap_breadcrumb_exhibit_page($exhibitPage = null, $linkCurrent = f
  * Get HTML for all files assigned to an item.
  *
  * @package Original: Omeka\Function\View\Item
- * @uses file_markup()
  * @param array $options
  * @param array $wrapperAttributes
  * @param Item|null $item Check for this specific item record (current item if null).
