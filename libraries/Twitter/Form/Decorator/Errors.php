@@ -9,7 +9,7 @@ class Twitter_Form_Decorator_Errors extends Zend_Form_Decorator_Errors
      * Render error method
      *
      * @param string $content
-     * @return string|HTML
+     * @return string html
      */
     public function render($content)
     {
