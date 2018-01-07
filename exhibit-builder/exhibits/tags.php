@@ -11,6 +11,7 @@ echo head(array(
             <h1><span class="glyphicon glyphicon-eye-open"></span> <?php echo $title; ?></h1>
         </div>
     </div>
+</div>
 <nav class="navigation exhibits-tags" id="secondary-nav">
     <?php echo nav(array(
             array(
