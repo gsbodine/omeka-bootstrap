@@ -28,8 +28,8 @@ Warning
 
 Use it at your own risk.
 
-It's always recommended to backup your files and database regularly so you can
-roll back if needed.
+It’s always recommended to backup your files and your databases and to check
+your archives regularly so you can roll back if needed.
 
 
 Troubleshooting
@@ -78,7 +78,7 @@ Copyright
 * Copyright Twitter, Inc, 2011-2016
 * Copyright Garrick S. Bodine, 2013
 * Copyright Amanda Regan, 2015
-* Copyright Daniel Berthereau, 2014-2016
+* Copyright Daniel Berthereau, 2014-2018
 
 Grid Rotator:
 

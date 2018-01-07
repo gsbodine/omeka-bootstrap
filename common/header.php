@@ -33,11 +33,11 @@
         queue_css_url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     }
     queue_css_file('style');
-    $displayBanner = get_theme_option('Display Corner Banner');
-    if ($displayBanner) {
+    $displayCornerBanner = get_theme_option('Display Corner Banner');
+    if ($displayCornerBanner) {
         queue_css_file('corner-banner');
     }
-    if (get_theme_option('Display Grid Rotator') && is_current_url('/')) {
+    if (get_theme_option('Display Grid Rotator') && is_current_url('/')):
         queue_css_file('grid-rotator-style');
     ?>
         <noscript>
@@ -47,21 +47,24 @@
         <link rel="stylesheet" type="text/css" href="<?php css_src('grid-rotator-fallback') ?>" />
         <![endif]-->
     <?php
-    }
+    endif;
+
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
-    <?php queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu')); ?>
+    <?php If (get_theme_option('Use Accessible Mega Menu')):
+        queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu'));
+    endif; ?>
     <?php // see footer for bootstrap-related js...
     echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <!-- <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a> -->
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
-    <?php if ($displayBanner): ?>
+    <?php if ($displayCornerBanner): ?>
     <span id="corner-banner">
-        <em><?php echo $displayBanner; ?></em>
+        <em><?php echo $displayCornerBanner; ?></em>
     </span>
     <?php endif; ?>
     <header id="header" role="banner" class="container">
