@@ -9,8 +9,6 @@
     <?php /* <link rel="shortcut icon" href="<?php echo img('favicon.ico'); ?>" type="image/x-icon" /> */ ?>
     <?php /* <link rel="apple-touch-icon" href="<?php echo img('favicon.svg'); ?>" type="image/svg+xml" /> */ ?>
     <?php
-    echo auto_discovery_link_tags();
-
     if (isset($title)) {
         $titleParts[] = strip_formatting($title);
     }
