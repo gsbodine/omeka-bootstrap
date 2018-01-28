@@ -74,9 +74,9 @@ echo head(array(
                     <div class="carousel-caption">
                         <h4><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h4>
                         <?php if ($description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
-                            <p class="item-description">
+                            <div class="item-description">
                                 <?php echo $description; ?>
-                            </p>
+                            </div>
                         <?php elseif ($text = metadata($item, array('Item Type Metadata', 'Text'), array('snippet' => 250))): ?>
                             <div class="item-description">
                                 <?php echo $text; ?>
@@ -84,7 +84,7 @@ echo head(array(
                         <?php endif; ?>
                         <?php if (metadata($item, 'has tags')): ?>
                             <div class="browse-item-tags"><p><strong><?php echo __('Tags'); ?>:</strong>
-                                <?php echo tag_string('items'); ?></p>
+                                <?php echo tag_string($item); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>
