@@ -1,5 +1,5 @@
 <?php
-// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+// For improved geolocation (https://github.com/Daniel-KM/Omeka-plugin-Geolocation).
 
 $request = Zend_Controller_Front::getInstance()->getRequest();
 

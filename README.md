@@ -101,7 +101,7 @@ Carousel:
 [Wearing Gay History Digital Archive]: https://www.wearinggayhistory.com
 [Codrops Animated Responsive Image Grid]: https://github.com/codrops/AnimatedResponsiveImageGrid
 [Owl Carousel]: http://www.owlgraphic.com/owlcarousel/
-[theme issues]: https://github.com/Daniel-KM/omeka-bootstrap/issues
+[theme issues]: https://github.com/Daniel-KM/Omeka-theme-Bootstrap/issues
 [Garrick S. Bodine]: https://github.com/gsbodine
 [Amanda Regan]: https://github.com/regan008
 [Bootstrap-Zend-Framework]: https://github.com/komola/Bootstrap-Zend-Framework

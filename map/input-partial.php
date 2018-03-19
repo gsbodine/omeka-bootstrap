@@ -1,5 +1,5 @@
 <?php
-// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+// For improved geolocation (https://github.com/Daniel-KM/Omeka-plugin-Geolocation).
 ?>
 <div class="geolocation-list">
     <label class="control-label col-sm-2"><?php echo $allowMultipleLocations ?  __('List of locations') : __('Current location'); ?></label>

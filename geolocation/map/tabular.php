@@ -1,5 +1,5 @@
 <?php
-// For improved geolocation (https://github.com/Daniel-KM/Geolocation).
+// For improved geolocation (https://github.com/Daniel-KM/Omeka-plugin-Geolocation).
 
 queue_css_file('geolocation-items-map');
 
