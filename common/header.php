@@ -39,10 +39,10 @@
         queue_css_file('grid-rotator-style');
     ?>
         <noscript>
-        <link rel="stylesheet" type="text/css" href="<?php css_src('grid-rotator-fallback') ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo css_src('grid-rotator-fallback'); ?>" />
         </noscript>
         <!--[if lt IE 9]>
-        <link rel="stylesheet" type="text/css" href="<?php css_src('grid-rotator-fallback') ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo css_src('grid-rotator-fallback'); ?>" />
         <![endif]-->
     <?php
     endif;
