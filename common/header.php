@@ -117,6 +117,9 @@
                     <?php endif; ?>
                 </ul>
                 <?php endif; ?>
+                <?php if (plugin_is_active('LocaleSwitcher')): ?>
+                <?php echo $this->localeSwitcher(); ?>
+                <?php endif; ?>
             </div>
          </div>
     </nav>
