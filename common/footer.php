@@ -58,7 +58,7 @@
     </script>
 
     <?php if (get_theme_option('Use Google Analytics') && $googleAccount = get_theme_option('Google Analytics Account')): ?>
-    <?php echo common('analyticstracking.php', array('account' => $googleAccount)); ?>
+    <?php echo common('analyticstracking.php', array('googleAccount' => $googleAccount)); ?>
     <?php endif; ?>
 </body>
 </html>
