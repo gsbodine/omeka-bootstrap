@@ -1,149 +1,127 @@
-<?php 
-    echo head(array('title' => metadata($item,array('Dublin Core', 'Title')), 'bodyid'=>'items','bodyclass' => 'show')); 
-    $item = $this->item;
-    ?>
+<?php
+$pageTitle = metadata($item, array('Dublin Core', 'Title'));
+echo head(array(
+    'title' => $pageTitle,
+    'bodyclass' => 'items show',
+));
+?>
 <div id="primary">
-    <div class="row">
-        <div class="span12">
-            <div class="pagination pagination-centered">
+    <div class="row form-group">
+        <div class="col-xs-12">
+            <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
                 </ul>
                 <ul>
                     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </div>
-    <div class="row">
-        <div class="span12">
-            <?php echo flash(); ?>
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h1><span class="glyphicon glyphicon-book"></span> <?php echo $pageTitle; ?></h1>
         </div>
     </div>
+<?php if ($selectedMetadata = get_theme_option('Display Preselected Metadata')):
+    echo common('show-selected-metadata', array('item' => $item));
+else:
+    // TODO Limit fields to display.
+    // $fieldsToDisplay = get_theme_option('Display Dublin Core Fields');
+?>
     <div class="row">
-        <div class="span12">
-            <div class="page-header"><h1><?php echo metadata($item,array('Dublin Core', 'Title')); ?></h1></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span6">
-            <!-- Item Description -->
+        <div class="col-md-6">
             <div class="row">
-                <div class="span6">
-                    <?php if ($itemDescription = metadata($item,array('Dublin Core','Description'))): ?>
-                        <p class="lead"><?php echo $itemDescription; ?></p>
-                    <?php else: ?>
-                        <h4>Description</h4>
-                        <p class="alert"><strong>Sorry!</strong> No description recorded yet.</p>
-                    <?php endif; ?>
+                <div class="col-xs-12">
+                    <?php echo all_element_texts($item); ?>
                 </div>
             </div>
-            
-            <!-- Item Collection Information (if available) -->
+
+            <!-- If the item belongs to a collection, the following creates a link to that collection. -->
             <?php if (get_collection_for_item($item)): ?>
-            <div class="row"><div class="span6">
-                <div id="collection" class="element">
-                    <h4 style="display:inline"><?php echo __('Collection'); ?>: </h4>
-                    <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
-                </div>
-            </div></div>
-            <?php endif; ?>
-            
-            <div class="row"><div class="span6"><hr /></div></div>
-            
             <div class="row">
-                <div class="span2">
-                <!-- Item Date Information -->    
-                    <h4><i class="icon-calendar icon-large"></i> Date: </h5>
-                    <?php if ($itemDate = metadata($item,array('Dublin Core','Date'))): // TODO: create a date format function...?>
-                        <div class="lead"><?php echo $itemDate; ?></div>
-                    <?php else: ?>
-                        <div class="lead">None recorded.</div>
-                    <?php endif; ?>
-                </div>
-                <div class="span2">
-                <!-- Item Creator Information -->
-                    <h4><i class="icon-user icon-large"></i> Author: </h4>
-                    <div class="lead">
-                    <?php if ($itemCreator = metadata($item,array('Dublin Core','Creator'))): ?>
-                        <?php echo $itemCreator; ?>
-                    <?php else: ?>
-                        None recorded.
-                    <?php endif; ?>
+                <div class="col-xs-12">
+                    <hr />
+                    <div id="collection">
+                        <h4 style="display:inline"><span class="glyphicon glyphicon-book"></span> <?php echo __('Collection'); ?>: </h4>
+                        <h4 style="display:inline"><?php echo link_to_collection_for_item(); ?></h4>
                     </div>
                 </div>
-                <div class="span2">
-                <!-- Item Recipient Information (if available) -->
-                    
-                    <?php 
-                        $itemRecipient = metadata($item,array('Item Type Metadata','Recipient'));
-                        if (trim($itemRecipient) != ''): ?>
-                        <h4><i class="icon-envelope icon-large"></i> Recipient: </h4>
-                        <div class="lead">
-                            <?php echo $itemRecipient; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
             </div>
-            
-            <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            
-                
+            <?php endif; ?>
+
             <!-- The following prints a list of all tags associated with the item -->
+            <?php // if (metadata($item, 'has tags')): ?>
             <div class="row">
-                <div class="span6">
+                <div class="col-xs-12">
                     <hr />
-                    <h4><i class="icon-tags icon-large"></i> Tags</h4>
+                    <h4><span class="fa fa-tags fa-large"></span> <?php echo __('Tags'); ?></h4>
                     <div class="tags well well-small">
-                        <?php if (tag_string($item) != null) {
-                            echo tag_string($item); }
-                            else {
-                            echo 'No tags recorded for this item.'; 
-                            }
+                        <?php if (tag_string($item) != null):
+                                echo tag_string($item);
+                            else:
+                                echo __('No tags recorded for this item.');
+                            endif;
                         ?>
                     </div>
                 </div>
             </div>
+            <?php // endif; ?>
+            <!-- The following prints a citation for this item. -->
             <div class="row">
-                <div class="span6">
+                <div class="col-xs-12">
                     <hr />
-                    <!-- The following prints a citation for this item. -->
-                    <h4><i class="icon-retweet icon-large"></i> <?php echo __('Citation'); ?></h4>
+                    <h4><span class="fa fa-retweet fa-lg"></span> <?php echo __('Citation'); ?></h4>
                     <div class="element-text"><?php echo metadata($item,'citation',array('no_escape' => true)); ?></div>
                 </div>
             </div>
             <div class="row">
-                <div class="span6">
+                <div id="item-output-formats" class="col-xs-12">
+                    <hr />
+                    <h4><span class="glyphicon glyphicon-export"></span> <?php echo __('Output Formats'); ?></h4>
+                    <div class="element-text"><?php echo output_format_list(); ?></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr />
                     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
                 </div>
             </div>
         </div>
         <!-- The following returns all of the files associated with an item. -->
-        <div id="itemfiles" class="span6">
-            <!-- <h3><?php echo __('Files'); ?></h3> -->
-            <p class="lead" style="text-align:center;">Item Identification #: <?php echo metadata($item,array('Dublin Core','Identifier')); ?></p>
-           
-            <div class="element-text"><?php echo files_for_item(
-                array('imageSize'=>'fullsize','linkToFile'=>true,'linkToMetadata'=>false),//options
-                array('class'=>'file-image'),
-                null); 
-        ?></div>
+        <div id="itemfiles" class="col-md-6">
+            <?php if (metadata($item, 'has files')): ?>
+            <h3><?php echo metadata($item, 'file_count') == 1 ? __('File') : __('Files'); ?></h3>
+            <div class="element-text"><?php echo custom_files_for_item(
+                // This might be easier for future customization: https://omeka.org/codex/Display_Specific_Metadata_for_an_Item_File
+                //options
+                array(
+                    'imageSize' => 'fullsize',
+                    'linkToFile' => true,
+                    'linkToMetadata'=>false,
+                    'imgAttributes' => array('class' => 'img-responsive'),
+                ),
+                // wrapper
+                array('class' => 'file-image'),
+                null);
+            ?></div>
+            <?php endif; ?>
         </div>
     </div>
-    <div class="row">
-        <div class="span12">
-            <div class="pagination pagination-centered">
+<?php endif; ?>
+    <br />
+    <div class="row form-group">
+        <div class="col-xs-12">
+            <nav class="pager">
                 <ul>
                     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
                 </ul>
                 <ul>
                     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </div>
-        
-</div>
-<!-- end primary -->
-
-<?php echo foot(); ?>
+</div><?php //end primary ?>
+<?php echo foot();
